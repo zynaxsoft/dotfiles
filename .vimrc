@@ -13,6 +13,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'altercation/vim-colors-solarized'
+Plugin 'vim-syntastic/syntastic'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -77,8 +78,19 @@ syntax on
 
 set showtabline=2
 " set status line show file name
-"set laststatus=1
+" set laststatus=2
 "set statusline=%f "tail of the filename
 
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
+
+" pep8
+let g:syntastic_python_checkers = ['pylint']
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
