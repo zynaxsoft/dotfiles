@@ -3,7 +3,7 @@
 pushd "$(dirname "$0")" > /dev/null
 
 echo "creating symlink to $HOME"
-for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .gitconfig
+for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .gitconfig .zsh-custom
 	do
 	if test -f "$HOME/$file"; then
 		echo "backing up $HOME/$file to $file.bak"
