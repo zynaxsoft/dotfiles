@@ -1,0 +1,14 @@
+[user]
+	email = tanapol@qbit-robotics.jp
+	name = Tanapol Prucksakorn
+	signingkey = 26E4D38087E86A1B
+[diff]
+	tool = vimdiff
+[difftool]
+	prompt = false
+
+[alias]
+	lg = log --graph --oneline --decorate=full -20 --date=short --format=\"%C(yellow)%h%C(reset) %C(magenta)[%G?]%C(reset) %C(blue)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)\"
+	lg2 = log --graph --oneline --decorate=full --date=short --format=\"%C(yellow)%h%C(reset) %C(magenta)[%G?]%C(reset) %C(blue)[%ad]%C(reset)%C(auto)%d%C(reset) %s %C(cyan)@%an%C(reset)\"
+[commit]
+	gpgsign = true
