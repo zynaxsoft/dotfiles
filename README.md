@@ -1,3 +1,4 @@
+<img src="/uploads/d661878ab664c4fb2934c03e8f15949a/image.png" width=300><br>
 # my-dotfiles
 
 A personal repo for keeping Tanapol's dotfiles
