@@ -14,6 +14,9 @@ Plugin 'davidhalter/jedi-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'altercation/vim-colors-solarized'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -95,3 +98,11 @@ set statusline+=%*
 "let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 "let g:syntastic_check_on_wq = 0
+
+" pep8 indent
+let g:python_pep8_indent_hang_closing = 1
+
+" snippets
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-j>"
+let g:UltiSnipsJumpBackwardTrigger="<c-k>"
