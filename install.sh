@@ -15,4 +15,7 @@ done
 git submodule init
 git submodule update
 
+echo "installing pylint3"
+sudo apt install pylint3
+
 popd > /dev/null

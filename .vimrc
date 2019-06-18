@@ -85,12 +85,13 @@ let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
 
 " pep8
+let g:syntastic_python_pylint_exe = 'python3 -m pylint'
 let g:syntastic_python_checkers = ['pylint']
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
+"let g:syntastic_always_populate_loc_list = 1
+"let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+"let g:syntastic_check_on_wq = 0
