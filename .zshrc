@@ -109,7 +109,7 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 alias pact='source .env/bin/activate'
-alias omore=$HOME/omotenashi/src/omote-remote.py
+alias omore=$HOME/omotenashi/src/tools/omote-remote.py
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
