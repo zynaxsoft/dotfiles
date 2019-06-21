@@ -51,6 +51,8 @@ filetype plugin on
 " see :h vundle for more details or wiki for FAQ
 " Put your non-Plugin stuff after this line
 
+set bs=2
+
 set list
 set listchars=tab:»-,trail:⋅,eol:¬,extends:»,precedes:«,nbsp:%
 set ignorecase
@@ -89,10 +91,45 @@ let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
 
 " pep8
-let g:ale_python_pylint_executable = 'python3 -m pylint'
+let g:ale_python_pylint_executable = 'python3'
+let g:ale_python_pylint_options = '-m pylint'
+let g:ale_python_autopep8_executable = 'python3'
+let g:ale_python_autopep8_options = '-m autopep8'
+let g:ale_python_isort_executable = 'python3'
+let g:ale_python_isort_options = '-m isort'
+let g:ale_python_black_executable = 'python3'
+let g:ale_python_black_options = '-m black'
+
 let g:ale_python_pylint_use_global = 1
 let g:ale_completion_enabled = 1
+
+let g:ale_lint_on_text_changed = 'always'
+let g:ale_lint_on_insert_leave = 1
+let g:ale_lint_on_enter = 1
+let g:ale_lint_on_filetype_changed = 1
+
+let g:ale_sign_error = '😞'
+let g:ale_sign_warning = '😡'
+
+"let g:ale_open_list = 1
+let g:ale_set_loclist = 0
+let g:ale_set_quickfix = 1
+let g:ale_list_window_size = 4
+
+au VimEnter * highlight SignColumn ctermbg=10
+au VimEnter * highlight clear ALEErrorSign
+au VimEnter * highlight clear ALEWarningSign
+
 set omnifunc=ale#completion#OmniFunc
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\   'python': ['autopep8', 'black', 'isort'],
+\}
+let g:ale_linters = {
+    \ 'python': ['flake8', 'pylint', 'mypy'],
+    \ }
+nmap <Leader>x <Plug>(ale_fix)
 
 "let g:syntastic_python_pylint_exe = 'python3 -m pylint'
 "let g:syntastic_python_checkers = ['pylint']
