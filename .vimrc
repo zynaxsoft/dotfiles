@@ -13,8 +13,9 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'Yggdroot/indentLine'
 Plugin 'altercation/vim-colors-solarized'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 Plugin 'Vimjas/vim-python-pep8-indent'
+Plugin 'w0rp/ale'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
 
@@ -88,17 +89,22 @@ let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
 
 " pep8
-let g:syntastic_python_pylint_exe = 'python3 -m pylint'
-let g:syntastic_python_checkers = ['pylint']
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
+let g:ale_python_pylint_executable = 'python3 -m pylint'
+let g:ale_python_pylint_use_global = 1
+let g:ale_completion_enabled = 1
+set omnifunc=ale#completion#OmniFunc
 
-let g:syntastic_always_populate_loc_list = 1
-"let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-"let g:syntastic_check_on_wq = 0
-let g:syntastic_enable_signs = 1
+"let g:syntastic_python_pylint_exe = 'python3 -m pylint'
+"let g:syntastic_python_checkers = ['pylint']
+"set statusline+=%#warningmsg#
+"set statusline+=%{SyntasticStatuslineFlag()}
+"set statusline+=%*
+"
+"let g:syntastic_always_populate_loc_list = 1
+""let g:syntastic_auto_loc_list = 1
+"let g:syntastic_check_on_open = 1
+""let g:syntastic_check_on_wq = 0
+"let g:syntastic_enable_signs = 1
 
 " pep8 indent
 let g:python_pep8_indent_hang_closing = 1
