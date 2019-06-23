@@ -58,6 +58,8 @@ set listchars=tab:»-,trail:⋅,eol:¬,extends:»,precedes:«,nbsp:%
 set ignorecase
 set smartcase
 
+set showtabline=2
+
 " set timeoutlen=1000 ttimeoutlen=0
 
 set hlsearch
