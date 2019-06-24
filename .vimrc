@@ -58,6 +58,8 @@ set listchars=tab:»-,trail:⋅,eol:¬,extends:»,precedes:«,nbsp:%
 set ignorecase
 set smartcase
 
+set showtabline=2
+
 " set timeoutlen=1000 ttimeoutlen=0
 
 set hlsearch
@@ -81,11 +83,6 @@ setlocal spell spelllang=en_us,cjk
 hi clear SpellBad
 hi SpellBad ctermfg=1 cterm=underline
 syntax on
-
-set showtabline=2
-" set status line show file name
-" set laststatus=2
-"set statusline=%f "tail of the filename
 
 let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
