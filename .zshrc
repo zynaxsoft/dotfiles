@@ -133,3 +133,8 @@ bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
 unsetopt share_history
+
+# stop the ctrl-s behavior
+# (it stop the output of the terminal, it could be resumed by ctrl-q)
+stty stop undef
+stty start undef
