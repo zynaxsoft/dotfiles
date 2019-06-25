@@ -19,6 +19,7 @@ Plugin 'w0rp/ale'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
 Plugin 'zivyangll/git-blame.vim'
+Plugin 'tpope/vim-fugitive'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
