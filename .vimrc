@@ -18,6 +18,7 @@ Plugin 'Vimjas/vim-python-pep8-indent'
 Plugin 'w0rp/ale'
 " Plugin 'SirVer/ultisnips'
 " Plugin 'honza/vim-snippets'
+Plugin 'zivyangll/git-blame.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
@@ -147,3 +148,8 @@ let g:python_pep8_indent_hang_closing = 1
 "let g:UltiSnipsExpandTrigger="<tab>"
 "let g:UltiSnipsJumpForwardTrigger="<c-j>"
 "let g:UltiSnipsJumpBackwardTrigger="<c-k>"
+
+
+" Git
+" git-blame activate by leader b
+nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
