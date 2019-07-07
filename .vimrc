@@ -90,13 +90,13 @@ let g:jedi#popup_select_first = 0
 let g:jedi#show_call_signatures = "1"
 
 " pep8
-let g:ale_python_pylint_executable = 'python3'
+let g:ale_python_pylint_executable = '/usr/bin/python3'
 let g:ale_python_pylint_options = '-m pylint'
-let g:ale_python_autopep8_executable = 'python3'
+let g:ale_python_autopep8_executable = '/usr/bin/python3'
 let g:ale_python_autopep8_options = '-m autopep8'
-let g:ale_python_isort_executable = 'python3'
+let g:ale_python_isort_executable = '/usr/bin/python3'
 let g:ale_python_isort_options = '-m isort'
-let g:ale_python_black_executable = 'python3'
+let g:ale_python_black_executable = '/usr/bin/python3'
 let g:ale_python_black_options = '-m black'
 
 let g:ale_python_pylint_use_global = 1
