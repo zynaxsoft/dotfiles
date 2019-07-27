@@ -18,4 +18,9 @@ git submodule update
 echo "installing pylint3"
 sudo apt install pylint3
 
+echo "installing nerd fonts"
+mkdir -p ~/.local/share/fonts
+cp fonts/dejavu-nerd-font.ttf ~/.local/share/fonts
+fc-cache -f -v
+
 popd > /dev/null
