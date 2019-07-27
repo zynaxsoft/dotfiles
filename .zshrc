@@ -137,6 +137,12 @@ unsetopt share_history
 
 eval "$(dircolors $HOME/dotfiles/dircolors.solarized-dark)"
 
+# aws completion
+AWS_COMPLETER=$HOME/.local/bin/aws_zsh_completer.sh
+if test -f ; then
+    source $AWS_COMPLETER
+fi
+
 # stop the ctrl-s behavior
 # (it stop the output of the terminal, it could be resumed by ctrl-q)
 stty stop undef
