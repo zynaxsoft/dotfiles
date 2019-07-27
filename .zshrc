@@ -134,6 +134,8 @@ bindkey -M emacs '^N' history-substring-search-down
 
 unsetopt share_history
 
+eval "$(dircolors dotfiles/dircolors.solarized-dark)"
+
 # stop the ctrl-s behavior
 # (it stop the output of the terminal, it could be resumed by ctrl-q)
 stty stop undef
