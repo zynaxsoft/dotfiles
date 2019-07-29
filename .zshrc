@@ -90,6 +90,7 @@ source $ZSH/oh-my-zsh.sh
 # User configuration
 
 # export MANPATH="/usr/local/man:$MANPATH"
+export PATH=$PATH:"$HOME/.local/bin"
 
 # You may need to manually set your language environment
 # export LANG=en_US.UTF-8
@@ -133,6 +134,14 @@ bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
 unsetopt share_history
+
+eval "$(dircolors $HOME/dotfiles/dircolors.solarized-dark)"
+
+# aws completion
+AWS_COMPLETER=$HOME/.local/bin/aws_zsh_completer.sh
+if test -f ; then
+    source $AWS_COMPLETER
+fi
 
 # stop the ctrl-s behavior
 # (it stop the output of the terminal, it could be resumed by ctrl-q)
