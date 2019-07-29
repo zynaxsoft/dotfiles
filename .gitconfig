@@ -1,7 +1,7 @@
 [user]
 	email = tanapol@qbit-robotics.jp
 	name = Tanapol Prucksakorn
-	signingkey = 26E4D38087E86A1B
+	signingkey = A551A9EA656343CF
 [diff]
 	tool = vimdiff
 [difftool]
