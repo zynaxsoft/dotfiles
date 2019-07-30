@@ -143,6 +143,11 @@ if test -f AWS_COMPLETER; then
     source $AWS_COMPLETER
 fi
 
+# detect wsl and do wsl stuffs
+if uname -r | grep -qi microsoft; then
+	eval $(ssh-agent) > /dev/null
+fi
+
 # stop the ctrl-s behavior
 # (it stop the output of the terminal, it could be resumed by ctrl-q)
 stty stop undef
