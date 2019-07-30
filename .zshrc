@@ -134,6 +134,7 @@ bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 
 unsetopt share_history
+setopt AUTO_PUSHD
 
 eval "$(dircolors $HOME/dotfiles/dircolors.solarized-dark)"
 
