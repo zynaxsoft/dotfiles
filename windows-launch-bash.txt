@@ -1,0 +1,16 @@
+# Windows Scheduler
+
+## Run xserver
+
+Program
+"C:\Program Files\VcXsrv\vcxsrv.exe"
+Argument
+:1 -ac -terminate -fullscreen -clipboard -wgl -dpi auto
+
+## Run terminal
+Program
+C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe
+
+Argument:
+-windowstyle hidden "bash -i -c "runfcitx""
+-windowstyle hidden "bash -i -c "runfullterminal""
