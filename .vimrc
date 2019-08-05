@@ -119,7 +119,7 @@ au VimEnter * highlight SignColumn ctermbg=10
 au VimEnter * highlight clear ALEErrorSign
 au VimEnter * highlight clear ALEWarningSign
 
-#set omnifunc=ale#completion#OmniFunc
+"set omnifunc=ale#completion#OmniFunc
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
