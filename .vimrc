@@ -97,8 +97,10 @@ let g:ale_python_autopep8_executable = '/usr/bin/python3'
 let g:ale_python_autopep8_options = '-m autopep8'
 let g:ale_python_isort_executable = '/usr/bin/python3'
 let g:ale_python_isort_options = '-m isort'
-let g:ale_python_black_executable = '/usr/bin/python3'
-let g:ale_python_black_options = '-m black'
+"let g:ale_python_black_executable = '/usr/bin/python3'
+"let g:ale_python_black_options = '-m black'
+let g:ale_python_yapf_executable = '/usr/bin/yapf'
+let g:ale_python_yapf_options = ''
 
 let g:ale_python_pylint_use_global = 1
 let g:ale_completion_enabled = 1
@@ -124,10 +126,10 @@ au VimEnter * highlight clear ALEWarningSign
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
 \   'javascript': ['eslint'],
-\   'python': ['autopep8', 'black', 'isort'],
+\   'python': ['autopep8', 'isort', 'yapf'],
 \}
 let g:ale_linters = {
-    \ 'python': ['flake8', 'pylint', 'mypy'],
+    \ 'python': ['flake8', 'pylint'],
     \ }
 nmap <Leader>x <Plug>(ale_fix)
 
