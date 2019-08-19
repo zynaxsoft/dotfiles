@@ -91,7 +91,7 @@ let g:jedi#show_call_signatures = "1"
 
 " pep8
 let g:ale_python_pylint_executable = '/usr/bin/python3'
-let g:ale_python_pylint_options = '-m pylint'
+let g:ale_python_pylint_options = '-m pylint --errors-only'
 let g:ale_python_autopep8_executable = '/usr/bin/python3'
 let g:ale_python_autopep8_options = '-m autopep8'
 let g:ale_python_isort_executable = '/usr/bin/python3'
