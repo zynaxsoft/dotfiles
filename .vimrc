@@ -166,6 +166,7 @@ set tabstop=8
 set expandtab
 set shiftwidth=4
 set softtabstop=4
+set smartindent
 
 "set number
 
@@ -178,3 +179,4 @@ hi clear SpellBad
 hi SpellBad ctermfg=1 cterm=underline
 
 
+set smartindent
