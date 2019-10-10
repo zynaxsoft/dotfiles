@@ -26,4 +26,11 @@ mkdir -p ~/.local/share/fonts
 cp fonts/dejavu-nerd-font.ttf ~/.local/share/fonts
 fc-cache -f -v
 
+echo "install and config gpg-agent"
+sudo apt install gnupg2 gnupg-agent
+sudo apt install pinentry-tty
+mv $HOME/.gnupg/{gpg-agent.conf, gpg-agent.conf.bak}
+cp $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
+gpg-connect-agent reloadagent /bye
+
 popd > /dev/null
