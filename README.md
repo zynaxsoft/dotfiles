@@ -1,4 +1,5 @@
-<img src="/uploads/d661878ab664c4fb2934c03e8f15949a/image.png" width=300><br>
+<img src="https://user-images.githubusercontent.com/1210722/66711562-2c5ccf00-edc9-11e9-947d-5c0f2e7add32.png" width=300><br>
+
 # my-dotfiles
 
 A personal repo for keeping Tanapol's dotfiles
