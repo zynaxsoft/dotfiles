@@ -1,7 +1,7 @@
 [user]
 	email = tanapol.pr@gmail.com
 	name = Tanapol Prucksakorn
-	signingkey = A551A9EA656343CF
+	signingkey = AAAAAAAAAAAAAAAAA
 [diff]
 	tool = vimdiff
 [difftool]
