@@ -12,6 +12,7 @@ for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .gi
 	echo "ln -s $HOME/dotfiles/$file $HOME/"
 	ln -s $HOME/dotfiles/$file $HOME/
 done
+ln -s $HOME/dotfiles/.vim $HOME/
 git submodule init
 git submodule update
 
