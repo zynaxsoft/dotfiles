@@ -140,7 +140,7 @@ eval "$(dircolors $HOME/dotfiles/dircolors.solarized-dark)"
 
 # aws completion
 AWS_COMPLETER=$HOME/.local/bin/aws_zsh_completer.sh
-if test -f AWS_COMPLETER; then
+if test -f $AWS_COMPLETER; then
     source $AWS_COMPLETER
 fi
 
