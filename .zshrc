@@ -135,6 +135,7 @@ prompt_end() {
 }
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
+bindkey \^U backward-kill-line
 
 unsetopt share_history
 setopt AUTO_PUSHD
