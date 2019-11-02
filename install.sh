@@ -31,7 +31,7 @@ fc-cache -f -v
 echo "install and config gpg-agent"
 sudo apt install gnupg2 gnupg-agent
 sudo apt install pinentry-tty
-mv $HOME/.gnupg/{gpg-agent.conf, gpg-agent.conf.bak}
+mv $HOME/.gnupg/{gpg-agent.conf,gpg-agent.conf.bak}
 cp $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
 
