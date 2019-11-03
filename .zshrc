@@ -87,6 +87,9 @@ history-substring-search
 )
 
 source $ZSH/oh-my-zsh.sh
+if [[ -f /etc/zsh_command_not_found ]]; then
+    source /etc/zsh_command_not_found
+fi
 
 # User configuration
 
