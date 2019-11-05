@@ -50,3 +50,9 @@
 [submodule ".vim/bundle/git-blame.vim"]
 	path = .vim/bundle/git-blame.vim
 	url = https://github.com/zivyangll/git-blame.vim.git
+[submodule ".vim/bundle/vim-tmux-focus-events"]
+	path = .vim/bundle/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule ".vim/bundle/vim-tmux-clipboard"]
+	path = .vim/bundle/vim-tmux-clipboard
+	url = https://github.com/roxma/vim-tmux-clipboard.git

@@ -20,6 +20,8 @@ Plugin 'w0rp/ale'
 " Plugin 'honza/vim-snippets'
 Plugin 'zivyangll/git-blame.vim'
 Plugin 'tpope/vim-fugitive'
+Plugin 'tmux-plugins/vim-tmux-focus-events'
+Plugin 'roxma/vim-tmux-clipboard'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
