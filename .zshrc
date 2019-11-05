@@ -153,7 +153,13 @@ fi
 
 # detect wsl and do wsl stuffs
 if uname -r | grep -qi microsoft; then
-	eval $(ssh-agent) > /dev/null
+    eval $(ssh-agent) > /dev/null
+    # DISPLAY stuff
+    if [ -z ${DISPLAY} ]; then
+        export DISPLAY=:1
+        tmux set-option -g update-environment DISPLAY
+    fi
+
 fi
 
 # stop the ctrl-s behavior
