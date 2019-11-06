@@ -16,6 +16,9 @@ if [ $USER = "tanapol" ]; then
 elif [ $USER = "zynaxsoft" ]; then
 	DEFAULT_USER=zynaxsoft
 fi
+if [[ -n $SSH_CONNECTION ]]; then
+    DEFAULT_USER=
+fi
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=240
 ZSH_AUTOSUGGEST_USE_ASYNCa=YES
 ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
