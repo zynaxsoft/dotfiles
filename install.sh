@@ -3,10 +3,20 @@
 pushd "$(dirname "$0")" > /dev/null
 
 # test $(awk -F= '/^NAME/{print $2}' /etc/os-release) = "\"Ubuntu\"
-echo "installing latest git and vim"
+echo "adding latest git and vim repository"
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:jonathonf/vim
 sudo apt update
+
+echo "installing gnome-tweaks"
+sudo apt install -y gnome-tweaks
+
+echo "installing nerd fonts"
+mkdir -p ~/.local/share/fonts
+cp fonts/dejavu-nerd-font.ttf ~/.local/share/fonts
+fc-cache -f -v
+
+echo "installing git and vim"
 sudo apt install -y git
 sudo apt install -y vim-gtk
 
@@ -16,8 +26,8 @@ sudo apt install -y tmux
 echo "installing zsh"
 sudo apt install -y zsh
 
-echo "installing gnome-tweaks"
-sudo apt install -y gnome-tweaks
+echo "installing python(s)"
+sudo apt install python3-pip python3.7 python3.8 python3.7-venv python3.8-venv
 
 
 echo "creating symlink to $HOME"
@@ -40,11 +50,6 @@ sudo apt install -y pylint3
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip
-
-echo "installing nerd fonts"
-mkdir -p ~/.local/share/fonts
-cp fonts/dejavu-nerd-font.ttf ~/.local/share/fonts
-fc-cache -f -v
 
 echo "install and config gpg-agent"
 sudo apt install -y gnupg2 gnupg-agent
