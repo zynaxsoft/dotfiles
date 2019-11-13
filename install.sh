@@ -2,6 +2,21 @@
 
 pushd "$(dirname "$0")" > /dev/null
 
+# test $(awk -F= '/^NAME/{print $2}' /etc/os-release) = "\"Ubuntu\"
+echo "installing latest git and vim"
+sudo add-apt-repository -y ppa:git-core/ppa
+sudo add-apt-repository -y ppa:jonathonf/vim
+sudo apt update
+sudo apt install -y git
+sudo apt install -y vim-gtk
+
+echo "installing tmux"
+sudo apt install -y tmux
+
+echo "installing zsh"
+sudo apt install -y zsh
+
+
 echo "creating symlink to $HOME"
 for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
     do
@@ -18,10 +33,10 @@ git submodule init
 git submodule update
 
 echo "installing pylint3"
-sudo apt install pylint3
+sudo apt install -y pylint3
 
 echo "install clipboard tools"
-sudo apt install xsel xclip
+sudo apt install -y xsel xclip
 
 echo "installing nerd fonts"
 mkdir -p ~/.local/share/fonts
@@ -29,8 +44,8 @@ cp fonts/dejavu-nerd-font.ttf ~/.local/share/fonts
 fc-cache -f -v
 
 echo "install and config gpg-agent"
-sudo apt install gnupg2 gnupg-agent
-sudo apt install pinentry-tty
+sudo apt install -y gnupg2 gnupg-agent
+sudo apt install -y pinentry-tty
 mv $HOME/.gnupg/{gpg-agent.conf,gpg-agent.conf.bak}
 cp $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
