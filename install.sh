@@ -16,6 +16,9 @@ sudo apt install -y tmux
 echo "installing zsh"
 sudo apt install -y zsh
 
+echo "installing gnome-tweaks"
+sudo apt install -y gnome-tweaks
+
 
 echo "creating symlink to $HOME"
 for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
