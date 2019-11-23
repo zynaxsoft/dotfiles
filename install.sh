@@ -27,7 +27,7 @@ echo "installing zsh"
 sudo apt install -y zsh
 
 echo "installing python(s)"
-sudo apt install python3-pip python3.7 python3.8 python3.7-venv python3.8-venv
+sudo apt install -y python3-pip python3.7 python3.8 python3.7-venv python3.8-venv
 
 
 echo "creating symlink to $HOME"
