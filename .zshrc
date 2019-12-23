@@ -165,6 +165,10 @@ if uname -r | grep -qi microsoft; then
 
 fi
 
+if [ -f "$(which kubectl)" ]; then
+    source <(kubectl completion zsh)
+fi
+
 # stop the ctrl-s behavior
 # (it stop the output of the terminal, it could be resumed by ctrl-q)
 stty stop undef
