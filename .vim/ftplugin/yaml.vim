@@ -1,6 +1,7 @@
 " Vim indent file
 " Language: Yaml
 " Author: Ian Young
+" Get it bundled for pathogen: https://github.com/avakhov/vim-yaml
 
 if exists("b:did_indent")
   finish
@@ -12,30 +13,19 @@ let b:did_indent = 1
 setlocal autoindent sw=2 et
 setlocal indentexpr=GetYamlIndent()
 setlocal indentkeys=o,O,*<Return>,!^F
+setlocal ts=2 sts=2 expandtab
 
 function! GetYamlIndent()
-  let prevlnum = v:lnum - 1
-  if prevlnum == 0
+  let lnum = v:lnum - 1
+  if lnum == 0
     return 0
   endif
-  let line = substitute(getline(v:lnum),'\s\+$','','')
-  let prevline = substitute(getline(prevlnum),'\s\+$','','')
-
-  let indent = indent(prevlnum)
+  let line = substitute(getline(lnum),'\s\+$','','')
+  let indent = indent(lnum)
   let increase = indent + &sw
-  let decrease = indent - &sw
-
-  if prevline =~ ':$'
+  if line =~ ':$'
     return increase
-  elseif prevline =~ '^\s\+\-' && line =~ '^\s\+[^-]\+:'
-    return decrease
   else
     return indent
   endif
 endfunction
-
-set tabstop=8
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-" vim:set sw=2:
