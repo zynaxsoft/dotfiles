@@ -22,6 +22,7 @@ Plugin 'zivyangll/git-blame.vim'
 Plugin 'tpope/vim-fugitive'
 Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'roxma/vim-tmux-clipboard'
+Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
 
 " The following are examples of different formats supported.
