@@ -24,6 +24,8 @@ Plugin 'tmux-plugins/vim-tmux-focus-events'
 Plugin 'roxma/vim-tmux-clipboard'
 Plugin 'godlygeek/tabular'
 Plugin 'plasticboy/vim-markdown'
+Plugin 'vim-syntastic/syntastic'
+Plugin 'rust-lang/rust.vim'
 
 " The following are examples of different formats supported.
 " Keep Plugin commands between vundle#begin/end.
