@@ -50,3 +50,6 @@
 [submodule ".vim/plugged/vim-tmux-focus-events"]
 	path = .vim/plugged/vim-tmux-focus-events
 	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
+[submodule ".vim/plugged/YouCompleteMe"]
+	path = .vim/plugged/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe.git

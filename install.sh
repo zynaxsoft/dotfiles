@@ -48,6 +48,11 @@ git submodule update
 echo "installing pylint3"
 sudo apt install -y pylint3
 
+echo "installing vim plugins"
+sudo apt install -y cmake
+vim +PlugInstall +qall
+python3 ~/dotfiles/.vim/plugged/YouCompleteMe/install.py
+
 echo "install clipboard tools"
 sudo apt install -y xsel xclip
 
