@@ -4,7 +4,7 @@ set shell=/bin/bash
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'davidhalter/jedi-vim'
+" Plug 'davidhalter/jedi-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'altercation/vim-colors-solarized'
 " Plug 'vim-syntastic/syntastic'
@@ -57,9 +57,9 @@ hi clear SpellBad
 hi SpellBad ctermfg=1 cterm=underline
 syntax on
 
-let g:jedi#popup_select_first = 0
-let g:jedi#show_call_signatures = "1"
-let g:jedi#use_tabs_not_buffers = 1
+" let g:jedi#popup_select_first = 0
+" let g:jedi#show_call_signatures = "1"
+" let g:jedi#use_tabs_not_buffers = 1
 
 " pep8
 let g:ale_python_pylint_executable = '/usr/bin/python3'
@@ -76,7 +76,7 @@ let g:ale_python_yapf_executable = '/usr/bin/yapf'
 let g:ale_python_yapf_options = ''
 
 let g:ale_python_pylint_use_global = 1
-let g:ale_completion_enabled = 1
+let g:ale_completion_enabled = 0
 
 
 let g:ale_rust_cargo_check_all_targets = 1
@@ -176,3 +176,9 @@ let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+
+
+let g:ycm_add_preview_to_completeopt = 1
+let g:ycm_autoclose_preview_window_after_completion = 1
+let g:ycm_autoclose_preview_window_after_insertion = 1
+let g:ycm_key_invoke_completion = '<C-Space>'

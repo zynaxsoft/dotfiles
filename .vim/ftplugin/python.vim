@@ -9,8 +9,8 @@ set softtabstop=4
 "set number
 
 " highlight the length over 80column
-highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-match OverLength /\%81v.*/
+" highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
+" match OverLength /\%81v.*/
 
 "setlocal spell spelllang=en_us,cjk
 hi clear SpellBad
