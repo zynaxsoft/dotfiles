@@ -20,9 +20,6 @@
 [submodule ".vim/plugged/ale"]
 	path = .vim/plugged/ale
 	url = https://github.com/w0rp/ale.git
-[submodule ".vim/plugged/coc.nvim"]
-	path = .vim/plugged/coc.nvim
-	url = https://github.com/neoclide/coc.nvim.git
 [submodule ".vim/plugged/git-blame.vim"]
 	path = .vim/plugged/git-blame.vim
 	url = https://github.com/zivyangll/git-blame.vim.git

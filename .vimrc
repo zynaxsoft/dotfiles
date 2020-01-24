@@ -18,7 +18,6 @@ Plug 'tmux-plugins/vim-tmux-focus-events'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
-Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 call plug#end()
 filetype plugin indent on
