@@ -1,27 +1,3 @@
-[submodule ".vim/bundle/Vundle.vim"]
-	path = .vim/bundle/Vundle.vim
-	url = https://github.com/VundleVim/Vundle.vim.git
-[submodule ".vim/bundle/command-t"]
-	path = .vim/bundle/command-t
-	url = git://git.wincent.com/command-t.git
-[submodule ".vim/bundle/indentLine"]
-	path = .vim/bundle/indentLine
-	url = https://github.com/Yggdroot/indentLine.git
-[submodule ".vim/bundle/jedi-vim"]
-	path = .vim/bundle/jedi-vim
-	url = https://github.com/davidhalter/jedi-vim.git
-[submodule ".vim/bundle/sparkup"]
-	path = .vim/bundle/sparkup
-	url = https://github.com/rstacruz/sparkup.git
-[submodule ".vim/bundle/syntastic"]
-	path = .vim/bundle/syntastic
-	url = https://github.com/vim-syntastic/syntastic.git
-[submodule ".vim/bundle/vim-colors-solarized"]
-	path = .vim/bundle/vim-colors-solarized
-	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule ".vim/bundle/vim-fugitive"]
-	path = .vim/bundle/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive.git
 [submodule ".tmux/tmux-resurrect"]
 	path = .tmux/tmux-resurrect
 	url = https://github.com/tmux-plugins/tmux-resurrect.git
@@ -29,39 +5,12 @@
 	path = .oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
 	ignore = dirty
-[submodule ".vim/bundle/ultisnips"]
-	path = .vim/bundle/ultisnips
-	url = https://github.com/SirVer/ultisnips.git
-[submodule ".vim/bundle/vim-python-pep8-indent"]
-	path = .vim/bundle/vim-python-pep8-indent
-	url = https://github.com/Vimjas/vim-python-pep8-indent.git
-[submodule ".vim/bundle/vim-snippets"]
-	path = .vim/bundle/vim-snippets
-	url = https://github.com/honza/vim-snippets.git
 [submodule ".zsh-custom/zsh-autosuggestions"]
 	path = .zsh-custom/zsh-autosuggestions
 	url = https://github.com/zsh-users/zsh-autosuggestions
 [submodule ".zsh-custom/zsh-syntax-highlighting"]
 	path = .zsh-custom/zsh-syntax-highlighting
 	url = https://github.com/zsh-users/zsh-syntax-highlighting.git
-[submodule ".vim/bundle/ale"]
-	path = .vim/bundle/ale
-	url = https://github.com/w0rp/ale.git
-[submodule ".vim/bundle/git-blame.vim"]
-	path = .vim/bundle/git-blame.vim
-	url = https://github.com/zivyangll/git-blame.vim.git
-[submodule ".vim/bundle/vim-tmux-focus-events"]
-	path = .vim/bundle/vim-tmux-focus-events
-	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git
-[submodule ".vim/bundle/vim-tmux-clipboard"]
-	path = .vim/bundle/vim-tmux-clipboard
-	url = https://github.com/roxma/vim-tmux-clipboard.git
-[submodule ".vim/bundle/vim-markdown"]
-	path = .vim/bundle/vim-markdown
-	url = https://github.com/plasticboy/vim-markdown.git
-[submodule ".vim/bundle/tabular"]
-	path = .vim/bundle/tabular
-	url = https://github.com/godlygeek/tabular.git
 [submodule ".vim/autoload/vim-plug"]
 	path = .vim/autoload/vim-plug
 	url = https://github.com/junegunn/vim-plug
