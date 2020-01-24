@@ -14,3 +14,42 @@
 [submodule ".vim/autoload/vim-plug"]
 	path = .vim/autoload/vim-plug
 	url = https://github.com/junegunn/vim-plug
+[submodule ".vim/plugged/Vundle.vim"]
+	path = .vim/plugged/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim.git
+[submodule ".vim/plugged/ale"]
+	path = .vim/plugged/ale
+	url = https://github.com/w0rp/ale.git
+[submodule ".vim/plugged/coc.nvim"]
+	path = .vim/plugged/coc.nvim
+	url = https://github.com/neoclide/coc.nvim.git
+[submodule ".vim/plugged/git-blame.vim"]
+	path = .vim/plugged/git-blame.vim
+	url = https://github.com/zivyangll/git-blame.vim.git
+[submodule ".vim/plugged/indentLine"]
+	path = .vim/plugged/indentLine
+	url = https://github.com/Yggdroot/indentLine.git
+[submodule ".vim/plugged/jedi-vim"]
+	path = .vim/plugged/jedi-vim
+	url = https://github.com/davidhalter/jedi-vim.git
+[submodule ".vim/plugged/tabular"]
+	path = .vim/plugged/tabular
+	url = https://github.com/godlygeek/tabular.git
+[submodule ".vim/plugged/vim-colors-solarized"]
+	path = .vim/plugged/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule ".vim/plugged/vim-fugitive"]
+	path = .vim/plugged/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive.git
+[submodule ".vim/plugged/vim-markdown"]
+	path = .vim/plugged/vim-markdown
+	url = https://github.com/plasticboy/vim-markdown.git
+[submodule ".vim/plugged/vim-python-pep8-indent"]
+	path = .vim/plugged/vim-python-pep8-indent
+	url = https://github.com/Vimjas/vim-python-pep8-indent.git
+[submodule ".vim/plugged/vim-tmux-clipboard"]
+	path = .vim/plugged/vim-tmux-clipboard
+	url = https://github.com/roxma/vim-tmux-clipboard.git
+[submodule ".vim/plugged/vim-tmux-focus-events"]
+	path = .vim/plugged/vim-tmux-focus-events
+	url = https://github.com/tmux-plugins/vim-tmux-focus-events.git

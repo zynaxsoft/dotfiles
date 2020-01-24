@@ -4,7 +4,6 @@ set shell=/bin/bash
 
 call plug#begin('~/.vim/plugged')
 
-Plug 'VundleVim/Vundle.vim'
 Plug 'davidhalter/jedi-vim'
 Plug 'Yggdroot/indentLine'
 Plug 'altercation/vim-colors-solarized'
