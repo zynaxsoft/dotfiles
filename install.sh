@@ -29,6 +29,11 @@ sudo apt install -y zsh
 echo "installing python(s)"
 sudo apt install -y python3-pip python3.7 python3.8 python3.7-venv python3.8-venv
 
+echo "installing rust"
+sudo apt install curl
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+rustup component add rls
+
 
 echo "creating symlink to $HOME"
 for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
@@ -51,7 +56,7 @@ sudo apt install -y pylint3
 echo "installing vim plugins"
 sudo apt install -y cmake
 vim +PlugInstall +qall
-python3 ~/dotfiles/.vim/plugged/YouCompleteMe/install.py
+python3 ~/dotfiles/.vim/plugged/YouCompleteMe/install.py --rust-completer
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip

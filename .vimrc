@@ -182,3 +182,4 @@ let g:ycm_add_preview_to_completeopt = 1
 let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_invoke_completion = '<C-Space>'
+let g:ycm_enable_diagnostic_signs = 0
