@@ -47,8 +47,6 @@ for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zs
 done
 ln -s $HOME/dotfiles/.vim $HOME/
 cp $HOME/dotfiles/.gitconfig $HOME/
-git submodule init
-git submodule update
 
 echo "installing pylint3"
 sudo apt install -y pylint3
@@ -67,5 +65,9 @@ sudo apt install -y pinentry-tty
 mv $HOME/.gnupg/{gpg-agent.conf,gpg-agent.conf.bak}
 cp $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
+
+echo "update git submodules for vim"
+git submodule init
+git submodule update
 
 popd > /dev/null
