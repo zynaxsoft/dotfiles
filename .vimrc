@@ -194,7 +194,7 @@ let g:ycm_semantic_triggers =  {
   \   'perl': ['->'],
   \   'php': ['->', '::'],
   \   'cs,d,elixir,go,groovy,java,javascript,julia,perl6,python,scala,typescript,vb': ['.'],
-  \   'python': ['re!from\s+\S+\s+import\s', 'from '],
+  \   'python': ['re!from\s+\S+\s+import\s', 'from ', 'import '],
   \   'ruby,rust': ['.', '::'],
   \   'lua': ['.', ':'],
   \   'erlang': [':'],
