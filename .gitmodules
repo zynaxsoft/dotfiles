@@ -53,3 +53,6 @@
 [submodule ".vim/plugged/YouCompleteMe"]
 	path = .vim/plugged/YouCompleteMe
 	url = https://github.com/Valloric/YouCompleteMe.git
+[submodule "tmux"]
+	path = tmux
+	url = https://github.com/tmux/tmux.git

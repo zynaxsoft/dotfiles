@@ -20,8 +20,15 @@ echo "installing git and vim"
 sudo apt install -y git
 sudo apt install -y vim-gtk
 
-echo "installing tmux"
-sudo apt install -y tmux
+echo "installing tmux by compiling from source"
+pushd tmux
+sh autogen.sh
+./configure > /dev/null
+make > /dev/null
+sudo apt remove -y tmux
+sudo apt install -y libevent-dev bison flex autoconf automake pkg-config
+sudo ln -s $HOME/dotfiles/tmux/tmux /usr/bin/tmux
+popd
 
 echo "installing zsh"
 sudo apt install -y zsh
