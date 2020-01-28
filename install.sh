@@ -22,6 +22,7 @@ sudo apt install -y vim-gtk
 
 echo "installing tmux by compiling from source"
 pushd tmux
+git checkout 2.9a
 sh autogen.sh
 ./configure > /dev/null
 make > /dev/null
