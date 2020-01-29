@@ -183,6 +183,8 @@ let g:ycm_autoclose_preview_window_after_completion = 1
 let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:ycm_key_invoke_completion = '<C-Space>'
 let g:ycm_enable_diagnostic_signs = 0
+nnoremap <leader>d :YcmCompleter GoTo<CR>
+nnoremap <leader>r :YcmCompleter GoToReferences<CR>
 
 
 let g:ycm_semantic_triggers =  {
