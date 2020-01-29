@@ -1,3 +1,8 @@
+# vim plugins
+.vim/plugged/*
+.vim/bundle/*
+
+
 resurrect/
 # Swap
 [._]*.s[a-v][a-z]
