@@ -19,6 +19,7 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 Plug 'Valloric/YouCompleteMe'
+Plug 'pangloss/vim-javascript'
 
 call plug#end()
 filetype plugin indent on
