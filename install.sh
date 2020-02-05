@@ -8,6 +8,10 @@ sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:jonathonf/vim
 sudo apt update
 
+echo "initialize and update git submodules"
+git submodule init
+git submodule update
+
 echo "installing gnome-tweaks"
 sudo apt install -y gnome-tweaks
 
@@ -75,9 +79,5 @@ sudo apt install -y pinentry-tty
 mv $HOME/.gnupg/{gpg-agent.conf,gpg-agent.conf.bak}
 cp $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
-
-echo "update git submodules for vim"
-git submodule init
-git submodule update
 
 popd > /dev/null
