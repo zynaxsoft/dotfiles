@@ -26,12 +26,18 @@ sudo apt install -y vim-gtk
 
 echo "installing tmux by compiling from source"
 pushd tmux
+sudo apt remove -y tmux
+sudo apt install -y libevent-dev bison flex autoconf automake pkg-config
 git checkout 2.9a
 sh autogen.sh
 ./configure > /dev/null
 make > /dev/null
-sudo apt remove -y tmux
-sudo apt install -y libevent-dev bison flex autoconf automake pkg-config
+if test -f "/usr/bin/tmux"; then
+    echo "/usr/bin/tmux still exists after doing 'apt remove tmux'." \
+         "Confirm if you don't have other version of tmux then'" \
+         "perform 'rm /usr/bin/tmux'"
+    exit 1
+fi
 sudo ln -s $HOME/dotfiles/tmux/tmux /usr/bin/tmux
 popd
 
