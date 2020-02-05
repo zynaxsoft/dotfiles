@@ -62,7 +62,7 @@ sudo apt install -y pylint3
 echo "installing vim plugins"
 sudo apt install -y cmake
 vim +PlugInstall +qall
-python3 ~/dotfiles/.vim/plugged/YouCompleteMe/install.py --rust-completer --ts-completer
+/usr/bin/python3 ~/dotfiles/.vim/plugged/YouCompleteMe/install.py --rust-completer --ts-completer
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip
