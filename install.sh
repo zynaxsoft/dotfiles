@@ -39,7 +39,7 @@ sudo apt install -y python3-pip python3.7 python3.8 python3.7-venv python3.8-ven
 
 echo "installing rust"
 sudo apt install curl
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 rustup component add rls
 
 
