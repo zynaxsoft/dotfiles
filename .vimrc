@@ -50,7 +50,7 @@ let g:indentLine_setConceal = 1
 " VIM SOLARIZED!!
 syntax enable
 set background=dark
-colorscheme solarized
+!silent colorscheme solarized
 
 " Spell check
 syntax enable
