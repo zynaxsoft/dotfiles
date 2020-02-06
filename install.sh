@@ -27,7 +27,7 @@ sudo apt install -y vim-gtk
 echo "installing tmux by compiling from source"
 pushd tmux
 sudo apt remove -y tmux
-sudo apt install -y libevent-dev bison flex autoconf automake pkg-config
+sudo apt install -y libevent-dev bison flex autoconf automake pkg-config ncurses-dev
 git checkout 2.9a
 sh autogen.sh
 ./configure > /dev/null
