@@ -67,7 +67,7 @@ syntax on
 let g:ale_python_pylint_executable = '/usr/bin/python3'
 let g:ale_python_pylint_options = '-m pylint --errors-only --disable E1101,E0401'
 let g:ale_python_flake8_executable = 'flake8'
-let g:ale_python_flake8_options = '--ignore "I100, I101, E123, W503"'
+let g:ale_python_flake8_options = '--ignore "I100, I101, E123, W503, F405"'
 let g:ale_python_autopep8_executable = '/usr/bin/python3'
 let g:ale_python_autopep8_options = '-m autopep8'
 let g:ale_python_isort_executable = '/usr/bin/python3'
