@@ -46,6 +46,7 @@ sudo apt install -y zsh
 
 echo "installing python(s)"
 sudo apt install -y python3-pip python3.7 python3.8 python3.7-venv python3.8-venv
+pip3 install flake8 pylint
 
 echo "installing rust"
 sudo apt install curl
