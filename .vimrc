@@ -111,7 +111,7 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
     \ 'python': ['flake8', 'pylint'],
-    \ 'rust': ['rls', 'cargo'],
+    \ 'rust': ['rls'],
     \ }
 nmap <Leader>x <Plug>(ale_fix)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
