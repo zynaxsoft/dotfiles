@@ -15,6 +15,9 @@ git submodule update
 echo "installing gnome-tweaks"
 sudo apt install -y gnome-tweaks
 
+echo "ranger"
+sudo apt install -y ranger
+
 echo "installing nerd fonts"
 mkdir -p ~/.local/share/fonts
 cp fonts/dejavu-nerd-font.ttf ~/.local/share/fonts
