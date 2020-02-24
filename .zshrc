@@ -23,6 +23,8 @@ ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE=fg=240
 ZSH_AUTOSUGGEST_USE_ASYNCa=YES
 ZSH_AUTOSUGGEST_STRATEGY=match_prev_cmd
 
+disable r
+
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
 # a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
