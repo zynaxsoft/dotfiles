@@ -46,6 +46,7 @@ popd
 
 echo "installing zsh"
 sudo apt install -y zsh
+zsh -ic "compaudit | xargs chmod g-w,o-w" || true
 
 echo "installing python(s)"
 sudo apt install -y python3-pip python3.7 python3.8 python3.7-venv python3.8-venv
