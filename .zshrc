@@ -156,9 +156,10 @@ if test -f $AWS_COMPLETER; then
     source $AWS_COMPLETER
 fi
 
+eval $(ssh-agent) > /dev/null
+
 # detect wsl and do wsl stuffs
 if uname -r | grep -qi microsoft; then
-    eval $(ssh-agent) > /dev/null
     # DISPLAY stuff
     if [ -z ${DISPLAY} ]; then
         export DISPLAY=:1
