@@ -57,6 +57,10 @@ sudo apt install curl
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 rustup component add rls
 
+echo "installing node"
+curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
+sudo apt-get install -y nodejs
+
 
 echo "creating symlink to $HOME"
 for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
@@ -77,9 +81,7 @@ sudo apt install -y pylint3
 echo "installing vim plugins"
 sudo apt install -y cmake
 vim +PlugInstall +qall
-# install node with npm first if you want TS completion
-# /usr/bin/python3 ~/dotfiles/.vim/plugged/YouCompleteMe/install.py --rust-completer --ts-completer
-/usr/bin/python3 ~/dotfiles/.vim/plugged/YouCompleteMe/install.py --rust-completer
+vim -c 'CocInstall -sync coc-json coc-html coc-python coc-rust-analyzer coc-yaml coc-tsserver coc-css|q'
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip
