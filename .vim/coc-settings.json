@@ -1,5 +1,4 @@
 {
-    "python.jediEnabled": false,
     "python.pythonPath": "python3",
     "python.linting.enabled": false,
 }
