@@ -29,6 +29,8 @@ filetype plugin on
 
 set bs=2
 
+set mouse=a
+
 set list
 set listchars=tab:»-,trail:⋅,eol:¬,extends:»,precedes:«,nbsp:%
 set ignorecase
