@@ -169,8 +169,11 @@ hi SpellBad ctermfg=1 cterm=underline
 set smartindent
 
 " Markdown
+let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
 let g:vim_markdown_conceal = 0
+let g:vim_markdown_new_list_item_indent = 0
+let g:vim_markdown_no_extensions_in_markdown = 1
 
 " Syntastic
 " set statusline+=%#warningmsg#
