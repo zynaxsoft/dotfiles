@@ -1,3 +1,13 @@
+# detect wsl and do wsl stuffs
+if uname -r | grep -qi microsoft; then
+    export PATH="/home/tanapol/.cargo/bin:/home/tanapol/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+    # DISPLAY stuff
+    if [ -z ${DISPLAY} ]; then
+        export DISPLAY=:1
+        tmux set-option -g update-environment DISPLAY
+    fi
+fi
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 # Path to your oh-my-zsh installation.
@@ -156,17 +166,6 @@ if test -f $AWS_COMPLETER; then
 fi
 
 eval $(ssh-agent) > /dev/null
-
-# detect wsl and do wsl stuffs
-if uname -r | grep -qi microsoft; then
-    export PATH="/home/tanapol/.cargo/bin:/home/tanapol/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
-    # DISPLAY stuff
-    if [ -z ${DISPLAY} ]; then
-        export DISPLAY=:1
-        tmux set-option -g update-environment DISPLAY
-    fi
-
-fi
 
 if [ -f "$(which kubectl)" ]; then
     source <(kubectl completion zsh)
