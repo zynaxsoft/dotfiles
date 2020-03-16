@@ -1,6 +1,5 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Path to your oh-my-zsh installation.
   export ZSH="$HOME/.oh-my-zsh"
 
@@ -160,6 +159,7 @@ eval $(ssh-agent) > /dev/null
 
 # detect wsl and do wsl stuffs
 if uname -r | grep -qi microsoft; then
+    export PATH="/home/tanapol/.cargo/bin:/home/tanapol/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
     # DISPLAY stuff
     if [ -z ${DISPLAY} ]; then
         export DISPLAY=:1
