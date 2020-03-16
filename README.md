@@ -18,12 +18,7 @@ A personal repo for keeping Tanapol's dotfiles
 
 
 ## WSL2
-vcxsrv requires -ac option (disable access control in the wizard)
-The ip of the host pc must be used for DISPLAY variable. This can be obtained by
-looking at `/etc/resolv.conf` (172.something). This can be taken out by
 
-`cat /etc/resolv.conf | grep nameserver | head -2 | tail -1 | awk '{print $2}'):1`
-
-Note that this assumes that the 172.something is on the second line.
-
-edit resolv.conf to your prefered DNS. (1.1.1.1, 8.8.8.8, or your dns cache server)
+* Add -ac option for vcxsrv (disable access control in the wizard)
+* Edit resolv.conf to your prefered DNS. (1.1.1.1, 8.8.8.8, or your dns cache server)
+* `runfullterminal` or `runterminal` command from **windows** terminal (or cmd/powershell). (since this utilize ipconfig.exe which won't be available in the pure Ubuntu environment.)
