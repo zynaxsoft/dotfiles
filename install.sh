@@ -94,4 +94,12 @@ mv $HOME/.gnupg/{gpg-agent.conf,gpg-agent.conf.bak}
 cp $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
 
+# WSL stuff
+if uname -r | grep -qi microsoft; then
+  echo "backing up wsl.conf to wsl.conf.bak"
+  sudo cp -f /etc/wsl.conf /etc/wsl.conf.bak 2> /dev/null || true
+  echo "copying wsl.conf to /etc/"
+  sudo cp -f $HOME/dotfiles/wsl.conf /etc/wsl.conf
+fi
+
 popd > /dev/null
