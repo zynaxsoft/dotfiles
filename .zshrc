@@ -1,6 +1,6 @@
 # detect wsl and do wsl stuffs
 if uname -r | grep -qi microsoft; then
-    export PATH="/home/tanapol/.cargo/bin:/home/tanapol/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
+    export PATH="$HOME/.cargo/bin:$HOME/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games"
     # DISPLAY stuff
     if [ -z ${DISPLAY} ]; then
         export DISPLAY=:1
