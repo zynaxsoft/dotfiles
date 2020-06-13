@@ -7,6 +7,10 @@ alias tks='_tmux_kill_session'
 alias ga='git add -i'
 alias rn='source ranger'
 
+alias ls='exa'
+alias ll='ls --icons --git -lg'
+alias la='ll -a'
+
 _tmux_kill_session() {
     tmux kill-session -t $1
 }
