@@ -57,6 +57,7 @@ echo "installing rust"
 sudo apt install curl
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 rustup component add rls
+cargo install exa  # ls alternative
 
 echo "installing node"
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
