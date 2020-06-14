@@ -19,6 +19,7 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'godlygeek/tabular'
 Plug 'plasticboy/vim-markdown'
 " Plug 'Valloric/YouCompleteMe'
+Plug 'rust-lang/rust.vim'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
@@ -107,6 +108,10 @@ let g:ale_list_window_size = 4
 au VimEnter * highlight SignColumn ctermbg=10
 au VimEnter * highlight clear ALEErrorSign
 au VimEnter * highlight clear ALEWarningSign
+
+
+" auto run rust_fmt on save
+let g:rustfmt_autosave = 1
 
 "set omnifunc=ale#completion#OmniFunc
 let g:ale_fixers = {

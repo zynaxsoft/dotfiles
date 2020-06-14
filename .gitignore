@@ -1,6 +1,7 @@
 # vim plugins
 .vim/plugged/*
 .vim/bundle/*
+.vim/view/*
 
 
 resurrect/
