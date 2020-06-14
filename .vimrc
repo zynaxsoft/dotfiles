@@ -157,6 +157,7 @@ set smartindent
 
 "set number
 
+set colorcolumn=80
 " highlight the length over 80column
 " highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 " match OverLength /\%81v.*/
