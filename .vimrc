@@ -27,6 +27,9 @@ call plug#end()
 filetype plugin indent on
 filetype plugin on
 
+" prevent the accident wq
+cabbrev wq w
+
 set bs=2
 
 set mouse=a
