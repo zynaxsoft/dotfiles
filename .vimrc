@@ -113,6 +113,8 @@ au VimEnter * highlight clear ALEWarningSign
 
 " auto run rust_fmt on save
 let g:rustfmt_autosave = 1
+" reload rust analyzer
+nnoremap <Leader><Leader>r :CocCommand rust-analyzer.reload<CR>
 
 au Filetype rust set colorcolumn=100
 
@@ -125,7 +127,7 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
     \ 'python': ['flake8', 'pylint'],
-    \ 'rust': ['rustfmt', 'rls'],
+    \ 'rust': ['analyzer', 'rustfmt', 'rls'],
     \ }
 nmap <Leader>x <Plug>(ale_fix)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
