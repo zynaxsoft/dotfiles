@@ -114,6 +114,8 @@ au VimEnter * highlight clear ALEWarningSign
 " auto run rust_fmt on save
 let g:rustfmt_autosave = 1
 
+au Filetype rust set colorcolumn=100
+
 "set omnifunc=ale#completion#OmniFunc
 let g:ale_fixers = {
 \   '*': ['remove_trailing_lines', 'trim_whitespace'],
@@ -166,7 +168,6 @@ set smartindent
 
 "set number
 
-set colorcolumn=80
 " highlight the length over 80column
 " highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 " match OverLength /\%81v.*/
