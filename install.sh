@@ -105,5 +105,6 @@ fi
 echo "installing rust tools"
 cargo install exa&  # ls alternative
 cargo install ripgrep&  # grep alternative
+cargo install bat&  # cat alternative
 
 popd > /dev/null
