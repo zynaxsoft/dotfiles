@@ -92,6 +92,7 @@ let g:ale_completion_enabled = 0
 let g:ale_rust_cargo_check_all_targets = 1
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_check_tests = 1
+let g:ale_rust_cargo_use_clippy = 1
 
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_lint_on_insert_leave = 1
@@ -127,7 +128,7 @@ let g:ale_fixers = {
 \}
 let g:ale_linters = {
     \ 'python': ['flake8', 'pylint'],
-    \ 'rust': ['analyzer', 'rustfmt', 'rls'],
+    \ 'rust': ['analyzer', 'rustfmt', 'cargo'],
     \ }
 nmap <Leader>x <Plug>(ale_fix)
 nmap <silent> <C-k> <Plug>(ale_previous_wrap)
