@@ -93,6 +93,7 @@ let g:ale_rust_cargo_check_all_targets = 1
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_use_clippy = 1
+let g:ale_rust_cargo_default_feature_behavior = 'all'
 
 let g:ale_lint_on_text_changed = 'always'
 let g:ale_lint_on_insert_leave = 1
