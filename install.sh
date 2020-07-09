@@ -74,7 +74,7 @@ for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zs
     ln -s $HOME/dotfiles/$file $HOME/
 done
 ln -s $HOME/dotfiles/.vim $HOME/
-cp $HOME/dotfiles/.gitconfig $HOME/
+ln -s $HOME/dotfiles/.gitconfig $HOME/
 
 echo "installing pylint3"
 sudo apt install -y pylint3
