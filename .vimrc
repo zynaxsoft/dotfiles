@@ -115,7 +115,7 @@ au VimEnter * highlight clear ALEWarningSign
 
 
 " auto run rust_fmt on save
-let g:rustfmt_autosave = 1
+" let g:rustfmt_autosave = 1
 " reload rust analyzer
 nnoremap <Leader><Leader>r :CocCommand rust-analyzer.reload<CR>
 
