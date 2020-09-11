@@ -47,6 +47,7 @@ set showtabline=2
 " set timeoutlen=1000 ttimeoutlen=0
 
 set hlsearch
+set incsearch
 
 let g:indentLine_enabled = 1
 " let g:indentLine_color_term = 239
