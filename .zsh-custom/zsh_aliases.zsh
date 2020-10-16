@@ -15,6 +15,8 @@ _tmux_kill_session() {
     tmux kill-session -t $1
 }
 
+alias tf='terraform'
+
 _pacter() {
     if [ -d ".env" ]
     then
