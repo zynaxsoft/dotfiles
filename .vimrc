@@ -25,6 +25,8 @@ Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'markonm/traces.vim'
 Plug 'cespare/vim-toml'
+Plug 'hashivim/vim-terraform'
+
 
 call plug#end()
 filetype plugin indent on
