@@ -3,10 +3,16 @@
 pushd "$(dirname "$0")" > /dev/null
 
 # test $(awk -F= '/^NAME/{print $2}' /etc/os-release) = "\"Ubuntu\"
-echo "adding latest git and vim repository"
+echo "adding latest git and vim repository and github cli"
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:jonathonf/vim
+# github cli
+sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
+sudo apt-add-repository -y https://cli.github.com/packages
 sudo apt update
+
+# install github cli
+sudo apt install -y gh
 
 echo "initialize and update git submodules"
 git submodule init
