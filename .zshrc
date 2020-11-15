@@ -175,3 +175,5 @@ fi
 # (it stop the output of the terminal, it could be resumed by ctrl-q)
 stty stop undef
 stty start undef
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

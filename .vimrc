@@ -27,6 +27,9 @@ Plug 'markonm/traces.vim'
 Plug 'cespare/vim-toml'
 Plug 'hashivim/vim-terraform'
 
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
+
 
 call plug#end()
 filetype plugin indent on
@@ -74,6 +77,14 @@ syntax on
 " let g:jedi#popup_select_first = 0
 " let g:jedi#show_call_signatures = "1"
 " let g:jedi#use_tabs_not_buffers = 1
+
+" FZF
+let g:fzf_layout = { 'down': '~20%' }
+nnoremap <left> :bp<CR>
+nnoremap <right> :bn<CR>
+nmap <leader>- :Buffers<CR>
+map <C-p> :Files<CR>
+
 
 " pep8
 let g:ale_python_pylint_executable = '/usr/bin/python3'
