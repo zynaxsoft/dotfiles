@@ -6,6 +6,8 @@ if uname -r | grep -qi microsoft; then
         export DISPLAY=:1
         tmux set-option -g update-environment DISPLAY
     fi
+else
+    export PATH=$PATH:"$HOME/.cargo/bin"
 fi
 
 # If you come from bash you might have to change your $PATH.
@@ -177,3 +179,5 @@ stty stop undef
 stty start undef
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+true
