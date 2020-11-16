@@ -82,8 +82,8 @@ syntax on
 let g:fzf_layout = { 'down': '~20%' }
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
-nmap <leader>- :Buffers<CR>
 map <C-p> :Files<CR>
+map <C-n> :Buffers<CR>
 
 
 " pep8
