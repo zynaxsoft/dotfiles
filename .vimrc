@@ -26,6 +26,7 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'markonm/traces.vim'
 Plug 'cespare/vim-toml'
 Plug 'hashivim/vim-terraform'
+Plug 'jparise/vim-graphql'
 
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
