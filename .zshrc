@@ -23,9 +23,9 @@ setxkbmap us
 ZSH_THEME="agnoster"
 
 if [ $USER = "tanapol" ]; then
-	DEFAULT_USER=tanapol
+    DEFAULT_USER=tanapol
 elif [ $USER = "zynaxsoft" ]; then
-	DEFAULT_USER=zynaxsoft
+    DEFAULT_USER=zynaxsoft
 fi
 if [[ -n $SSH_CONNECTION ]]; then
     DEFAULT_USER=
