@@ -1,20 +1,14 @@
 <img src="https://user-images.githubusercontent.com/1210722/66711562-2c5ccf00-edc9-11e9-947d-5c0f2e7add32.png" width=300><br>
 
-# my-dotfiles
+# My dotfiles
 
-A personal repo for keeping Tanapol's dotfiles
+My humble and messy dotfiles.
 
 ## Procedure
-1. `cd ~`
-2. `git clone git@gitlab.com:tanapol/my-dotfiles.git dotfiles`
-3. `cd dotfiles` 
-4. `./install-dry.sh` to check the symlink creation to your $HOME directory
+1. `cd`
+2. `git clone https://github.com/zynaxsoft/dotfiles`
+3. `cd dotfiles`
 5. `./install.sh` to install
-
-## Requirements
-* vim 8.1 or something newer than the current vim version in ubuntu 18.04
-  * vim can be downloaded from ubuntu ppa or built directly from the github (ref: https://github.com/Valloric/YouCompleteMe/wiki/Building-Vim-from-source)
-* `pip3 install pylint mypy flake8 flake8-import-order autopep8 black isort`
 
 
 ## WSL2
