@@ -4,30 +4,41 @@ set shell=/bin/bash
 
 call plug#begin('~/.vim/plugged')
 
-" Plug 'davidhalter/jedi-vim'
+" Show indent line
 Plug 'Yggdroot/indentLine'
+
+" Solarized!
 Plug 'altercation/vim-colors-solarized'
-" Plug 'vim-syntastic/syntastic'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'w0rp/ale'
-" Plug 'SirVer/ultisnips'
-" Plug 'honza/vim-snippets'
-Plug 'zivyangll/git-blame.vim'
-Plug 'tpope/vim-fugitive'
-Plug 'tmux-plugins/vim-tmux-focus-events'
-Plug 'roxma/vim-tmux-clipboard'
+
+" General tools
 Plug 'godlygeek/tabular'
-Plug 'plasticboy/vim-markdown'
-" Plug 'Valloric/YouCompleteMe'
-Plug 'rust-lang/rust.vim'
+Plug 'w0rp/ale'
+
+" Git
+Plug 'tpope/vim-fugitive'
+Plug 'zivyangll/git-blame.vim'
+
+" Completer
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'markonm/traces.vim'
+
+" Tmux stuff
+Plug 'roxma/vim-tmux-clipboard'
+Plug 'tmux-plugins/vim-tmux-focus-events'
+
+" Lang specifics
+Plug 'rust-lang/rust.vim'
+Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
 Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
 
+" Highlight and preview pattern/regex
+Plug 'markonm/traces.vim'
+
+" FZF for navigation
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
@@ -164,26 +175,8 @@ nmap <silent> <C-j> <Plug>(ale_next_wrap)
 nmap <silent> <C-l> <Plug>(ale_detail)
 "nmap <silent> <C-h> <Plug>(ale_hover)
 
-"let g:syntastic_python_pylint_exe = 'python3 -m pylint'
-"let g:syntastic_python_checkers = ['pylint']
-"set statusline+=%#warningmsg#
-"set statusline+=%{SyntasticStatuslineFlag()}
-"set statusline+=%*
-"
-"let g:syntastic_always_populate_loc_list = 1
-""let g:syntastic_auto_loc_list = 1
-"let g:syntastic_check_on_open = 1
-""let g:syntastic_check_on_wq = 0
-"let g:syntastic_enable_signs = 1
-
 " pep8 indent
 let g:python_pep8_indent_hang_closing = 1
-
-" snippets
-"let g:UltiSnipsExpandTrigger="<tab>"
-"let g:UltiSnipsJumpForwardTrigger="<c-j>"
-"let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-
 
 " Git
 " git-blame activate by leader b
@@ -196,12 +189,6 @@ set expandtab
 set shiftwidth=4
 set softtabstop=4
 set smartindent
-
-"set number
-
-" highlight the length over 80column
-" highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
-" match OverLength /\%81v.*/
 
 "setlocal spell spelllang=en_us,cjk
 hi clear SpellBad
@@ -218,62 +205,16 @@ let g:vim_markdown_conceal_code_blocks = 0
 let g:vim_markdown_new_list_item_indent = 0
 let g:vim_markdown_no_extensions_in_markdown = 1
 
-" Syntastic
-" set statusline+=%#warningmsg#
-" set statusline+=%{SyntasticStatuslineFlag()}
-" set statusline+=%*
-" 
-" let g:syntastic_always_populate_loc_list = 1
-" let g:syntastic_auto_loc_list = 1
-" let g:syntastic_check_on_open = 1
-" let g:syntastic_check_on_wq = 0
-
-
-" let g:ycm_add_preview_to_completeopt = 1
-" let g:ycm_autoclose_preview_window_after_completion = 1
-" let g:ycm_autoclose_preview_window_after_insertion = 1
-" let g:ycm_key_invoke_completion = '<C-Space>'
-" let g:ycm_enable_diagnostic_signs = 0
-" let g:ycm_goto_buffer_command = 'new-tab'
-" nnoremap <leader>d :YcmCompleter GoTo<CR>
-" nnoremap <leader>r :YcmCompleter GoToReferences<CR>
-"
-"
-" let g:ycm_semantic_triggers =  {
-"   \   'c': ['->', '.'],
-"   \   'objc': ['->', '.', 're!\[[_a-zA-Z]+\w*\s', 're!^\s*[^\W\d]\w*\s',
-"   \            're!\[.*\]\s'],
-"   \   'ocaml': ['.', '#'],
-"   \   'cpp,cuda,objcpp': ['->', '.', '::'],
-"   \   'perl': ['->'],
-"   \   'php': ['->', '::'],
-"   \   'cs,d,elixir,go,groovy,java,javascript,julia,perl6,python,scala,typescript,vb': ['.'],
-"   \   'python': ['re!from\s+\S+\s+import\s', 'from ', 'import '],
-"   \   'ruby,rust': ['.', '::'],
-"   \   'lua': ['.', ':'],
-"   \   'erlang': [':'],
-"   \ }
-
-
 let g:echodoc#enable_at_startup = 1
 let g:echodoc#type = 'echo'
 
 " Coc completer
 " TextEdit might fail if hidden is not set.
 set hidden
-
-" Some servers have issues with backup files, see #649.
 set nobackup
 set nowritebackup
-
-" Give more space for displaying messages.
 set cmdheight=2
-
-" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
-" delays and poor user experience.
 set updatetime=300
-
-" Don't pass messages to |ins-completion-menu|.
 set shortmess+=c
 
 " Use tab for trigger completion with characters ahead and navigate.
