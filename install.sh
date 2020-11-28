@@ -21,8 +21,11 @@ git submodule update
 echo "installing gnome-tweaks"
 sudo apt install -y gnome-tweaks
 
-echo "ranger"
+echo "installing ranger"
 sudo apt install -y ranger
+
+echo "installing fzf"
+sudo apt install -y fzf
 
 echo "installing nerd fonts"
 mkdir -p ~/.local/share/fonts
