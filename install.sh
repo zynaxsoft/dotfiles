@@ -76,6 +76,7 @@ sudo apt-get install -y nodejs
 
 
 echo "creating symlink to $HOME"
+mkdir -p $HOME/.config
 for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
     do
     if test -f "$HOME/$file"; then
@@ -87,6 +88,7 @@ for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zs
 done
 ln -s $HOME/dotfiles/.vim $HOME/
 ln -s $HOME/dotfiles/.gitconfig $HOME/
+ln -s $HOME/dotfiles/starship.toml $HOME/.config/
 
 echo "installing pylint3"
 sudo apt install -y pylint3
