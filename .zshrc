@@ -180,4 +180,6 @@ stty start undef
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
+eval "$(starship init zsh)"
+
 true
