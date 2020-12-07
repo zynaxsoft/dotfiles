@@ -24,16 +24,19 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 [git_branch]
 format = "[$symbol$branch]($style) "
 symbol = "🌿"
-style = "bold yellow"
+style = "bold 136"
 
 [git_commit]
-commit_hash_length = 8
-style = "bold white"
+commit_hash_length = 6
+tag_symbol = "🔖 "
+tag_disabled = false
+style = "bold fg:230"
 
 [git_state]
 progress_divider = " of "
 
 [git_status]
+format = '([\[$all_status$ahead_behind\]]($style) )'
 conflicted = "⚔️ "
 ahead = "🚀×${count} "
 behind = "🐢×${count} "
@@ -44,8 +47,7 @@ modified = "📝×${count} "
 staged = "🗃️ ×${count} "
 renamed = "📛 ×${count} "
 deleted = "🗑️ ×${count} "
-style = "bright-white"
-format = "$all_status$ahead_behind"
+style = "fg:230"
 
 [hostname]
 ssh_only = false
@@ -62,13 +64,38 @@ threshold = 50
 style = "bold dimmed white"
 disabled = false
 
-# [package]
-# disabled = true
+[package]
+format = "via [$symbol$version]($style) "
+symbol = "📦 "
+style = "bold fg:208"
+
+[nodejs]
+format = "via [$symbol$version]($style) "
+symbol = "🤖 "
+style = "bold 64"
 
 [python]
-format = "[$symbol$version]($style) "
-style = "bold green"
+format = 'via [${symbol}${pyenv_prefix}${version}( \($virtualenv\))]($style) '
+style = "bold fg:64"
 
 [username]
 style_user = "bold dimmed blue"
 show_always = false
+
+# Solarized color list (prefix with fg:)
+# base03    234
+# base02    235
+# base01    240
+# base00    241
+# base0     244
+# base1     245
+# base2     254
+# base3     230
+# yellow    136
+# orange    166
+# red       160
+# magenta   125
+# violet     61
+# blue       33
+# cyan       37
+# green      64
