@@ -97,6 +97,8 @@ let g:fzf_layout = { 'down': '~20%' }
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
 map <C-p> :Files<CR>
+command! -bang -nargs=* Files
+            \ call fzf#vim#files(<q-args>, {}, <bang>0)
 map <C-n> :Buffers<CR>
 
 " <leader>s for Rg search

@@ -179,6 +179,7 @@ stty stop undef
 stty start undef
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 
 eval "$(starship init zsh)"
 
