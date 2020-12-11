@@ -34,6 +34,8 @@ Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
 Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
+Plug 'leafgarland/typescript-vim'
+Plug 'peitalin/vim-jsx-typescript'
 
 " Highlight and preview pattern/regex
 Plug 'markonm/traces.vim'
