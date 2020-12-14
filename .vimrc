@@ -186,8 +186,6 @@ let g:python_pep8_indent_hang_closing = 1
 " git-blame activate by leader b
 nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
-filetype indent plugin on
-
 set tabstop=8
 set expandtab
 set shiftwidth=4
@@ -197,9 +195,6 @@ set smartindent
 "setlocal spell spelllang=en_us,cjk
 hi clear SpellBad
 hi SpellBad ctermfg=1 cterm=underline
-
-
-set smartindent
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1
