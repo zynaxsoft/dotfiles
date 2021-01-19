@@ -62,7 +62,7 @@ show_percentage = true
 show_swap = true
 threshold = 50
 style = "bold dimmed white"
-disabled = false
+disabled = true
 
 [package]
 format = "via [$symbol$version]($style) "
