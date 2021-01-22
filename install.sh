@@ -68,12 +68,11 @@ pip3 install jedi
 echo "installing rust"
 sudo apt install curl
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-rustup component add rls
+alias cargo="$HOME/.cargo/bin/cargo"
 
 echo "installing node"
 curl -sL https://deb.nodesource.com/setup_13.x | sudo -E bash -
 sudo apt-get install -y nodejs
-
 
 echo "creating symlink to $HOME"
 mkdir -p $HOME/.config
