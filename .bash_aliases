@@ -6,9 +6,9 @@ function _get_host_ip() {
 
 function _run_term() {
     local IP=$(_get_host_ip)
-    DISPLAY="${IP}:0"
+    export DISPLAY="${IP}:0"
     echo $DISPLAY
-    gnome-terminal -- tmux &
+    gnome-terminal -- zsh &
 }
 
 # alias runterminal="DISPLAY=$(_get_host_ip):0 gnome-terminal"
