@@ -130,6 +130,7 @@ let g:ale_python_pylint_use_global = 1
 let g:ale_completion_enabled = 0
 
 
+let g:ale_rust_cargo_target_dir = '/tmp/rust-analyzer-check/'
 let g:ale_rust_cargo_check_all_targets = 1
 let g:ale_rust_cargo_check_tests = 1
 let g:ale_rust_cargo_check_tests = 1
