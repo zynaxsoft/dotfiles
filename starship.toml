@@ -32,8 +32,8 @@ tag_symbol = "🔖 "
 tag_disabled = false
 style = "bold fg:230"
 
-[git_state]
-progress_divider = " of "
+# [git_state]
+# progress_divider = " of "
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
