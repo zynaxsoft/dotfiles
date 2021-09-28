@@ -323,6 +323,11 @@ command! -nargs=0 OR   :call     CocAction('runCommand', 'editor.action.organize
 " provide custom statusline: lightline.vim, vim-airline.
 set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
 
+" hi! CocErrorSign guifg=#d1666a
+" hi! CocInfoSign guibg=#353b45
+" hi! CocWarningSign guifg=#d1cd66
+hi! CocFloating ctermbg=black
+
 " Mappings using CoCList:
 " Show all diagnostics.
 " nnoremap <silent> <space>a  :<C-u>CocList diagnostics<cr>
