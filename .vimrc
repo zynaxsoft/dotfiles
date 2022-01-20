@@ -104,9 +104,10 @@ syntax on
 let g:fzf_layout = { 'down': '~20%' }
 nnoremap <left> :bp<CR>
 nnoremap <right> :bn<CR>
-map <C-p> :GFiles --exclude-standard --others --cached<CR>
+"map <C-p> :GFiles --exclude-standard --others --cached<CR>
 command! -bang -nargs=* Files
             \ call fzf#vim#files(<q-args>, {}, <bang>0)
+nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
 map <C-n> :Buffers<CR>
 
 " <leader>s for Rg search
