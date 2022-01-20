@@ -8,7 +8,8 @@ call plug#begin('~/.vim/plugged')
 Plug 'Yggdroot/indentLine'
 
 " Solarized!
-Plug 'altercation/vim-colors-solarized'
+" Plug 'altercation/vim-colors-solarized'
+Plug 'lifepillar/vim-solarized8'
 
 " General tools
 Plug 'godlygeek/tabular'
@@ -79,9 +80,14 @@ let g:indentLine_conceallevel = 2
 let g:indentLine_setConceal = 1
 
 " VIM SOLARIZED!!
+au VimEnter * ++nested colorscheme solarized8
 syntax enable
 set background=dark
-silent! colorscheme solarized
+" silent! colorscheme solarized
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+au VimEnter * hi TabLineFill ctermfg=0 guifg=#073642
 
 " Spell check
 syntax enable
@@ -151,7 +157,7 @@ let g:ale_set_loclist = 0
 let g:ale_set_quickfix = 1
 let g:ale_list_window_size = 4
 
-au VimEnter * highlight SignColumn ctermbg=10
+au VimEnter * highlight SignColumn ctermbg=10 guibg=#073642
 au VimEnter * highlight clear ALEErrorSign
 au VimEnter * highlight clear ALEWarningSign
 
