@@ -58,6 +58,10 @@ echo "installing zsh"
 sudo apt install -y zsh
 zsh -ic "compaudit | xargs chmod g-w,o-w" || true
 
+echo "install wezterm"
+curl -LO https://github.com/wez/wezterm/releases/download/20220101-133340-7edc5b5a/wezterm-20220101-133340-7edc5b5a.Ubuntu20.04.deb
+sudo apt install -y ./wezterm-20220101-133340-7edc5b5a.Ubuntu20.04.deb
+
 echo "install starship prompt"
 curl -fsSL https://starship.rs/install.sh | bash -s -- -y 
 
@@ -77,7 +81,7 @@ sudo apt-get install -y nodejs
 
 echo "creating symlink to $HOME"
 mkdir -p $HOME/.config
-for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
+for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom .wezterm.lua
     do
     if test -f "$HOME/$file"; then
             echo "backing up $HOME/$file to $file.bak"
