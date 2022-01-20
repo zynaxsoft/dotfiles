@@ -61,6 +61,8 @@ zsh -ic "compaudit | xargs chmod g-w,o-w" || true
 echo "install wezterm"
 curl -LO https://github.com/wez/wezterm/releases/download/20220101-133340-7edc5b5a/wezterm-20220101-133340-7edc5b5a.Ubuntu20.04.deb
 sudo apt install -y ./wezterm-20220101-133340-7edc5b5a.Ubuntu20.04.deb
+# make wezterm default terminal
+sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/wezterm 50
 
 echo "install starship prompt"
 curl -fsSL https://starship.rs/install.sh | bash -s -- -y 
