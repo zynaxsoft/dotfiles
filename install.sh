@@ -30,6 +30,7 @@ sudo apt install -y fzf
 echo "installing nerd fonts"
 mkdir -p ~/.local/share/fonts
 cp fonts/dejavu-nerd-font.ttf ~/.local/share/fonts
+cp fonts/fira-code-nf.ttf ~/.local/share/fonts
 fc-cache -f -v
 
 echo "installing git and vim"
