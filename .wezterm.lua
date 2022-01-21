@@ -13,6 +13,12 @@ Config = {
     audible_bell = "Disabled",
 
     warn_about_missing_glyphs = false,
+
+    keys = {
+        -- Turn this off because we're going to use theses in tmux.
+        {key="LeftArrow", mods="CTRL|SHIFT", action="DisableDefaultAssignment"},
+        {key="RightArrow", mods="CTRL|SHIFT", action="DisableDefaultAssignment"},
+    }
 }
 WindowsConfig = {
     default_prog = {"wsl.exe", "--cd", "~", "--exec", "/bin/zsh", "-l"},
