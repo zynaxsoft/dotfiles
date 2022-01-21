@@ -21,9 +21,9 @@ if is_wsl
         autocmd TextYankPost * :call MyYank()
     augroup END
     function! MyPaste(mode)
-        let @+ = system(g:win32yank . ' -o --lf')
+        let @- = system(g:win32yank . ' -o --lf')
         return a:mode
     endfunction
-    map <expr> "+p MyPaste('"+p')
-    map <expr> "+P MyPaste('"+P')
+    map <expr> "-p MyPaste('"-p')
+    map <expr> "-P MyPaste('"-P')
 endif
