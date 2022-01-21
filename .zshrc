@@ -8,7 +8,7 @@ if uname -r | grep -qi microsoft; then
     fi
 else
     export PATH=$PATH:"$HOME/.cargo/bin"
-    setxkbmap us
+    # setxkbmap us
 fi
 
 # If you come from bash you might have to change your $PATH.
