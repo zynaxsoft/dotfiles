@@ -4,11 +4,12 @@ Config = {
     color_scheme = "Builtin Solarized Dark",
     hide_tab_bar_if_only_one_tab = true,
     window_padding = {
-        left = 2,
-        right = 2,
+        left = 3,
+        right = 0,
         top = 0,
         bottom = 0,
     },
+    enable_scroll_bar = false,
     audible_bell = "Disabled",
 
     warn_about_missing_glyphs = false,
