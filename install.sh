@@ -3,9 +3,9 @@
 pushd "$(dirname "$0")" > /dev/null
 
 # test $(awk -F= '/^NAME/{print $2}' /etc/os-release) = "\"Ubuntu\"
-echo "adding latest git and vim repository and github cli"
+echo "adding latest git, nvim, and github cli repository"
 sudo add-apt-repository -y ppa:git-core/ppa
-sudo add-apt-repository -y ppa:jonathonf/vim
+sudo add-apt-repository -y ppa:neovim-ppa/stable
 # github cli
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository -y https://cli.github.com/packages
@@ -37,22 +37,9 @@ echo "installing git and vim"
 sudo apt install -y git
 sudo apt install -y vim-gtk
 
-# echo "installing tmux by compiling from source"
-# pushd tmux
-# sudo apt remove -y tmux
-# sudo apt install -y libevent-dev bison flex autoconf automake pkg-config ncurses-dev
-# git checkout 2.9a
-# sh autogen.sh
-# ./configure > /dev/null
-# make > /dev/null
-# if test -f "/usr/bin/tmux"; then
-#     echo "/usr/bin/tmux still exists after doing 'apt remove tmux'." \
-#          "Confirm if you don't have other version of tmux then'" \
-#          "perform 'rm /usr/bin/tmux'"
-#     exit 1
-# fi
-# sudo ln -s $HOME/dotfiles/tmux/tmux /usr/bin/tmux
-# popd
+echo "install neovim"
+sudo apt install -y neovim
+
 echo "installing tmux"
 sudo apt install -y tmux
 
@@ -70,7 +57,7 @@ echo "install starship prompt"
 curl -fsSL https://starship.rs/install.sh | bash -s -- -y 
 
 echo "installing python(s)"
-sudo apt install -y python3-pip python3.7 python3.8 python3.7-venv python3.8-venv
+sudo apt install -y python3-pip python3.7 python3.8 python3.7-venv python3.8-venv python3.9 python3.9-venv
 pip3 install flake8 pylint
 pip3 install jedi
 
