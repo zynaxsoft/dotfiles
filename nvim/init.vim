@@ -12,6 +12,7 @@ Plug 'Yggdroot/indentLine'
 Plug 'lifepillar/vim-solarized8'
 
 " General tools
+Plug 'nvim-lua/plenary.nvim'
 Plug 'godlygeek/tabular'
 
 " Semantic language support
@@ -25,6 +26,8 @@ Plug 'ray-x/lsp_signature.nvim'
 Plug 'hrsh7th/cmp-vsnip', {'branch': 'main'}
 Plug 'hrsh7th/vim-vsnip'
 
+" Diagnostic stuff
+Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
 
@@ -194,6 +197,29 @@ require("trouble").setup {
     other = "✔"
   },
 }
+
+local null_ls = require("null-ls")
+
+null_ls.setup({
+  sources = {
+    -- Formatting
+    null_ls.builtins.formatting.stylua,
+    null_ls.builtins.formatting.prettier.with({
+      filetypes = { "html", "json", "yaml", "markdown" },
+    }),
+    null_ls.builtins.formatting.terraform_fmt,
+    null_ls.builtins.formatting.clang_format,
+    null_ls.builtins.formatting.black,
+
+    -- Completion
+    null_ls.builtins.completion.spell,
+
+    -- Diagnostic
+    null_ls.builtins.diagnostics.eslint,
+    null_ls.builtins.diagnostics.pylint,
+    null_ls.builtins.diagnostics.flake8,
+  },
+})
 END
 
 " Enable type inlay hints
