@@ -84,6 +84,7 @@ done
 ln -s $HOME/dotfiles/.vim $HOME/
 ln -s $HOME/dotfiles/.gitconfig $HOME/
 ln -s $HOME/dotfiles/starship.toml $HOME/.config/
+ln -s $HOME/dotfiles/nvim $HOME/.config/
 
 echo "installing pylint3"
 sudo apt install -y pylint3
