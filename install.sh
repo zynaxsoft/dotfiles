@@ -89,10 +89,10 @@ ln -s $HOME/dotfiles/nvim $HOME/.config/
 echo "installing pylint3"
 sudo apt install -y pylint3
 
-echo "installing vim plugins"
+echo "installing nvim plugins"
 sudo apt install -y cmake
-vim +PlugInstall +qall
-vim -c 'CocInstall -sync coc-json coc-html coc-python coc-rust-analyzer coc-yaml coc-tsserver coc-css|q'
+nvim +PlugInstall +qall
+nvim -c 'CocInstall -sync coc-json coc-html coc-python coc-rust-analyzer coc-yaml coc-tsserver coc-css|q'
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip
