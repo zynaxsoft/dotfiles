@@ -92,7 +92,7 @@ sudo apt install -y pylint3
 echo "installing nvim plugins"
 sudo apt install -y cmake
 nvim +PlugInstall +qall
-nvim -c 'CocInstall -sync coc-json coc-html coc-python coc-rust-analyzer coc-yaml coc-tsserver coc-css|q'
+nvim -c 'CocInstall -sync coc-json coc-html coc-pyright coc-rust-analyzer coc-yaml coc-tsserver coc-css|q'
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip

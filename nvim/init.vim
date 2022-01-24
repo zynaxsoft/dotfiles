@@ -28,6 +28,9 @@ Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'tmux-plugins/vim-tmux-focus-events'
 
+" Color
+Plug 'norcalli/nvim-colorizer.lua'
+
 " Lang specifics
 Plug 'rust-lang/rust.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
@@ -45,8 +48,8 @@ Plug 'markonm/traces.vim'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 
-
 call plug#end()
+
 filetype plugin indent on
 filetype plugin on
 
@@ -115,6 +118,12 @@ command! -bang -nargs=* Rg
 " git-blame activate by leader b
 nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
 
+" Stop search with Enter key
+map <cr> :nohlsearch<cr>
+" Jump to start and end of line using the home row keys
+map H ^
+map L $
+
 " Markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_folding_style_pythonic = 1
@@ -138,3 +147,6 @@ source ~/dotfiles/nvim/configs/coc-stuff.vim
 source ~/dotfiles/nvim/configs/ale-stuff.vim
 source ~/dotfiles/nvim/configs/rust-stuff.vim
 source ~/dotfiles/nvim/configs/python-stuff.vim
+
+lua require'colorizer'.setup()
+

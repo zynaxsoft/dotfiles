@@ -1,4 +1,5 @@
 {
+    "diagnostic.displayByAle": true,
     "python.pythonPath": "/usr/bin/python3",
     "python.linting.enabled": false,
     "coc.preferences.jumpCommand": "tab drop",
