@@ -3,6 +3,10 @@
 .vim/bundle/*
 .vim/view/*
 
+nvim/plugged/*
+nvim/bundle/*
+nvim/view/*
+
 
 resurrect/
 # Swap
