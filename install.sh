@@ -66,10 +66,6 @@ sudo apt install curl
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
 alias cargo="$HOME/.cargo/bin/cargo"
 
-echo "installing node"
-curl -sL https://deb.nodesource.com/setup_16.x | sudo -E bash -
-sudo apt-get install -y nodejs
-
 echo "creating symlink to $HOME"
 mkdir -p $HOME/.config
 for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom .wezterm.lua
@@ -92,7 +88,6 @@ sudo apt install -y pylint3
 echo "installing nvim plugins"
 sudo apt install -y cmake
 nvim +PlugInstall +qall
-nvim -c 'CocInstall -sync coc-json coc-html coc-pyright coc-rust-analyzer coc-yaml coc-tsserver coc-css|q'
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip
@@ -116,5 +111,8 @@ echo "installing rust tools"
 cargo install exa&  # ls alternative
 cargo install ripgrep&  # grep alternative
 cargo install bat&  # cat alternative
+
+echo "installing langauge servers"
+./install-lang-server.sh
 
 popd > /dev/null
