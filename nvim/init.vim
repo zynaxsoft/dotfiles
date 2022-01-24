@@ -2,6 +2,9 @@ set nocompatible
 filetype off
 set shell=/bin/bash
 
+" Use Coc lsp instead
+let g:ale_disable_lsp = 1
+
 call plug#begin('~/.config/nvim/plugged')
 
 " Show indent line
@@ -34,8 +37,10 @@ Plug 'norcalli/nvim-colorizer.lua'
 " Lang specifics
 Plug 'rust-lang/rust.vim'
 Plug 'Vimjas/vim-python-pep8-indent'
+Plug 'rhysd/vim-clang-format'
 Plug 'plasticboy/vim-markdown'
 Plug 'cespare/vim-toml'
+Plug 'stephpy/vim-yaml'
 Plug 'hashivim/vim-terraform'
 Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'

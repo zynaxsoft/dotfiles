@@ -12,5 +12,5 @@
     "rust-analyzer.checkOnSave.extraArgs": [
       "--target-dir", "/tmp/rust-analyzer-check"
     ],
-    "rust-analyzer.inlayHints.typeHintsSeparator": "=>> "
+    "rust-analyzer.inlayHints.typeHintsSeparator": "\t==>>  " 
 }
