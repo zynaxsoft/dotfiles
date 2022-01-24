@@ -2,7 +2,7 @@ set nocompatible
 filetype off
 set shell=/bin/bash
 
-call plug#begin('~/.config/nvim/site/plugged')
+call plug#begin('~/.config/nvim/plugged')
 
 " Show indent line
 Plug 'Yggdroot/indentLine'
