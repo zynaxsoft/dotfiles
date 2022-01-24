@@ -11,6 +11,10 @@ alias ls='exa'
 alias ll='ls --icons --git -lg'
 alias la='ll -a'
 
+alias vim='nvim'
+alias vi='nvim'
+alias vimdiff='nvim -d'
+
 _tmux_kill_session() {
     tmux kill-session -t $1
 }

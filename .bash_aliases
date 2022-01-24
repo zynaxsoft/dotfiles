@@ -15,3 +15,9 @@ function _run_term() {
 alias runterminal=_run_term
 alias runfullterminal="DISPLAY=$(_get_host_ip):0 gnome-terminal --window-with-profile tanapol-full -- tmux &"
 alias runfcitx="fcitx-autostart"
+
+alias vim='nvim'
+alias vi='nvim'
+alias vimdiff='nvim -d'
+
+export EDITOR='nvim'
