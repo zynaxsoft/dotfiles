@@ -10,5 +10,6 @@
     "rust-analyzer.cargo.allFeatures": true,
     "rust-analyzer.checkOnSave.extraArgs": [
       "--target-dir", "/tmp/rust-analyzer-check"
-    ]
+    ],
+    "rust-analyzer.inlayHints.typeHintsSeparator": "=>> "
 }
