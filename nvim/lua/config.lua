@@ -16,13 +16,12 @@ cmp.setup({
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     },
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
   },
-  sources = cmp.config.sources({
-    -- TODO: currently snippets from lsp end up getting prioritized -- stop that!
-    { name = 'nvim_lsp' },
-  }, {
-    { name = 'path' },
-  }),
+  sources = cmp.config.sources(
+    {{ name = 'nvim_lsp' }, { name = 'vsnip' }, { name = 'buffer' }},
+    {{ name = 'path' }}
+  ),
   experimental = {
     ghost_text = true,
   },
@@ -37,11 +36,20 @@ cmp.setup({
   },
 })
 
+-- Enable completing paths in /
+cmp.setup.cmdline('/', {
+    sources = cmp.config.sources(
+      {{ name = 'path' }},
+      {{ name = 'buffer' }}
+    )
+  })
+
 -- Enable completing paths in :
 cmp.setup.cmdline(':', {
-  sources = cmp.config.sources({
-    { name = 'path' }
-  })
+  sources = cmp.config.sources(
+    {{ name = 'path' }},
+    {{ name = 'cmdline' }}
+  )
 })
 
 -- Setup lspconfig.
@@ -61,13 +69,13 @@ local on_attach = function(client, bufnr)
   -- buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
   -- buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
   buf_set_keymap('n', 'K', '<Cmd>lua vim.lsp.buf.hover()<CR>', opts)
-  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+  buf_set_keymap('n', '<C-s>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
   buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
   buf_set_keymap('n', '<space>r', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
   -- buf_set_keymap('n', '<space>a', '<cmd>lua vim.lsp.buf.code_action()<CR>', opts)
   buf_set_keymap('n', '<C-l>', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-  buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-  buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+  buf_set_keymap('n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+  buf_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
   buf_set_keymap("n", "<space>f", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
 
@@ -89,9 +97,9 @@ local on_attach = function(client, bufnr)
   -- Semantic highlighting
   if client.resolved_capabilities.document_highlight then
     vim.cmd [[
-      hi LspReferenceRead guibg=#073642
-      hi LspReferenceText guibg=#073642
-      hi LspReferenceWrite guibg=#073642
+      hi LspReferenceRead guibg=#073642 gui=NONE
+      hi LspReferenceText guibg=#073642 gui=NONE
+      hi LspReferenceWrite guibg=#073642 gui=NONE
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
@@ -134,7 +142,8 @@ lspconfig.rust_analyzer.setup {
 
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
   vim.lsp.diagnostic.on_publish_diagnostics, {
-    virtual_text = true,
+    virtual_text = false,
+    underline = true,
     signs = true,
     update_in_insert = true,
   }
@@ -157,20 +166,24 @@ null_ls.setup({
   sources = {
     -- Formatting
     null_ls.builtins.formatting.stylua,
-    null_ls.builtins.formatting.prettier.with({
-      filetypes = { "html", "json", "yaml", "markdown" },
-    }),
+    null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.terraform_fmt,
     null_ls.builtins.formatting.clang_format,
     null_ls.builtins.formatting.black,
+    null_ls.builtins.formatting.taplo,
 
     -- Completion
     null_ls.builtins.completion.spell,
 
     -- Diagnostic
+    null_ls.builtins.diagnostics.yamllint,
     null_ls.builtins.diagnostics.eslint,
+    -- python
     null_ls.builtins.diagnostics.pylint,
     null_ls.builtins.diagnostics.flake8,
+    -- lua
+    null_ls.builtins.diagnostics.selene,
+    null_ls.builtins.diagnostics.luacheck,
 
     -- Code actions
     null_ls.builtins.code_actions.gitsigns,
@@ -297,6 +310,11 @@ require('gitsigns').setup {
   yadm = {
     enable = false
   },
+}
+
+require('spellsitter').setup {
+  -- Whether enabled, can be a list of filetypes, e.g. {'python', 'lua'}
+  enable = true,
 }
 
 require'colorizer'.setup()

@@ -14,6 +14,7 @@ Plug 'markonm/traces.vim'
 " Color
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'lewis6991/spellsitter.nvim'
 
 " Common dependencies
 Plug 'kyazdani42/nvim-web-devicons'
@@ -26,6 +27,7 @@ Plug 'nvim-lua/lsp_extensions.nvim'
 Plug 'hrsh7th/cmp-nvim-lsp', {'branch': 'main'}
 Plug 'hrsh7th/cmp-buffer', {'branch': 'main'}
 Plug 'hrsh7th/cmp-path', {'branch': 'main'}
+Plug 'hrsh7th/cmp-cmdline', {'branch': 'main'}
 Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'hrsh7th/cmp-vsnip', {'branch': 'main'}
@@ -34,6 +36,9 @@ Plug 'onsails/lspkind-nvim'
 " Diagnostic stuff
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/trouble.nvim'
+
+" Motions
+Plug 'tpope/vim-surround'
 
 " Tools
 Plug 'nvim-telescope/telescope.nvim'
@@ -66,6 +71,8 @@ set updatetime=300
 set termguicolors
 let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
 let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+let &t_Cs = "\e[4:3m"
+let &t_Ce = "\e[4:0m"
 
 " Lua stuff goes here!!
 lua require('config')
@@ -120,10 +127,11 @@ au VimEnter * hi DiagnosticSignInfo guibg=#073642
 au VimEnter * hi DiagnosticSignHint guibg=#073642
 
 " Spell check
-syntax enable
+" Spell check doesn't work well with Treesitter
+" We need lewis6991/spellsitter.nvim to make spellcheck sane
+" Otherwize, we will get underline everywhere.
 setlocal spell spelllang=en_us,cjk
-hi clear SpellBad
-hi SpellBad ctermfg=1 cterm=underline
+au VimEnter * hi SpellBad guifg=NONE guibg=NONE gui=undercurl
 syntax on
 
 " Git
@@ -168,6 +176,8 @@ nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files(
             \ )<cr>
 nnoremap <leader>f: <cmd>lua require('telescope.builtin').command_history()<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader><leader>h <cmd>lua require('telescope.builtin').live_grep(
+            \{cwd='$HOME/dotfiles/nvim'})<cr>
 nnoremap <leader>f/ <cmd>lua require('telescope.builtin').search_history()<cr>
 nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
 nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
