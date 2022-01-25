@@ -174,6 +174,7 @@ null_ls.setup({
 
     -- Code actions
     null_ls.builtins.code_actions.gitsigns,
+    null_ls.builtins.code_actions.eslint_d,
   },
 })
 
