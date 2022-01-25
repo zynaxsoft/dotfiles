@@ -23,12 +23,12 @@ format = "[$path]($style)[$lock_symbol]($lock_style) "
 
 [git_branch]
 format = "[$symbol$branch]($style) "
-symbol = "🌿"
+symbol = ""
 style = "bold 136"
 
 [git_commit]
 commit_hash_length = 6
-tag_symbol = "🔖 "
+tag_symbol = " "
 tag_disabled = false
 style = "bold fg:230"
 
@@ -37,16 +37,16 @@ style = "bold fg:230"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-conflicted = "⚔️ "
-ahead = "🚀×${count} "
-behind = "🐢×${count} "
-diverged = "🔱🚀 ×${ahead_count} 🐢 ×${behind_count} "
-untracked = "🛤️ ×${count} "
-stashed = "🗳 "
-modified = "📝×${count} "
-staged = "🗃️ ×${count} "
-renamed = "📛 ×${count} "
-deleted = "🗑️ ×${count} "
+conflicted = "ﲅ "
+ahead = "異×${count} "
+behind = "×${count} "
+diverged = "異 ×${ahead_count}  ×${behind_count} "
+untracked = "×${count} "
+stashed = "ﰤ "
+modified = "×${count} "
+staged = " ×${count} "
+renamed = " ×${count} "
+deleted = " ×${count} "
 style = "fg:230"
 
 [hostname]
@@ -66,12 +66,12 @@ disabled = true
 
 [package]
 format = "via [$symbol$version]($style) "
-symbol = "📦 "
+symbol = " "
 style = "bold fg:208"
 
 [nodejs]
 format = "via [$symbol$version]($style) "
-symbol = "🤖 "
+symbol = " "
 style = "bold 64"
 
 [python]
