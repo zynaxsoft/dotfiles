@@ -4,14 +4,19 @@ set shell=/bin/bash
 
 call plug#begin('~/.config/nvim/plugged')
 
+" GUI
+Plug 'ishan9299/nvim-solarized-lua'
+Plug 'nvim-lualine/lualine.nvim'
 " Show indent line
 Plug 'Yggdroot/indentLine'
+" Highlight and preview pattern/regex
+Plug 'markonm/traces.vim'
+" Color
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 
-" Solarized!
-" Plug 'altercation/vim-colors-solarized'
-Plug 'lifepillar/vim-solarized8'
-
-" General tools
+" Common dependencies
+Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
 Plug 'godlygeek/tabular'
 
@@ -25,21 +30,20 @@ Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
 Plug 'ray-x/lsp_signature.nvim'
 Plug 'hrsh7th/cmp-vsnip', {'branch': 'main'}
 Plug 'hrsh7th/vim-vsnip'
-
+Plug 'onsails/lspkind-nvim'
 " Diagnostic stuff
 Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'kyazdani42/nvim-web-devicons'
 Plug 'folke/trouble.nvim'
+
+" Tools
+Plug 'nvim-telescope/telescope.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
-Plug 'zivyangll/git-blame.vim'
+Plug 'lewis6991/gitsigns.nvim'
 
 " Tmux stuff
 Plug 'roxma/vim-tmux-clipboard'
-
-" Color
-Plug 'norcalli/nvim-colorizer.lua'
 
 " Lang specifics
 Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
@@ -55,22 +59,18 @@ Plug 'jparise/vim-graphql'
 Plug 'leafgarland/typescript-vim'
 Plug 'peitalin/vim-jsx-typescript'
 
-" Highlight and preview pattern/regex
-Plug 'markonm/traces.vim'
-
-" FZF for navigation
-Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
-Plug 'junegunn/fzf.vim'
-
 call plug#end()
 
 let mapleader = "\<Space>"
 set updatetime=300
+set termguicolors
+let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 
 " Lua stuff goes here!!
 lua require('config')
 " Enable type inlay hints
-autocmd CursorHold,CursorHoldI *.rs :lua require'lsp_extensions'.inlay_hints{
+autocmd CursorHold,CursorHoldI *.rs :silent! lua require'lsp_extensions'.inlay_hints{
             \  prefix = ' ==>> ',
             \  highlight = "Comment",
             \  enabled = {"TypeHint", "ChainingHint", "ParameterHint"},
@@ -105,12 +105,8 @@ let g:indentLine_conceallevel = 2
 let g:indentLine_setConceal = 1
 
 " VIM SOLARIZED!!
-au VimEnter * ++nested colorscheme solarized8
+au VimEnter * ++nested colorscheme solarized
 set background=dark
-" silent! colorscheme solarized
-set termguicolors
-let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
-let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
 au VimEnter * hi SignColumn guibg=#073642
 au VimEnter * hi TabLineFill ctermfg=0 guifg=#073642
 au VimEnter * hi LspSignatureActiveParameter guifg=#073642 guibg=#93a1a1
@@ -122,7 +118,6 @@ au VimEnter * hi DiagnosticSignError guibg=#073642
 au VimEnter * hi DiagnosticSignWarn guibg=#073642
 au VimEnter * hi DiagnosticSignInfo guibg=#073642
 au VimEnter * hi DiagnosticSignHint guibg=#073642
-au VimEnter * hi SignColumn guibg=#073642
 
 " Spell check
 syntax enable
@@ -131,29 +126,18 @@ hi clear SpellBad
 hi SpellBad ctermfg=1 cterm=underline
 syntax on
 
-" FZF
-let g:fzf_layout = { 'down': '~20%' }
-nnoremap <left> :bp<CR>
-nnoremap <right> :bn<CR>
-"map <C-p> :GFiles --exclude-standard --others --cached<CR>
-command! -bang -nargs=* Files
-            \ call fzf#vim#files(<q-args>, {}, <bang>0)
-nnoremap <expr> <C-p> (len(system('git rev-parse')) ? ':Files' : ':GFiles --exclude-standard --others --cached')."\<cr>"
-map <C-n> :Buffers<CR>
-
-" <leader>s for Rg search
-noremap <leader>s :Rg<CR>
-command! -bang -nargs=* Rg
-  \ call fzf#vim#grep(
-  \   'rg --column --line-number --no-heading --hidden --color=always '.shellescape(<q-args>), 1,
-  \   <bang>0 ? fzf#vim#with_preview('up:60%')
-  \           : fzf#vim#with_preview('right:50%:hidden', '?'),
-  \   <bang>0)
-
-
 " Git
 " git-blame activate by leader b
-nnoremap <Leader>b :<C-u>call gitblame#echo()<CR>
+nnoremap <Leader>b :Gitsigns toggle_current_line_blame<cr>
+nnoremap <Leader>B :Git blame<cr>
+" Fugitive
+nnoremap <leader>dd :Gvdiffsplit!<cr>
+nnoremap <leader>dh :diffget //2<cr>
+nnoremap <leader>dl :diffget //3<cr>
+nnoremap gl :.Gclog!<cr>
+nnoremap gL :0Gclog!<cr>
+nnoremap <leader>fc :Git difftool<cr> :ccl<cr> :Telescope quickfix<cr>
+nnoremap <leader>fC :Git mergetool<cr> :ccl<cr> :Telescope quickfix<cr>
 
 " Ctrl+h to stop searching
 vnoremap <C-h> :nohlsearch<cr>
@@ -163,12 +147,45 @@ nnoremap <C-h> :nohlsearch<cr>
 map H ^
 map L $
 
-nnoremap <leader>q <cmd>TroubleToggle<cr>
-nnoremap <leader>xw <cmd>TroubleToggle workspace_diagnostics<cr>
-nnoremap <leader>xd <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <c-q> <cmd>TroubleToggle document_diagnostics<cr>
+nnoremap <leader>q <cmd>TroubleToggle workspace_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
+
+" Find files using Telescope command-line sugar.
+" Questionable
+nnoremap <leader>fb <cmd>lua require('telescope.builtin').builtin()<cr>
+nnoremap <leader>fbh <cmd>lua require('telescope.builtin').highlights()<cr>
+nnoremap <leader>fbc <cmd>lua require('telescope.builtin').commands()<cr>
+
+nnoremap <c-p> <cmd>lua require('telescope.gitfile-fallback').project_files()<cr>
+nnoremap <c-n> <cmd>lua require('telescope.builtin').buffers()<cr>
+nnoremap <leader>g <cmd>lua require('telescope.builtin').live_grep()<cr>
+nnoremap <leader>G <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find()<cr>
+nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files(
+            \{hidden = true, no_ignore = true, }
+            \ )<cr>
+nnoremap <leader>f: <cmd>lua require('telescope.builtin').command_history()<cr>
+nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags()<cr>
+nnoremap <leader>f/ <cmd>lua require('telescope.builtin').search_history()<cr>
+nnoremap <leader>fm <cmd>lua require('telescope.builtin').marks()<cr>
+nnoremap <leader>fq <cmd>lua require('telescope.builtin').quickfix()<cr>
+nnoremap <leader>fl <cmd>lua require('telescope.builtin').loclist()<cr>
+nnoremap <leader>fr <cmd>lua require('telescope.builtin').registers()<cr>
+nnoremap <leader>fe <cmd>lua require('telescope.builtin').keymaps()<cr>
+nnoremap <leader>fs <cmd>lua require('telescope.builtin').spell_suggest()<cr>
+nnoremap <leader>fy <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
+nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
+nnoremap <leader>a <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
+vnoremap <leader>a :'<,'>Telescope lsp_range_code_actions<cr>
+nnoremap gd <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
+nnoremap gD <cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>
+nnoremap gi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
+nnoremap gr <cmd>lua require('telescope.builtin').lsp_references()<cr>
+
+" Reload config
+nnoremap <leader><leader><c-r> <cmd>source $MYVIMRC<cr>
 
 " Markdown
 let g:vim_markdown_folding_disabled = 1
@@ -181,6 +198,10 @@ let g:vim_markdown_no_extensions_in_markdown = 1
 let g:echodoc#enable_at_startup = 1
 let g:echodoc#type = 'echo'
 
+set foldlevel=99
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+
 set tabstop=8
 set expandtab
 set shiftwidth=4
@@ -192,5 +213,6 @@ source ~/dotfiles/nvim/configs/wsl-stuff.vim
 source ~/dotfiles/nvim/configs/rust-stuff.vim
 source ~/dotfiles/nvim/configs/python-stuff.vim
 
-lua require'colorizer'.setup()
-
+function Booboo()
+    :TSInstall! rust python bash css html yaml json toml tsx vim cpp html c cmake http make regex javascript
+endfunction

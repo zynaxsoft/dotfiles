@@ -114,5 +114,6 @@ cargo install bat&  # cat alternative
 
 echo "installing langauge servers"
 ./install-lang-server.sh
+./install-nvim-treesitter-plugins.sh
 
 popd > /dev/null
