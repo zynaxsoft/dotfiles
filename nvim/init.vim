@@ -39,6 +39,7 @@ Plug 'folke/trouble.nvim'
 
 " Motions
 Plug 'tpope/vim-surround'
+Plug 'justinmk/vim-sneak'
 
 " Tools
 Plug 'nvim-telescope/telescope.nvim'
