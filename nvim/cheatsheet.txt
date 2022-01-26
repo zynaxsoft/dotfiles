@@ -1,5 +1,19 @@
+# sections are as follows
+# ## section-name @tag1 @tag2
+# section-name will appear on first column
+
 ## vim-surround
-edit surrounding stuff | cs{surround char}{new char}
+edit surrounding stuff - cs{surround char}{new char} | cs({
+
 ## vim-sneak
-sneak to specified 2 chars | [count]s{char}{char}
-sneak delete until 2 chars | [count]dz{char}{char}
+sneak to specified 2 chars - [count]s{char}{char} | csxx
+sneak delete until 2 chars - [count]dz{char}{char} | dzxx
+
+## vim-sandwich
+sandwich something sa{motion/textobject}{addition} | saiw(
+sandwich delete sd{deletion} | sd(
+sandwich replace sr{deletion}{addition} | sr("
+sandwich text object inside brackets | ib
+sandwich text object inside brackets include brackets | ab
+sandwich text object means we don't have to check which bracket is surrounding |
+delete inside symbols | dis{symbol}<cr>

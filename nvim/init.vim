@@ -53,6 +53,7 @@ Plug 'sudormrfbin/cheatsheet.nvim'
 " Motions
 Plug 'tpope/vim-surround'
 Plug 'justinmk/vim-sneak'
+Plug 'machakann/vim-sandwich'
 
 " Tools
 Plug 'nvim-telescope/telescope.nvim'
