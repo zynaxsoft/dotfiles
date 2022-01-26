@@ -24,7 +24,8 @@ sudo apt install -y gnome-tweaks
 echo "installing ranger"
 sudo apt install -y ranger
 
-echo "installing fzf"
+echo "installing tools"
+sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep fd-find
 sudo apt install -y fzf
 
 echo "installing nerd fonts"
@@ -109,8 +110,6 @@ fi
 
 echo "installing rust tools"
 cargo install exa&  # ls alternative
-cargo install ripgrep&  # grep alternative
-cargo install bat&  # cat alternative
 
 echo "installing langauge servers"
 ./install-lang-server.sh
