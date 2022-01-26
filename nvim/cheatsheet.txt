@@ -1,0 +1,5 @@
+## vim-surround
+edit surrounding stuff | cs{surround char}{new char}
+## vim-sneak
+sneak to specified 2 chars | [count]s{char}{char}
+sneak delete until 2 chars | [count]dz{char}{char}

@@ -19,8 +19,24 @@ cmp.setup({
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
   },
   sources = cmp.config.sources(
-    {{ name = 'nvim_lsp' }, { name = 'vsnip' }, { name = 'buffer' }},
-    {{ name = 'path' }}
+    {
+      { name = 'nvim_lsp' },
+      { name = 'vsnip' },
+      { name = 'buffer' },
+      { name = 'rg'},
+      { name = 'treesitter'},
+      { name = 'tmux', option = {
+        all_panes = false,
+        label = '[tmux]',
+        trigger_characters = { '.' },
+        trigger_characters_ft = {} -- { filetype = { '.' } }
+      }},
+      { name = 'nvim-lsp-signature-help' },
+      { name = 'calc' },
+    },
+    {{ name = 'emoji', option = { insert = true } }},
+    {{ name = 'path' }},
+    {{ name = 'crates' }}
   ),
   experimental = {
     ghost_text = true,
@@ -173,7 +189,7 @@ null_ls.setup({
     null_ls.builtins.formatting.taplo,
 
     -- Completion
-    null_ls.builtins.completion.spell,
+    -- null_ls.builtins.completion.spell,
 
     -- Diagnostic
     null_ls.builtins.diagnostics.yamllint,
@@ -317,4 +333,5 @@ require('spellsitter').setup {
   enable = true,
 }
 
+require('crates').setup()
 require'colorizer'.setup()

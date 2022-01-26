@@ -19,23 +19,36 @@ Plug 'lewis6991/spellsitter.nvim'
 " Common dependencies
 Plug 'kyazdani42/nvim-web-devicons'
 Plug 'nvim-lua/plenary.nvim'
+Plug 'nvim-lua/popup.nvim'
 Plug 'godlygeek/tabular'
 
 " Semantic language support
 Plug 'neovim/nvim-lspconfig'
 Plug 'nvim-lua/lsp_extensions.nvim'
+Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
+Plug 'ray-x/lsp_signature.nvim'
+Plug 'hrsh7th/vim-vsnip'
+Plug 'onsails/lspkind-nvim'
+" nvim-cmp sources
 Plug 'hrsh7th/cmp-nvim-lsp', {'branch': 'main'}
+Plug 'hrsh7th/cmp-vsnip', {'branch': 'main'}
 Plug 'hrsh7th/cmp-buffer', {'branch': 'main'}
 Plug 'hrsh7th/cmp-path', {'branch': 'main'}
 Plug 'hrsh7th/cmp-cmdline', {'branch': 'main'}
-Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'hrsh7th/cmp-vsnip', {'branch': 'main'}
-Plug 'hrsh7th/vim-vsnip'
-Plug 'onsails/lspkind-nvim'
+Plug 'hrsh7th/cmp-nvim-lsp-signature-help', {'branch': 'main'}
+Plug 'hrsh7th/cmp-calc', {'branch': 'main'}
+Plug 'saecki/crates.nvim', { 'tag': 'v0.1.0' }
+Plug 'lukas-reineke/cmp-rg'
+Plug 'ray-x/cmp-treesitter'
+Plug 'andersevenrud/cmp-tmux'
+Plug 'hrsh7th/cmp-emoji'
 " Diagnostic stuff
 Plug 'jose-elias-alvarez/null-ls.nvim'
 Plug 'folke/trouble.nvim'
+
+" Enhancement
+Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
+Plug 'sudormrfbin/cheatsheet.nvim'
 
 " Motions
 Plug 'tpope/vim-surround'
