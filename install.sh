@@ -120,6 +120,6 @@ echo "installing langauge servers"
 ./install-nvim-treesitter-plugins.sh
 
 echo "set url origin of this git repo to ssh protocol"
-git remote set-url origin 'git@github.com/zynaxsoft/dotfiles'
+git remote set-url origin 'git@github.com:zynaxsoft/dotfiles'
 
 popd > /dev/null
