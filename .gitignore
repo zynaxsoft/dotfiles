@@ -1,3 +1,4 @@
+/bin/win32yank
 # vim plugins
 .vim/plugged/*
 .vim/bundle/*

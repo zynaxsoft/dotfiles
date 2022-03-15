@@ -87,6 +87,7 @@ ln -s $HOME/dotfiles/.vim $HOME/
 ln -s $HOME/dotfiles/.gitconfig $HOME/
 ln -s $HOME/dotfiles/starship.toml $HOME/.config/
 ln -s $HOME/dotfiles/nvim $HOME/.config/
+ln -s $HOME/dotfiles/bin/win32yank.exe $HOME/dotfiles/bin/win32yank
 
 echo "installing pylint3"
 sudo apt install -y pylint3
@@ -122,5 +123,8 @@ echo "installing langauge servers"
 
 echo "set url origin of this git repo to ssh protocol"
 git remote set-url origin 'git@github.com:zynaxsoft/dotfiles'
+
+echo "If wim32yank is slow. copy win32yank.exe to somewhere in Windows if you are using WSL2"
+echo "Then do ln -s /mnt/c/path/to/win32yank.exe $HOME/dotfiles/bin/win32yank (without .exe)"
 
 popd > /dev/null

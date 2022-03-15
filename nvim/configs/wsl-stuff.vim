@@ -10,7 +10,7 @@ endfunction
 
 let g:is_wsl = IsWSL()
 if is_wsl
-    let g:win32yank = $HOME . '/dotfiles/bin/win32yank.exe'
+    let g:win32yank = $HOME . '/dotfiles/bin/win32yank'
     let g:clipboard = {
     \   'name': 'wslClipboard',
     \   'copy': {
