@@ -17,3 +17,7 @@ sandwich text object inside brackets | ib
 sandwich text object inside brackets include brackets | ab
 sandwich text object means we don't have to check which bracket is surrounding |
 delete inside symbols | dis{symbol}<cr>
+
+## mergetool
+initiate 3 way diff. | <leader>dd
+select the diff | do
