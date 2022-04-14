@@ -184,5 +184,10 @@ export FZF_DEFAULT_COMMAND='rg --hidden --no-ignore -l ""'
 
 eval "$(starship init zsh)"
 
+echo "You can use Ctrl+t to find files"
+
+autoload -Uz compinit
+compinit -u
+
 true
 
