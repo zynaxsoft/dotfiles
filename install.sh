@@ -87,6 +87,7 @@ ln -s $HOME/dotfiles/.vim $HOME/
 ln -s $HOME/dotfiles/.gitconfig $HOME/
 ln -s $HOME/dotfiles/starship.toml $HOME/.config/
 ln -s $HOME/dotfiles/nvim $HOME/.config/
+ln -s $HOME/dotfiles/zfunc $HOME/.config/zfunc
 ln -s $HOME/dotfiles/bin/win32yank.exe $HOME/dotfiles/bin/win32yank
 
 echo "installing pylint3"
@@ -113,6 +114,10 @@ if uname -r | grep -qi microsoft; then
   echo "copying wsl.conf to /etc/"
   sudo cp -f $HOME/dotfiles/wsl.conf /etc/wsl.conf
 fi
+
+echo "installing rustup completions"
+rustup completions zsh > ~/.config/zfunc/_rustup
+rustup completions zsh cargo > ~/.config/zfunc/_cargo
 
 echo "installing rust tools"
 cargo install exa&  # ls alternative
