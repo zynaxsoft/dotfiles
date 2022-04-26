@@ -12,6 +12,8 @@ cmp.setup({
   mapping = {
     -- Tab immediately completes. C-n/C-p to select.
     ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior }),
+    ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior }),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
       select = false,
@@ -54,6 +56,7 @@ cmp.setup({
 
 -- Enable completing paths in /
 cmp.setup.cmdline('/', {
+    mapping = cmp.mapping.preset.cmdline({}),
     sources = cmp.config.sources(
       {{ name = 'path' }},
       {{ name = 'buffer' }}
@@ -145,6 +148,9 @@ lspconfig.rust_analyzer.setup {
     ["rust-analyzer"] = {
       cargo = {
         allFeatures = true,
+      },
+      diagnostics = {
+        disabled = {"inactive-code"},
       },
       -- completion = {
       --   postfix = {
