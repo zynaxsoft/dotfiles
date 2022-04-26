@@ -92,12 +92,12 @@ let &t_Ce = "\e[4:0m"
 " Lua stuff goes here!!
 lua require('config')
 " Enable type inlay hints
-autocmd CursorHold,CursorHoldI *.rs :silent! lua require'lsp_extensions'.inlay_hints{
-            \  prefix = ' ==>> ',
-            \  highlight = "Comment",
-            \  enabled = {"TypeHint", "ChainingHint", "ParameterHint"},
-            \  only_current_line = true,
-            \}
+" autocmd CursorHold,CursorHoldI *.rs :silent! lua require'lsp_extensions'.inlay_hints{
+"             \  prefix = ' ==>> ',
+"             \  highlight = "Comment",
+"             \  enabled = {"TypeHint", "ChainingHint", "ParameterHint"},
+"             \  only_current_line = true,
+"             \}
 
 filetype plugin indent on
 filetype plugin on
