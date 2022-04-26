@@ -153,6 +153,8 @@ prompt_end() {
   #printf "\n 🔥";
   printf "\n 🚀";
 }
+bindkey '^n' expand-or-complete
+bindkey '^p' reverse-menu-complete
 bindkey -M emacs '^P' history-substring-search-up
 bindkey -M emacs '^N' history-substring-search-down
 bindkey \^U backward-kill-line
