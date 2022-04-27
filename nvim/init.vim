@@ -57,6 +57,7 @@ Plug 'machakann/vim-sandwich'
 
 " Tools
 Plug 'nvim-telescope/telescope.nvim'
+Plug 'nvim-telescope/telescope-ui-select.nvim'
 
 " Git
 Plug 'tpope/vim-fugitive'
@@ -202,7 +203,6 @@ nnoremap <leader>fe <cmd>lua require('telescope.builtin').keymaps()<cr>
 nnoremap <leader>fs <cmd>lua require('telescope.builtin').spell_suggest()<cr>
 nnoremap <leader>fy <cmd>lua require('telescope.builtin').lsp_document_symbols()<cr>
 nnoremap <leader>ft <cmd>lua require('telescope.builtin').treesitter()<cr>
-nnoremap <leader>a <cmd>lua require('telescope.builtin').lsp_code_actions()<cr>
 vnoremap <leader>a :'<,'>Telescope lsp_range_code_actions<cr>
 nnoremap gd <cmd>lua require('telescope.builtin').lsp_definitions()<cr>
 nnoremap gD <cmd>lua require('telescope.builtin').lsp_type_definitions()<cr>
