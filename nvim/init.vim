@@ -152,20 +152,20 @@ syntax on
 
 " Git
 " git-blame activate by leader b
-nnoremap <Leader>b :Gitsigns toggle_current_line_blame<cr>
-nnoremap <Leader>B :Git blame<cr>
+nnoremap <silent> <Leader>b :Gitsigns toggle_current_line_blame<cr>
+nnoremap <silent> <Leader>B :Git blame<cr>
 " Fugitive
-nnoremap <leader>dd :Gvdiffsplit!<cr>
-nnoremap <leader>dh :diffget //2<cr>
-nnoremap <leader>dl :diffget //3<cr>
+nnoremap <silent> <leader>dd :Gvdiffsplit!<cr>
+nnoremap <silent> <leader>dh :diffget //2<cr>
+nnoremap <silent> <leader>dl :diffget //3<cr>
 nnoremap gl :.Gclog!<cr>
 nnoremap gL :0Gclog!<cr>
 nnoremap <leader>fc :Git difftool<cr> :ccl<cr> :Telescope quickfix<cr>
 nnoremap <leader>fC :Git mergetool<cr> :ccl<cr> :Telescope quickfix<cr>
 
 " Ctrl+h to stop searching
-vnoremap <C-h> :nohlsearch<cr>
-nnoremap <C-h> :nohlsearch<cr>
+vnoremap <silent> <C-h> :nohlsearch<cr>
+nnoremap <silent> <C-h> :nohlsearch<cr>
 
 " Jump to start and end of line using the home row keys
 map H ^
