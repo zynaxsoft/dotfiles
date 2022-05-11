@@ -96,7 +96,7 @@ local on_attach = function(client, bufnr)
   buf_set_keymap('n', '<C-k>', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
   buf_set_keymap('n', '<C-j>', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
   -- buf_set_keymap('n', '<space>q', '<cmd>lua vim.diagnostic.setloclist()<CR>', opts)
-  buf_set_keymap("n", "<leader>m", "<cmd>lua vim.lsp.buf.formatting()<CR>", opts)
+  buf_set_keymap("n", "<leader>m", "<cmd>lua vim.lsp.buf.format {async = true} <CR>", opts)
 
   local signs = { Error = "😡", Warn = "🤔", Hint = "👌", Info = "💡" }
   for type, icon in pairs(signs) do
@@ -114,7 +114,7 @@ local on_attach = function(client, bufnr)
     hi_parameter = "LspSignatureActiveParameter",
   })
   -- Semantic highlighting
-  if client.resolved_capabilities.document_highlight then
+  if client.server_capabilities.documentHighlightProvider then
     vim.cmd [[
       hi LspReferenceRead guibg=#073642 gui=NONE
       hi LspReferenceText guibg=#073642 gui=NONE
