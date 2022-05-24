@@ -5,7 +5,7 @@ pushd "$(dirname "$0")" > /dev/null
 # test $(awk -F= '/^NAME/{print $2}' /etc/os-release) = "\"Ubuntu\"
 echo "adding latest git, nvim, and github cli repository"
 sudo add-apt-repository -y ppa:git-core/ppa
-sudo add-apt-repository -y ppa:neovim-ppa/stable
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
 # github cli
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
 sudo apt-add-repository -y https://cli.github.com/packages
