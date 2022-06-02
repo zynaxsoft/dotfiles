@@ -162,6 +162,18 @@ lspconfig.rust_analyzer.setup {
   capabilities = capabilities,
 }
 
+-- For LSP servers that don't need extra config
+local servers = { 'taplo' }
+for _, lsp in pairs(servers) do
+require('lspconfig')[lsp].setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+  flags = {
+    debounce_text_changes = 150,
+  }
+}
+end
+
 vim.diagnostic.config({
   virtual_text = false,
   underline = true,
