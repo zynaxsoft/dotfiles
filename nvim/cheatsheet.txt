@@ -21,3 +21,6 @@ delete inside symbols | dis{symbol}<cr>
 ## mergetool
 initiate 3 way diff. | <leader>dd
 select the diff | do
+
+## delete-buffer
+:bd <type path> press <C-a> 2 times | :bd
