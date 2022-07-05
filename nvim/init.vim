@@ -210,7 +210,7 @@ nnoremap gi <cmd>lua require('telescope.builtin').lsp_implementations()<cr>
 nnoremap gr <cmd>lua require('telescope.builtin').lsp_references()<cr>
 
 " Restart lang server
-nnoremap <silent> <leader><leader>r :LspRestart<cr>
+nnoremap <silent> <leader><leader>r :LspRestart<cr> :LspStart<cr>
 " Reload config
 nnoremap <leader><leader><c-r> <cmd>source $MYVIMRC<cr>
 
