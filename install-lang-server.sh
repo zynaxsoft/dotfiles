@@ -1,7 +1,7 @@
 #!/bin/sh
 
 # python
-pip3 install pyright
+pip3 install pyright flake8 pylint black
 
 # rust analyzer
 mkdir -p ~/.local/bin
@@ -10,4 +10,4 @@ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/
 chmod +x ~/.local/bin/rust-analyzer
 
 # taplo
-cargo install taplo-cli
+# cargo install taplo-cli
