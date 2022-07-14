@@ -10,4 +10,4 @@ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/
 chmod +x ~/.local/bin/rust-analyzer
 
 # taplo
-# cargo install taplo-cli
+# cargo install --features lsp --locked taplo-cli
