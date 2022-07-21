@@ -14,6 +14,7 @@ Plug 'markonm/traces.vim'
 " Color
 Plug 'norcalli/nvim-colorizer.lua'
 Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+Plug 'nvim-treesitter/nvim-treesitter-context'
 Plug 'lewis6991/spellsitter.nvim'
 
 " Common dependencies
