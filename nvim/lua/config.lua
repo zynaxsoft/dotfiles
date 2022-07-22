@@ -11,11 +11,11 @@ cmp.setup({
   },
   mapping = {
     -- Tab immediately completes. C-n/C-p to select.
-    ['<Tab>'] = cmp.mapping.confirm({ select = true }),
+    ['<Tab>'] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
     ['<C-n>'] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior }),
     ['<C-p>'] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior }),
     ['<CR>'] = cmp.mapping.confirm {
-      behavior = cmp.ConfirmBehavior.Replace,
+      -- behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     },
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
@@ -47,28 +47,93 @@ cmp.setup({
     format = require'lspkind'.cmp_format({
       with_text = true,
       max_width = 50,
+      menu = ({
+        buffer = "[Buf]",
+        nvim_lsp = "[LSP]",
+        vsnip = "[Snip]",
+        treesitter = "[Tree]",
+        rg = "[Rg]",
+        ["nvim-lsp-signature-help"] = "[Sig]",
+        tmux = "[Tmux]",
+        calc = "[Calc]",
+        path = "[Path]",
+        crates = "[Crates]",
+      }),
       before = function (entry, vim_item)
         return vim_item
-      end
+      end,
     })
   },
 })
 
+cmdline_mapping = {
+    ['<Tab>'] = {
+      c = function()
+        local cmp = require('cmp')
+        if cmp.visible() then
+          cmp.select_next_item()
+        else
+          feedkeys.call(keymap.t('<C-z>'), 'n')
+        end
+      end,
+    },
+    ['<S-Tab>'] = {
+      c = function()
+        local cmp = require('cmp')
+        if cmp.visible() then
+          cmp.select_prev_item()
+        else
+          feedkeys.call(keymap.t('<C-z>'), 'n')
+        end
+      end,
+    },
+    ['<C-n>'] = {
+      c = function(fallback)
+        local cmp = require('cmp')
+        if cmp.visible() then
+          cmp.select_prev_item()  -- reversed for the wildmenu
+        else
+          fallback()
+        end
+      end,
+    },
+    ['<C-p>'] = {
+      c = function(fallback)
+        local cmp = require('cmp')
+        if cmp.visible() then
+          cmp.select_next_item()  -- reversed for the wildmenu
+        else
+          fallback()
+        end
+      end,
+    },
+    ['<C-e>'] = {
+      c = cmp.mapping.close(),
+    },
+  }
+
 -- Enable completing paths in /
 cmp.setup.cmdline('/', {
-    mapping = cmp.mapping.preset.cmdline({}),
-    sources = cmp.config.sources(
-      {{ name = 'path' }},
-      {{ name = 'buffer' }}
-    )
-  })
+  mapping = cmdline_mapping,
+  sources = cmp.config.sources(
+    {{ name = 'path' }},
+    {{ name = 'buffer' }}
+  ),
+  view = {
+    entries = {name = 'wildmenu', separator = '|' }
+  },
+})
 
 -- Enable completing paths in :
 cmp.setup.cmdline(':', {
+  mapping = cmdline_mapping,
   sources = cmp.config.sources(
     {{ name = 'path' }},
     {{ name = 'cmdline' }}
-  )
+  ),
+  view = {
+    entries = {name = 'wildmenu', separator = '|' }
+  },
 })
 
 -- Setup lspconfig.
