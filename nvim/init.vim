@@ -173,7 +173,7 @@ map H ^
 map L $
 
 nnoremap <c-q> <cmd>TroubleToggle document_diagnostics<cr>
-nnoremap <leader>q <cmd>TroubleToggle workspace_diagnostics<cr>
+nnoremap <a-q> <cmd>TroubleToggle workspace_diagnostics<cr>
 nnoremap <leader>xq <cmd>TroubleToggle quickfix<cr>
 nnoremap <leader>xl <cmd>TroubleToggle loclist<cr>
 nnoremap gR <cmd>TroubleToggle lsp_references<cr>
