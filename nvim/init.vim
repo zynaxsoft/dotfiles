@@ -236,6 +236,11 @@ set shiftwidth=4
 set softtabstop=4
 set smartindent
 
+set grepprg=rg\ --vimgrep
+nnoremap <leader>q :copen<cr>
+nnoremap ]q :cnext<cr>
+nnoremap [q :cprevious<cr>
+
 
 source ~/dotfiles/nvim/configs/wsl-stuff.vim
 source ~/dotfiles/nvim/configs/rust-stuff.vim
