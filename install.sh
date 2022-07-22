@@ -26,6 +26,7 @@ sudo apt install -y ranger
 
 echo "installing tools"
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep fd-find
+ln -s $(which fdfind) ~/.local/bin/fd
 sudo apt install -y fzf
 
 echo "installing nerd fonts"
