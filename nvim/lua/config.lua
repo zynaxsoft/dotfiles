@@ -383,6 +383,9 @@ require('telescope').setup{
 }
 require("telescope").load_extension("ui-select")
 
+function gitsigns_visual_op(op)
+  return require('gitsigns')[op]({ vim.fn.line("."), vim.fn.line("v") })
+end
 
 require('gitsigns').setup {
   signs = {
@@ -438,11 +441,13 @@ require('gitsigns').setup {
 
     -- Actions
     map('n', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>')
-    map('v', '<leader>hs', '<cmd>Gitsigns stage_hunk<CR>')
     map('n', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>')
-    map('v', '<leader>hr', '<cmd>Gitsigns reset_hunk<CR>')
-    map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>')
     map('n', '<leader>hu', '<cmd>Gitsigns undo_stage_hunk<CR>')
+    -- from https://github.com/b0o/nvim-conf/blob/main/lua/user/mappings.lua#L716
+    map('v', '<leader>hs', '<cmd>lua gitsigns_visual_op"stage_hunk"<CR>')
+    map('v', '<leader>hr', '<cmd>lua gitsigns_visual_op"reset_hunk"<CR>')
+    map('v', '<leader>hu', '<cmd>lua gitsigns_visual_op"undo_stage_hunk"<CR>')
+    map('n', '<leader>hS', '<cmd>Gitsigns stage_buffer<CR>')
     map('n', '<leader>hR', '<cmd>Gitsigns reset_buffer<CR>')
     map('n', '<leader>hp', '<cmd>Gitsigns preview_hunk<CR>')
     map('n', '<leader>hb', '<cmd>lua require"gitsigns".blame_line{full=true}<CR>')
