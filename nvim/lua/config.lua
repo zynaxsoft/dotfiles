@@ -67,6 +67,16 @@ cmp.setup({
 })
 
 cmdline_mapping = {
+    ['<C-Space>'] = {
+      c = function()
+        local cmp = require('cmp')
+        if cmp.visible() then
+          cmp.confirm()
+        else
+          feedkeys.call(keymap.t('<CR>'), 'n')
+        end
+      end,
+    },
     ['<Tab>'] = {
       c = function()
         local cmp = require('cmp')
