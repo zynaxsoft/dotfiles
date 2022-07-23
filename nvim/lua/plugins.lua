@@ -138,6 +138,14 @@ return require('packer').startup(function()
     end,
     requires = 'kyazdani42/nvim-web-devicons',
   }
+  -- When the diagnostics are too long, it doesn't wrap
+  -- maybe later
+  -- use {
+  --   'https://git.sr.ht/~whynothugo/lsp_lines.nvim',
+  --   config = function()
+  --     require('lsp_lines').setup()
+  --   end,
+  -- }
 
   -- Enhancement
   use { 'tversteeg/registers.nvim', branch = 'main' }
