@@ -67,14 +67,20 @@ cmp.setup({
 })
 
 cmdline_mapping = {
-    ['<C-Space>'] = {
-      c = function()
+    ['<CR>'] = {
+      c = function(fallback)
         local cmp = require('cmp')
-        if cmp.visible() then
+        if cmp.visible() and cmp.get_selected_entry() then
           cmp.confirm()
         else
-          feedkeys.call(keymap.t('<CR>'), 'n')
+          fallback()
         end
+      end,
+    },
+    ['<C-Space>'] = {
+      c = function(fallback)
+        local cmp = require('cmp')
+        cmp.complete()
       end,
     },
     ['<Tab>'] = {
