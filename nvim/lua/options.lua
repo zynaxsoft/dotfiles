@@ -1,6 +1,6 @@
-if vim.fn.has 'unix' then
+if vim.fn.has 'unix' == 1 then
   vim.opt.shell = '/bin/bash'
-elseif vim.fn.has 'win64' then
+elseif vim.fn.has 'win64' == 1 then
   vim.cmd [[
     let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
     let &shellcmdflag = '-NoLogo -NoProfile -ExecutionPolicy RemoteSigned -Command [Console]::InputEncoding=[Console]::OutputEncoding=[System.Text.Encoding]::UTF8;'
