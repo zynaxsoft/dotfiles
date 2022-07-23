@@ -28,6 +28,8 @@ echo "installing tools"
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep fd-find
 ln -s $(which fdfind) ~/.local/bin/fd
 sudo apt install -y fzf
+git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/bin/fzf
+~/.local/bin/fzf/install --all
 
 echo "installing nerd fonts"
 mkdir -p ~/.local/share/fonts
@@ -36,8 +38,7 @@ cp fonts/fira-code-nf.ttf ~/.local/share/fonts
 cp fonts/victor-mono-medium-nf.ttf ~/.local/share/fonts
 fc-cache -f -v
 
-echo "installing git and vim"
-sudo apt install -y git
+echo "installing vim"
 sudo apt install -y vim-gtk
 
 echo "install neovim"
