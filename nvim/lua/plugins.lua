@@ -53,7 +53,7 @@ return require('packer').startup(function()
   }
   -- Diagnostic stuff
   use 'jose-elias-alvarez/null-ls.nvim'
-  use { 'folke/trouble.nvim', requires = 'kyazdani42/nvim-web-devicons' }
+  use { 'folke/trouble.nvim', opt = true, requires = 'kyazdani42/nvim-web-devicons' }
 
   -- Enhancement
   use { 'tversteeg/registers.nvim', branch = 'main' }
@@ -89,9 +89,9 @@ return require('packer').startup(function()
   use 'roxma/vim-tmux-clipboard'
 
   -- Lang specifics
-  use { 'plasticboy/vim-markdown', requires = 'godlygeek/tabular' }
-  use 'rust-lang/rust.vim'
-  use 'cespare/vim-toml'
-  use 'stephpy/vim-yaml'
-  use 'hashivim/vim-terraform'
+  use { 'plasticboy/vim-markdown', requires = 'godlygeek/tabular', opt = true, ft = {'markdown'} }
+  use {'rust-lang/rust.vim', opt = true, ft = {'rust'}}
+  use {'cespare/vim-toml', opt = true, ft = {'toml'}}
+  use {'stephpy/vim-yaml', opt = true, ft = {'yaml', 'yml'}}
+  use {'hashivim/vim-terraform', opt = true, ft = {'terraform'}}
 end)
