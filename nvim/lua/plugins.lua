@@ -36,17 +36,17 @@ return require('packer').startup(function()
   }
   use {
     'lewis6991/spellsitter.nvim',
-    config = (require 'config.treesitter').spell,
+    config = require('config.treesitter').spell,
     requires = 'nvim-treesitter/nvim-treesitter',
   }
   use {
     'nvim-treesitter/nvim-treesitter-context',
-    config = (require 'config.treesitter').context,
+    config = require('config.treesitter').context,
     requires = 'nvim-treesitter/nvim-treesitter',
   }
   use {
     'nvim-treesitter/nvim-treesitter-textobjects',
-    config = (require 'config.treesitter').textobjects,
+    config = require('config.treesitter').textobjects,
     requires = 'nvim-treesitter/nvim-treesitter',
   }
 
@@ -68,7 +68,7 @@ return require('packer').startup(function()
   use {
     'neovim/nvim-lspconfig',
     config = function()
-      require 'lspconfig'
+      require 'config.lspconfig'
     end,
   }
   use 'nvim-lua/lsp_extensions.nvim'
@@ -90,7 +90,6 @@ return require('packer').startup(function()
       { 'hrsh7th/cmp-cmdline', branch = 'main' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', branch = 'main' },
       { 'hrsh7th/cmp-calc', branch = 'main' },
-      { 'saecki/crates.nvim', branch = 'main' },
       'lukas-reineke/cmp-rg',
       'ray-x/cmp-treesitter',
       'andersevenrud/cmp-tmux',
@@ -102,11 +101,24 @@ return require('packer').startup(function()
       'onsails/lspkind-nvim',
     },
   }
+  use 'nvim-lua/plenary.nvim'
+  use {
+    'saecki/crates.nvim',
+    branch = 'main',
+    requires = { 'nvim-lua/plenary.nvim' },
+    opt = true,
+    ft = { 'rust', 'toml' },
+    config = function()
+      require('crates').setup()
+    end,
+  }
   -- Diagnostic stuff
   use {
     'jose-elias-alvarez/null-ls.nvim',
+    requires = 'nvim-lua/plenary.nvim',
     config = function()
-      require 'config.null-ls'
+      on_attach = require('config.lspconfig').on_attach
+      require('config.null-ls').init(on_attach)
     end,
   }
   use {
@@ -131,8 +143,6 @@ return require('packer').startup(function()
   }
 
   -- Motions
-  use 'tpope/vim-surround'
-  use 'justinmk/vim-sneak'
   use 'machakann/vim-sandwich'
 
   -- Tools

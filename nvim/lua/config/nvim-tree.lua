@@ -57,7 +57,7 @@ require('nvim-tree').setup {
   open_on_setup = false,
   open_on_setup_file = false,
   open_on_tab = false,
-  ignore_buf_on_tab_change = {},
+  -- ignore_buf_on_tab_change = {},
   sort_by = 'name',
   root_dirs = {},
   prefer_startup_root = false,
@@ -142,7 +142,7 @@ require('nvim-tree').setup {
     auto_open = true,
   },
   update_focused_file = {
-    enable = false,
+    enable = true,
     update_root = false,
     ignore_list = {},
   },
@@ -154,7 +154,7 @@ require('nvim-tree').setup {
   diagnostics = {
     enable = false,
     show_on_dirs = false,
-    debounce_delay = 50,
+    -- debounce_delay = 50,
     icons = {
       hint = '',
       info = '',
@@ -219,7 +219,7 @@ require('nvim-tree').setup {
       all = false,
       config = false,
       copy_paste = false,
-      dev = false,
+      -- dev = false,
       diagnostics = false,
       git = false,
       profile = false,

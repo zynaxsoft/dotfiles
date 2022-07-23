@@ -30,7 +30,7 @@ vim.g.indentLine_concealcursor = 'inc'
 vim.g.indentLine_conceallevel = 2
 vim.g.indentLine_setConceal = 1
 
-vim.opt.foldlevel = 99
+vim.wo.foldlevel = 99
 vim.wo.foldmethod = 'expr'
 vim.wo.foldexpr = [[nvim_treesitter#foldexpr()]]
 
