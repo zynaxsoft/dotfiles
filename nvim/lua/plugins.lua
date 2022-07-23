@@ -3,6 +3,7 @@ return require('packer').startup(function()
   use 'wbthomason/packer.nvim'
 
   -- Core
+  use 'nvim-lua/plenary.nvim'
   use {
     'nathom/filetype.nvim',
     config = function()
@@ -17,7 +18,7 @@ return require('packer').startup(function()
     config = function()
       require 'config.lualine'
     end,
-    requires = { 'kyazdani42/nvim-web-devicons', opt = true },
+    requires = { 'arkav/lualine-lsp-progress', 'kyazdani42/nvim-web-devicons' },
   }
 
   -- Show indent line
@@ -62,7 +63,7 @@ return require('packer').startup(function()
   use {
     'kyazdani42/nvim-tree.lua',
     requires = {
-      'kyazdani42/nvim-web-devicons', -- optional, for file icons
+      'kyazdani42/nvim-web-devicons',
     },
     cmd = 'NvimTreeToggle',
     config = function()
@@ -109,7 +110,6 @@ return require('packer').startup(function()
       'onsails/lspkind-nvim',
     },
   }
-  use 'nvim-lua/plenary.nvim'
   use {
     'saecki/crates.nvim',
     branch = 'main',
@@ -174,7 +174,7 @@ return require('packer').startup(function()
   use {
     'tpope/vim-fugitive',
     opt = true,
-    cmd = {'Git', 'Gvdiffsplit', 'diffget', 'Gclog'},
+    cmd = { 'Git', 'Gvdiffsplit', 'diffget', 'Gclog' },
   }
   use {
     'lewis6991/gitsigns.nvim',
@@ -201,7 +201,7 @@ return require('packer').startup(function()
     config = function()
       on_attach = require('config.lspconfig').on_attach
       capabilities = require('config.lspconfig').capabilities
-      require 'config.rust-tools'.init(on_attach, capabilities)
+      require('config.rust-tools').init(on_attach, capabilities)
     end,
     requires = {
       'nvim-lua/plenary.nvim',
