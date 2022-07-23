@@ -1,0 +1,8 @@
+You can use Ctrl+t to find files
+Ctrl+r to find old commands
+Use ESC-_ for filling last argument
+---------------------------------
+Vim
+za to toggle fold, zA toggle fold harder
+zm increase fold, zM fold all (across buf)
+zr reduce fold, zR unfold all (across buf)

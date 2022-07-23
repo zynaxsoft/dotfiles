@@ -187,10 +187,7 @@ export FZF_CTRL_T_COMMAND='fd --hidden --no-ignore""'
 
 eval "$(starship init zsh)"
 
-echo "You can use Ctrl+t to find files"
-echo "Ctrl+r to find old commands"
-echo "Use ESC-_ for filling last argument"
-echo "---------------------------------"
+cat ~/dotfiles/motd.txt
 
 autoload -Uz compinit
 compinit -u
