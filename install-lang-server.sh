@@ -10,9 +10,9 @@ curl -L https://github.com/rust-analyzer/rust-analyzer/releases/latest/download/
 chmod +x ~/.local/bin/rust-analyzer
 
 # lua
-sudo apt install -y luacheck
+# sudo apt install -y luacheck
 cargo install stylua
-cargo install selene
+# cargo install selene
 
 # taplo
 # cargo install --features lsp --locked taplo-cli
