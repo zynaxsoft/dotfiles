@@ -293,7 +293,7 @@ null_ls.setup({
   sources = {
     -- Formatting
     null_ls.builtins.formatting.stylua.with({
-      extra_args = { "--indent-type", "Spaces", "--column-width", "100", "--indent-width", "2" },
+      extra_args = { "--indent-type", "Spaces", "--column-width", "100", "--indent-width", "2", "--call-parentheses", "None", "--quote-style", "AutoPreferSingle" },
     }),
     null_ls.builtins.formatting.prettierd,
     null_ls.builtins.formatting.terraform_fmt,

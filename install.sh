@@ -98,7 +98,7 @@ sudo apt install -y pylint3
 
 echo "installing nvim plugins"
 sudo apt install -y cmake
-nvim +PlugInstall +qall
+nvim +PackerSync +qall
 
 echo "install clipboard tools"
 sudo apt install -y xsel xclip

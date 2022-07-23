@@ -2,86 +2,7 @@ set nocompatible
 filetype off
 set shell=/bin/bash
 
-call plug#begin('~/.config/nvim/plugged')
-
-" GUI
-Plug 'ishan9299/nvim-solarized-lua'
-Plug 'nvim-lualine/lualine.nvim'
-" Show indent line
-Plug 'Yggdroot/indentLine'
-" Highlight and preview pattern/regex
-Plug 'markonm/traces.vim'
-" Color
-Plug 'norcalli/nvim-colorizer.lua'
-Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
-Plug 'nvim-treesitter/nvim-treesitter-context'
-Plug 'lewis6991/spellsitter.nvim'
-
-" Common dependencies
-Plug 'kyazdani42/nvim-web-devicons'
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-lua/popup.nvim'
-Plug 'godlygeek/tabular'
-
-" Semantic language support
-Plug 'neovim/nvim-lspconfig'
-Plug 'nvim-lua/lsp_extensions.nvim'
-Plug 'hrsh7th/nvim-cmp', {'branch': 'main'}
-Plug 'ray-x/lsp_signature.nvim'
-Plug 'hrsh7th/vim-vsnip'
-Plug 'onsails/lspkind-nvim'
-" nvim-cmp sources
-Plug 'hrsh7th/cmp-nvim-lsp', {'branch': 'main'}
-Plug 'hrsh7th/cmp-vsnip', {'branch': 'main'}
-Plug 'hrsh7th/cmp-buffer', {'branch': 'main'}
-Plug 'hrsh7th/cmp-path', {'branch': 'main'}
-Plug 'hrsh7th/cmp-cmdline', {'branch': 'main'}
-Plug 'hrsh7th/cmp-nvim-lsp-signature-help', {'branch': 'main'}
-Plug 'hrsh7th/cmp-calc', {'branch': 'main'}
-Plug 'saecki/crates.nvim', { 'tag': 'v0.1.0' }
-Plug 'lukas-reineke/cmp-rg'
-Plug 'ray-x/cmp-treesitter'
-Plug 'andersevenrud/cmp-tmux'
-Plug 'hrsh7th/cmp-emoji'
-" Diagnostic stuff
-Plug 'jose-elias-alvarez/null-ls.nvim'
-Plug 'folke/trouble.nvim'
-
-" Enhancement
-Plug 'tversteeg/registers.nvim', { 'branch': 'main' }
-Plug 'sudormrfbin/cheatsheet.nvim'
-
-" Motions
-Plug 'tpope/vim-surround'
-Plug 'justinmk/vim-sneak'
-Plug 'machakann/vim-sandwich'
-
-" Tools
-Plug 'nvim-telescope/telescope.nvim'
-Plug 'nvim-telescope/telescope-ui-select.nvim'
-
-" Git
-Plug 'tpope/vim-fugitive'
-Plug 'lewis6991/gitsigns.nvim'
-
-" Tmux stuff
-Plug 'roxma/vim-tmux-clipboard'
-
-" Lang specifics
-Plug 'pangloss/vim-javascript', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'mxw/vim-jsx', { 'for': ['javascript', 'javascript.jsx'] }
-Plug 'rust-lang/rust.vim'
-Plug 'Vimjas/vim-python-pep8-indent'
-Plug 'rhysd/vim-clang-format'
-Plug 'plasticboy/vim-markdown'
-Plug 'cespare/vim-toml'
-Plug 'stephpy/vim-yaml'
-Plug 'hashivim/vim-terraform'
-Plug 'jparise/vim-graphql'
-Plug 'leafgarland/typescript-vim'
-Plug 'peitalin/vim-jsx-typescript'
-
-call plug#end()
+lua require('plugins')
 
 let mapleader = "\<Space>"
 set updatetime=300
@@ -216,15 +137,15 @@ nnoremap <silent> <leader><leader>r :LspRestart<cr> :LspStart<cr>
 nnoremap <leader><leader><c-r> <cmd>source $MYVIMRC<cr>
 
 " Markdown
-let g:vim_markdown_folding_disabled = 1
-let g:vim_markdown_folding_style_pythonic = 1
-let g:vim_markdown_conceal = 0
-let g:vim_markdown_conceal_code_blocks = 0
-let g:vim_markdown_new_list_item_indent = 0
-let g:vim_markdown_no_extensions_in_markdown = 1
+" let g:vim_markdown_folding_disabled = 1
+" let g:vim_markdown_folding_style_pythonic = 1
+" let g:vim_markdown_conceal = 0
+" let g:vim_markdown_conceal_code_blocks = 0
+" let g:vim_markdown_new_list_item_indent = 0
+" let g:vim_markdown_no_extensions_in_markdown = 1
 
-let g:echodoc#enable_at_startup = 1
-let g:echodoc#type = 'echo'
+" let g:echodoc#enable_at_startup = 1
+" let g:echodoc#type = 'echo'
 
 set foldlevel=99
 set foldmethod=expr
@@ -245,7 +166,3 @@ nnoremap [q :cprevious<cr>
 source ~/dotfiles/nvim/configs/wsl-stuff.vim
 source ~/dotfiles/nvim/configs/rust-stuff.vim
 source ~/dotfiles/nvim/configs/python-stuff.vim
-
-function Booboo()
-    :TSInstall! rust python bash css html yaml json toml tsx vim cpp html c cmake http make regex javascript
-endfunction
