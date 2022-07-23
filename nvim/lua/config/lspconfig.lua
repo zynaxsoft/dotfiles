@@ -73,28 +73,30 @@ lspconfig.pyright.setup {
   capabilities = capabilities,
 }
 
-lspconfig.rust_analyzer.setup {
-  on_attach = on_attach,
-  flags = {
-    debounce_text_changes = 150,
-  },
-  settings = {
-    ['rust-analyzer'] = {
-      cargo = {
-        allFeatures = true,
-      },
-      diagnostics = {
-        disabled = { 'inactive-code' },
-      },
-      -- completion = {
-      --   postfix = {
-      --     enable = false,
-      --   },
-      -- },
-    },
-  },
-  capabilities = capabilities,
-}
+-- ==Moved to config.rust-tools.==
+--
+-- lspconfig.rust_analyzer.setup {
+--   on_attach = on_attach,
+--   flags = {
+--     debounce_text_changes = 150,
+--   },
+--   settings = {
+--     ['rust-analyzer'] = {
+--       cargo = {
+--         allFeatures = true,
+--       },
+--       diagnostics = {
+--         disabled = { 'inactive-code' },
+--       },
+--       -- completion = {
+--       --   postfix = {
+--       --     enable = false,
+--       --   },
+--       -- },
+--     },
+--   },
+--   capabilities = capabilities,
+-- }
 
 -- For LSP servers that don't need extra config
 local servers = { 'taplo' }
@@ -118,4 +120,5 @@ vim.diagnostic.config {
 
 return {
   on_attach = on_attach,
+  capabilities = capabilities,
 }

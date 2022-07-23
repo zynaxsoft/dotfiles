@@ -194,6 +194,21 @@ return require('packer').startup(function()
     requires = 'godlygeek/tabular',
   }
   use { 'rust-lang/rust.vim', opt = true, ft = { 'rust' } }
+  use {
+    'simrat39/rust-tools.nvim',
+    opt = true,
+    ft = { 'rust' },
+    config = function()
+      on_attach = require('config.lspconfig').on_attach
+      capabilities = require('config.lspconfig').capabilities
+      require 'config.rust-tools'.init(on_attach, capabilities)
+    end,
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'mfussenegger/nvim-dap',
+      'neovim/nvim-lspconfig',
+    },
+  }
   use { 'cespare/vim-toml', opt = true, ft = { 'toml' } }
   use { 'stephpy/vim-yaml', opt = true, ft = { 'yaml', 'yml' } }
   use { 'hashivim/vim-terraform', opt = true, ft = { 'terraform' } }
