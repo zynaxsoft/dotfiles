@@ -148,10 +148,12 @@ return require('packer').startup(function()
       { 'nvim-lua/popup.nvim' },
       { 'nvim-lua/plenary.nvim' },
     },
+    opt = true,
+    keys = '<Leader>?',
   }
 
   -- Motions
-  use 'machakann/vim-sandwich'
+  use { 'machakann/vim-sandwich', opt = true, keys = 's' }
 
   -- Tools
   use {
@@ -169,7 +171,11 @@ return require('packer').startup(function()
   }
 
   -- Git
-  use 'tpope/vim-fugitive'
+  use {
+    'tpope/vim-fugitive',
+    opt = true,
+    cmd = {'Git', 'Gvdiffsplit', 'diffget', 'Gclog'},
+  }
   use {
     'lewis6991/gitsigns.nvim',
     config = function()
