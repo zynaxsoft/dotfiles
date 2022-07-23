@@ -2,6 +2,14 @@ return require('packer').startup(function()
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
+  -- Core
+  use {
+    'nathom/filetype.nvim',
+    config = function()
+      require 'config.filetype'
+    end,
+  }
+
   -- GUI
   use { 'ishan9299/nvim-solarized-lua', as = 'solarized' }
   use {
