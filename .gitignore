@@ -4,6 +4,7 @@
 .vim/bundle/*
 .vim/view/*
 
+packer_compiled.lua
 nvim/plugged/*
 nvim/bundle/*
 nvim/view/*
