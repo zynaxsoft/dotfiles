@@ -9,7 +9,6 @@ elseif vim.fn.has 'win64' == 1 then
     set shellquote= shellxquote=
    ]]
 end
-vim.opt.guifont = 'VictorMono NF:h12.5'
 vim.opt.termguicolors = true
 -- <Space> as the leader 🪜
 vim.g.mapleader = ' '
