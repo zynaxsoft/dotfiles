@@ -1,4 +1,4 @@
-return require('packer').startup(function()
+return require('packer').startup(function(use)
   -- Packer can manage itself
   use 'wbthomason/packer.nvim'
 
@@ -41,7 +41,7 @@ return require('packer').startup(function()
   use {
     'nvim-treesitter/nvim-treesitter',
     run = ':TSUpdate',
-    config = (require 'config.treesitter').main,
+    config = require('config.treesitter').main,
   }
   use {
     'lewis6991/spellsitter.nvim',
@@ -73,15 +73,25 @@ return require('packer').startup(function()
     tag = 'nightly', -- optional, updated every week. (see issue #1193)
   }
 
-  -- Semantic language support
+  -- LSP
   use {
     'neovim/nvim-lspconfig',
     config = function()
       require 'config.lspconfig'
     end,
   }
-  use 'nvim-lua/lsp_extensions.nvim'
   use 'ray-x/lsp_signature.nvim'
+
+  -- LSP Installer
+  use {
+    'williamboman/mason.nvim',
+    config = require('config.mason').main,
+  }
+  use {
+    'williamboman/mason-lspconfig.nvim',
+    config = require('config.mason').lspconfig,
+    requires = { 'williamboman/mason.nvim', 'neovim/nvim-lspconfig' },
+  }
 
   -- nvim-cmp
   use {
@@ -125,7 +135,7 @@ return require('packer').startup(function()
     'jose-elias-alvarez/null-ls.nvim',
     requires = 'nvim-lua/plenary.nvim',
     config = function()
-      on_attach = require('config.lspconfig').on_attach
+      local on_attach = require('config.lspconfig').on_attach
       require('config.null-ls').init(on_attach)
     end,
   }
@@ -207,8 +217,8 @@ return require('packer').startup(function()
     opt = true,
     ft = { 'rust' },
     config = function()
-      on_attach = require('config.lspconfig').on_attach
-      capabilities = require('config.lspconfig').capabilities
+      local on_attach = require('config.lspconfig').on_attach
+      local capabilities = require('config.lspconfig').capabilities
       require('config.rust-tools').init(on_attach, capabilities)
     end,
     requires = {

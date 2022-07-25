@@ -2,6 +2,7 @@ local on_attach = function(client, bufnr)
   local function buf_set_keymap(...)
     vim.api.nvim_buf_set_keymap(bufnr, ...)
   end
+
   local function buf_set_option(...)
     vim.api.nvim_buf_set_option(bufnr, ...)
   end
@@ -99,7 +100,7 @@ lspconfig.pyright.setup {
 -- }
 
 -- For LSP servers that don't need extra config
-local servers = { 'taplo' }
+local servers = { 'taplo', 'sumneko_lua' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
