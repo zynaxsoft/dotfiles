@@ -6,3 +6,4 @@ Vim
 za to toggle fold, zA toggle fold harder
 zm increase fold, zM fold all (across buf)
 zr reduce fold, zR unfold all (across buf)
+gv to re-select last visual area
