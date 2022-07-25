@@ -11,7 +11,6 @@ function mason.lspconfig()
       'flake8',
       'black',
       'stylua',
-      'terraform-ls',
     },
     automatic_installation = true,
   }
