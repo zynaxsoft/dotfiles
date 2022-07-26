@@ -11,6 +11,7 @@ function mason.lspconfig()
       'flake8',
       'black',
       'stylua',
+      'rust-analyzer',
     },
     automatic_installation = true,
   }
