@@ -108,7 +108,8 @@ echo "install and config gpg-agent"
 sudo apt install -y gnupg2 gnupg-agent
 sudo apt install -y pinentry-tty
 mv $HOME/.gnupg/{gpg-agent.conf,gpg-agent.conf.bak}
-cp $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
+mkdir -p $HOME/dotfiles/.gnupg
+ln -s $HOME/dotfiles/.gnupg/gpg-agent.conf $HOME/.gnupg/gpg-agent.conf
 gpg-connect-agent reloadagent /bye
 
 # WSL stuff
