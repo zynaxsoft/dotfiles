@@ -29,7 +29,7 @@ function init(on_attach)
       -- null_ls.builtins.completion.spell,
 
       -- Diagnostic
-      null_ls.builtins.diagnostics.yamllint,
+      -- null_ls.builtins.diagnostics.yamllint,
       null_ls.builtins.diagnostics.eslint,
       -- python
       null_ls.builtins.diagnostics.pylint,
