@@ -187,6 +187,19 @@ return require('packer').startup(function(use)
       'nvim-telescope/telescope.nvim',
     },
   }
+  use {
+    'pwntester/octo.nvim',
+    requires = {
+      'nvim-lua/plenary.nvim',
+      'nvim-telescope/telescope.nvim',
+      'kyazdani42/nvim-web-devicons',
+    },
+    config = function()
+      require('config.octo')
+    end,
+    opt = true,
+    cmd = {'Octo'},
+  }
 
   -- Git
   use {
