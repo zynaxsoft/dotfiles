@@ -1,19 +1,19 @@
-require("telescope").setup({
+require('telescope').setup {
   defaults = {
     -- Default configuration for telescope goes here:
-    initial_mode = "insert",
+    initial_mode = 'insert',
     winblend = 15,
-    layout_strategy = "vertical",
+    layout_strategy = 'vertical',
     layout_config = {},
     vimgrep_arguments = {
-      "rg",
-      "--color=never",
-      "--no-heading",
-      "--with-filename",
-      "--line-number",
-      "--column",
-      "--smart-case",
-      "--trim",
+      'rg',
+      '--color=never',
+      '--no-heading',
+      '--with-filename',
+      '--line-number',
+      '--column',
+      '--smart-case',
+      '--trim',
     },
   },
   pickers = {
@@ -24,12 +24,22 @@ require("telescope").setup({
     -- }
     -- Now the picker_config_key will be applied every time you call this
     -- builtin picker
+    -- require("telescope").setup {
+    buffers = {
+      show_all_buffers = true,
+      sort_lastused = true,
+      mappings = {
+        i = {
+          ['<c-d>'] = 'delete_buffer',
+        },
+      },
+    },
   },
   extensions = {
-    ["ui-select"] = {
-      require("telescope.themes").get_dropdown({
+    ['ui-select'] = {
+      require('telescope.themes').get_dropdown {
         -- even more opts
-      }),
+      },
       -- Your extension configuration goes here:
       -- extension_name = {
       --   extension_config_key = value,
@@ -37,5 +47,5 @@ require("telescope").setup({
       -- please take a look at the readme of the extension you want to configure
     },
   },
-})
-require("telescope").load_extension("ui-select")
+}
+require('telescope').load_extension 'ui-select'
