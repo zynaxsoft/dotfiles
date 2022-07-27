@@ -19,9 +19,9 @@ local config = {
   sections = {
     lualine_a = { 'mode' },
     lualine_b = { 'branch', 'diff', 'diagnostics' },
-    lualine_c = { 'filename', 'lsp_progress' },
-    lualine_x = { 'encoding', 'fileformat', 'filetype' },
-    lualine_y = { 'progress' },
+    lualine_c = { 'filename' },
+    lualine_x = { 'lsp_progress' },
+    lualine_y = {},
     lualine_z = { 'location' },
   },
   inactive_sections = {
@@ -33,22 +33,23 @@ local config = {
     lualine_z = {},
   },
   tabline = {
-  --   lualine_a = {},
-  --   lualine_b = {},
-  --   lualine_c = {
-  --     {
-  --       'tabs',
-  --       mode = 2,
-  --       tabs_color = {
-  --         -- Same values as the general color option can be used here.
-  --         active = 'lualine_lualine_a_normal', -- Color for active tab.
-  --         inactive = 'lualine_lualine_a_inactive', -- Color for inactive tab.
-  --       },
-  --     },
-  --   },
-  --   lualine_x = {},
-  --   lualine_y = {},
-  --   lualine_z = {},
+    lualine_a = {
+      {
+        'tabs',
+        mode = 0,
+        separator = { left = '', right = '' },
+        right_padding = 2,
+        icon_enabled = true,
+        symbols = { alternate_file = '' },
+      },
+    },
+    lualine_c = {
+      {
+        'windows',
+      },
+    },
+    lualine_x = { 'encoding', 'fileformat', 'filetype' },
+    --   lualine_y = {},
   },
   winbar = {},
   inactive_winbar = {},
@@ -59,7 +60,6 @@ local config = {
 local colors = {
   yellow = '#B58900',
   cyan = '#2AA198',
-  blue = '#268BD2',
   green = '#859900',
   orange = '#CB4B16',
   violet = '#6C71C4',
