@@ -122,7 +122,6 @@ return require('packer').startup(function(use)
   }
   use {
     'saecki/crates.nvim',
-    tag = 'v0.2.1',
     requires = { 'nvim-lua/plenary.nvim' },
     opt = true,
     ft = { 'rust', 'toml' },

@@ -1,70 +1,68 @@
-local cmp = require("cmp")
-cmp.setup({
+local cmp = require 'cmp'
+cmp.setup {
   snippet = {
     -- REQUIRED by nvim-cmp. get rid of it once we can
     expand = function(args)
-      vim.fn["vsnip#anonymous"](args.body)
+      vim.fn['vsnip#anonymous'](args.body)
     end,
   },
   mapping = {
     -- Tab immediately completes. C-n/C-p to select.
-    ["<Tab>"] = cmp.mapping.confirm({ select = true, behavior = cmp.ConfirmBehavior.Replace }),
-    ["<C-n>"] = cmp.mapping.select_next_item({ behavior = cmp.SelectBehavior }),
-    ["<C-p>"] = cmp.mapping.select_prev_item({ behavior = cmp.SelectBehavior }),
-    ["<CR>"] = cmp.mapping.confirm({
+    ['<Tab>'] = cmp.mapping.confirm { select = true, behavior = cmp.ConfirmBehavior.Replace },
+    ['<C-n>'] = cmp.mapping.select_next_item { behavior = cmp.SelectBehavior },
+    ['<C-p>'] = cmp.mapping.select_prev_item { behavior = cmp.SelectBehavior },
+    ['<CR>'] = cmp.mapping.confirm {
       -- behavior = cmp.ConfirmBehavior.Replace,
       select = false,
-    }),
-    ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
-  },
-  sources = cmp.config.sources(
-    {
-      { name = "nvim_lsp" },
-      { name = "vsnip" },
-      { name = "buffer" },
-      { name = "rg" },
-      { name = "treesitter" },
-      {
-        name = "tmux",
-        option = {
-          all_panes = false,
-          label = "[tmux]",
-          trigger_characters = { "." },
-          trigger_characters_ft = {}, -- { filetype = { '.' } }
-        },
-      },
-      { name = "nvim-lsp-signature-help" },
-      { name = "calc" },
     },
-    { { name = "emoji", option = { insert = true } } },
-    { { name = "path" } },
-    { { name = "crates" } }
-  ),
+    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+  },
+  sources = cmp.config.sources {
+    { name = 'nvim_lsp' },
+    { name = 'vsnip' },
+    { name = 'buffer' },
+    { name = 'rg' },
+    { name = 'treesitter' },
+    {
+      name = 'tmux',
+      option = {
+        all_panes = false,
+        label = '[tmux]',
+        trigger_characters = { '.' },
+        trigger_characters_ft = {}, -- { filetype = { '.' } }
+      },
+    },
+    { name = 'nvim-lsp-signature-help' },
+    { name = 'calc' },
+    { name = 'emoji', option = { insert = true } },
+    { name = 'path' },
+    { name = 'crates' },
+  },
   experimental = {
     ghost_text = true,
   },
   formatting = {
-    format = require("lspkind").cmp_format({
+    format = require('lspkind').cmp_format {
       with_text = true,
       max_width = 50,
       menu = {
-        buffer = "[Buf]",
-        nvim_lsp = "[LSP]",
-        vsnip = "[Snip]",
-        treesitter = "[Tree]",
-        rg = "[Rg]",
-        ["nvim-lsp-signature-help"] = "[Sig]",
-        tmux = "[Tmux]",
-        calc = "[Calc]",
-        path = "[Path]",
-        crates = "[Crates]",
+        buffer = '[Buf]',
+        nvim_lsp = '[LSP]',
+        vsnip = '[Snip]',
+        treesitter = '[Tree]',
+        rg = '[Rg]',
+        ['nvim-lsp-signature-help'] = '[Sig]',
+        tmux = '[Tmux]',
+        calc = '[Calc]',
+        path = '[Path]',
+        crates = '[Crates]',
       },
       before = function(entry, vim_item)
         return vim_item
       end,
-    }),
+    },
   },
-})
+}
 
 cmdline_mapping = {
   -- ["<CR>"] = {
@@ -77,29 +75,29 @@ cmdline_mapping = {
   --     end
   --   end,
   -- },
-  ["<C-Space>"] = {
+  ['<C-Space>'] = {
     c = function(fallback)
-      local cmp = require("cmp")
+      local cmp = require 'cmp'
       cmp.confirm()
     end,
   },
-  ["<Tab>"] = {
+  ['<Tab>'] = {
     c = function()
-      local cmp = require("cmp")
+      local cmp = require 'cmp'
       if cmp.visible() then
         cmp.select_next_item()
       else
-        feedkeys.call(keymap.t("<C-z>"), "n")
+        feedkeys.call(keymap.t '<C-z>', 'n')
       end
     end,
   },
-  ["<S-Tab>"] = {
+  ['<S-Tab>'] = {
     c = function()
-      local cmp = require("cmp")
+      local cmp = require 'cmp'
       if cmp.visible() then
         cmp.select_prev_item()
       else
-        feedkeys.call(keymap.t("<C-z>"), "n")
+        feedkeys.call(keymap.t '<C-z>', 'n')
       end
     end,
   },
@@ -123,26 +121,25 @@ cmdline_mapping = {
   --     end
   --   end,
   -- },
-  ["<C-e>"] = {
+  ['<C-e>'] = {
     c = cmp.mapping.close(),
   },
 }
 
 -- Enable completing paths in /
-cmp.setup.cmdline("/", {
+cmp.setup.cmdline('/', {
   mapping = cmdline_mapping,
-  sources = cmp.config.sources({ { name = "path" } }, { { name = "buffer" } }),
+  sources = cmp.config.sources({ { name = 'path' } }, { { name = 'buffer' } }),
   view = {
-    entries = { name = "wildmenu", separator = "|" },
+    entries = { name = 'wildmenu', separator = '|' },
   },
 })
 
 -- Enable completing paths in :
-cmp.setup.cmdline(":", {
+cmp.setup.cmdline(':', {
   mapping = cmdline_mapping,
-  sources = cmp.config.sources({ { name = "path" } }, { { name = "cmdline" } }),
+  sources = cmp.config.sources({ { name = 'path' } }, { { name = 'cmdline' } }),
   view = {
-    entries = { name = "wildmenu", separator = "|" },
+    entries = { name = 'wildmenu', separator = '|' },
   },
 })
-
