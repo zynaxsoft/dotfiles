@@ -19,10 +19,11 @@ cmp.setup {
   },
   sources = cmp.config.sources {
     { name = 'nvim_lsp' },
+    { name = 'nvim-lsp-signature-help' },
     { name = 'vsnip' },
     { name = 'buffer' },
-    { name = 'rg' },
     { name = 'treesitter' },
+    { name = 'rg' },
     {
       name = 'tmux',
       option = {
@@ -32,7 +33,6 @@ cmp.setup {
         trigger_characters_ft = {}, -- { filetype = { '.' } }
       },
     },
-    { name = 'nvim-lsp-signature-help' },
     { name = 'calc' },
     { name = 'emoji', option = { insert = true } },
     { name = 'path' },
