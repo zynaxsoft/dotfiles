@@ -65,25 +65,23 @@ cmp.setup {
 }
 
 cmdline_mapping = {
-  -- ["<CR>"] = {
-  --   c = function(fallback)
-  --     local cmp = require("cmp")
-  --     if cmp.visible() and cmp.get_selected_entry() then
-  --       cmp.confirm()
-  --     else
-  --       fallback()
-  --     end
-  --   end,
-  -- },
-  ['<C-Space>'] = {
+  ["<CR>"] = {
     c = function(fallback)
-      local cmp = require 'cmp'
-      cmp.confirm()
+      if cmp.visible() and cmp.get_selected_entry() then
+        cmp.confirm()
+      else
+        fallback()
+      end
     end,
   },
+  -- ['<C-Space>'] = {
+  --   c = function(fallback)
+  --     local cmp = require 'cmp'
+  --     cmp.confirm()
+  --   end,
+  -- },
   ['<Tab>'] = {
     c = function()
-      local cmp = require 'cmp'
       if cmp.visible() then
         cmp.select_next_item()
       else
@@ -93,7 +91,6 @@ cmdline_mapping = {
   },
   ['<S-Tab>'] = {
     c = function()
-      local cmp = require 'cmp'
       if cmp.visible() then
         cmp.select_prev_item()
       else

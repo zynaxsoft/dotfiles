@@ -214,6 +214,9 @@ return require('packer').startup(function(use)
   -- Tmux stuff
   use 'roxma/vim-tmux-clipboard'
 
+  -- Nvim dev
+  use { 'bfredl/nvim-luadev', opt = true, cmd = 'Luadev' }
+
   -- Lang specifics
   use {
     'plasticboy/vim-markdown',
