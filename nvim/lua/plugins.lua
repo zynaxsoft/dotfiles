@@ -122,12 +122,12 @@ return require('packer').startup(function(use)
   }
   use {
     'saecki/crates.nvim',
-    branch = 'main',
+    tag = 'v0.2.1',
     requires = { 'nvim-lua/plenary.nvim' },
     opt = true,
     ft = { 'rust', 'toml' },
     config = function()
-      require('crates').setup()
+      require 'config.crates'
     end,
   }
   -- Diagnostic stuff
@@ -176,9 +176,7 @@ return require('packer').startup(function(use)
   -- Tools
   use {
     'nvim-telescope/telescope.nvim',
-    config = function()
-      require 'config.telescope'
-    end,
+    config = require('config.telescope').setup,
     requires = { 'nvim-lua/plenary.nvim' },
   }
   use {
@@ -195,10 +193,10 @@ return require('packer').startup(function(use)
       'kyazdani42/nvim-web-devicons',
     },
     config = function()
-      require('config.octo')
+      require 'config.octo'
     end,
     opt = true,
-    cmd = {'Octo'},
+    cmd = { 'Octo' },
   }
 
   -- Git

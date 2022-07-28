@@ -31,7 +31,7 @@ map('n', '<leader>fb', telescope.builtin)
 map('n', '<leader>fbh', telescope.highlights)
 map('n', '<leader>fbc', telescope.commands)
 
-map('n', '<c-p>', require('telescope.gitfile-fallback').project_files)
+map('n', '<c-p>', require('config.telescope').project_files)
 map('n', '<c-n>', telescope.buffers)
 map('n', '<leader>g', telescope.live_grep)
 map('n', '<leader>G', telescope.current_buffer_fuzzy_find)
