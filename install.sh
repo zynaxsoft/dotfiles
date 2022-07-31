@@ -63,7 +63,7 @@ zsh -ic "compaudit | xargs chmod g-w,o-w" || true
 # sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/wezterm 50
 
 echo "install starship prompt"
-curl -fsSL https://starship.rs/install.sh | bash -s -- -y 
+curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
 echo "installing python(s)"
 sudo apt install -y python python3-pip
