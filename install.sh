@@ -125,8 +125,9 @@ fi
 
 echo "installing rustup completions"
 CARGO_DIR=$HOME/.cargo/bin
-$CARGO_DIR/rustup completions zsh > ~/.config/zfunc/_rustup
-$CARGO_DIR/rustup completions zsh cargo > ~/.config/zfunc/_cargo
+# already have in dotfiles/zfunc
+# $CARGO_DIR/rustup completions zsh > ~/.config/zfunc/_rustup
+# $CARGO_DIR/rustup completions zsh cargo > ~/.config/zfunc/_cargo
 
 echo "installing rust tools"
 $CARGO_DIR/cargo install exa&  # ls alternative
