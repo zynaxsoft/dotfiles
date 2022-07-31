@@ -128,7 +128,7 @@ rustup completions zsh > ~/.config/zfunc/_rustup
 rustup completions zsh cargo > ~/.config/zfunc/_cargo
 
 echo "installing rust tools"
-cargo install exa&  # ls alternative
+$HOME/.cargo/bin/cargo install exa&  # ls alternative
 
 echo "installing langauge servers"
 ./install-lang-server.sh
