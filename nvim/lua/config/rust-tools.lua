@@ -180,10 +180,18 @@ function init(on_attach, capabilities)
       settings = {
         ['rust-analyzer'] = {
           cargo = {
+            features = "all",
             allFeatures = true,
           },
           diagnostics = {
             disabled = { 'inactive-code' },
+          },
+          checkOnSave = {
+            command = "clippy",
+            extraArgs = { '--',
+            '-W', 'clippy::pedantic',
+            '-W', 'clippy::nursery',
+          },
           },
         },
       },
