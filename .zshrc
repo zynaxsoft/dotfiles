@@ -195,5 +195,7 @@ compinit -u
 true
 
 
-autoload -U +X bashcompinit && bashcompinit
-complete -o nospace -C /usr/bin/terraform terraform
+if test -f /usr/bin/terraform; then
+    autoload -U +X bashcompinit && bashcompinit
+    complete -o nospace -C /usr/bin/terraform terraform
+fi
