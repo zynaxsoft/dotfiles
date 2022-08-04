@@ -169,6 +169,9 @@ AWS_COMPLETER=$HOME/.local/bin/aws_zsh_completer.sh
 if test -f $AWS_COMPLETER; then
     source $AWS_COMPLETER
 fi
+if test -f $(which aws_completer); then
+    complete -C $(which aws_completer) aws
+fi
 
 eval $(ssh-agent) > /dev/null
 
