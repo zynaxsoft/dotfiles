@@ -29,6 +29,7 @@ sudo apt install -y ranger
 
 echo "installing tools"
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep fd-find
+mkdir -p ~/.local/bin
 ln -s $(which fdfind) ~/.local/bin/fd
 sudo apt install -y fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/bin/fzf
