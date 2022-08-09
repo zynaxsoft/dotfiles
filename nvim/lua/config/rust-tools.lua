@@ -2,13 +2,6 @@
 function init(on_attach, capabilities)
   require('rust-tools').setup {
     tools = { -- rust-tools options
-      -- automatically set inlay hints (type hints)
-      -- There is an issue due to which the hints are not applied on the first
-      -- opened file. For now, write to the file to trigger a reapplication of
-      -- the hints or just run :RustSetInlayHints.
-      -- default: true
-      autoSetHints = true,
-
       -- whether to show hover actions inside the hover window
       -- this overrides the default hover handler so something like lspsaga.nvim's hover would be overriden by this
       -- default: true
@@ -24,24 +17,19 @@ function init(on_attach, capabilities)
 
       -- These apply to the default RustSetInlayHints command
       inlay_hints = {
+        -- automatically set inlay hints (type hints)
+        -- There is an issue due to which the hints are not applied on the first
+        -- opened file. For now, write to the file to trigger a reapplication of
+        -- the hints or just run :RustSetInlayHints.
+        -- default: true
+        auto = true,
 
         -- Only show inlay hints for the current line
         only_current_line = true,
 
-        -- Event which triggers a refersh of the inlay hints.
-        -- You can make this "CursorMoved" or "CursorMoved,CursorMovedI" but
-        -- not that this may cause higher CPU usage.
-        -- This option is only respected when only_current_line and
-        -- autoSetHints both are true.
-        only_current_line_autocmd = 'CursorHold',
-
         -- whether to show parameter hints with the inlay hints or not
         -- default: true
         show_parameter_hints = true,
-
-        -- whether to show variable name before type hints with the inlay hints or not
-        -- default: false
-        show_variable_name = false,
 
         -- prefix for parameter hints
         -- default: "<-"
@@ -180,18 +168,21 @@ function init(on_attach, capabilities)
       settings = {
         ['rust-analyzer'] = {
           cargo = {
-            features = "all",
+            features = 'all',
             allFeatures = true,
           },
           diagnostics = {
             disabled = { 'inactive-code' },
           },
           checkOnSave = {
-            command = "clippy",
-            extraArgs = { '--',
-            '-W', 'clippy::pedantic',
-            '-W', 'clippy::nursery',
-          },
+            command = 'clippy',
+            extraArgs = {
+              '--',
+              '-W',
+              'clippy::pedantic',
+              '-W',
+              'clippy::nursery',
+            },
           },
         },
       },
