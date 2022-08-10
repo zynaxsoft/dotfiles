@@ -26,6 +26,6 @@ vim.keymap.set('', '<a-0>', function() set_font_size(12.5) end, opts)
 vim.keymap.set('', '<C-/>', [[<cmd>NvimTreeToggle<cr>]], opts)
 
 -- nvui setup
-vim.cmd [[
-  cd ~
-]]
+-- vim.cmd [[
+--   cd ~
+-- ]]
