@@ -6,13 +6,13 @@ pushd "$(dirname "$0")" > /dev/null
 echo "adding latest git, nvim, and github cli repository"
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
-# github cli
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-key C99B11DEB97541F0
-sudo apt-add-repository -y https://cli.github.com/packages
-sudo apt update
 
-# install github cli
-sudo apt install -y gh
+# github cli
+curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& sudo chmod go+r /usr/share/keyrings/githubcli-archive-keyring.gpg \
+&& echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
+&& sudo apt update \
+&& sudo apt install gh -y
 
 # install curl
 sudo apt install -y curl
