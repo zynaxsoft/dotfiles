@@ -3,9 +3,14 @@ Ctrl+r to find old commands
 Use ESC-_ for filling last argument
 ---------------------------------
 Vim
-* za to toggle fold, zA toggle fold harder
-* zm increase fold, zM fold all (across buf)
-* zr reduce fold, zR unfold all (across buf)
-* gv to re-select last visual area
+* `za` to toggle fold, zA toggle fold harder
+* `zm` increase fold, zM fold all (across buf)
+* `zr` reduce fold, zR unfold all (across buf)
+* `gv` to re-select last visual area
 * remember you can use shell command to sort, ... things
   e.g. '<,'>!sort
+---
+To use more:
+* `va{` (or any bracket) to select the **next** block.
+* `yiW` (notice capital W) to yank things including punctuation.
+* select with visual mode then `p` to replace the whole thing.
