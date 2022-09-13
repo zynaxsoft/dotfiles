@@ -21,6 +21,7 @@ function M.setup()
         '--column',
         '--smart-case',
         '--trim',
+        '--hidden',
       },
     },
     pickers = {
