@@ -14,3 +14,4 @@ To use more:
 * `va{` (or any bracket) to select the **next** block.
 * `yiW` (notice capital W) to yank things including punctuation.
 * select with visual mode then `p` to replace the whole thing.
+* % motion
