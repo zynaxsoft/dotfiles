@@ -157,7 +157,14 @@ function init(on_attach, capabilities)
     -- these override the defaults set by rust-tools.nvim
     -- see https://github.com/neovim/nvim-lspconfig/blob/master/doc/server_configurations.md#rust_analyzer
     server = {
-      on_attach = on_attach,
+      on_attach = function(client, bufnr)
+        local function buf_set_keymap(...)
+          vim.api.nvim_buf_set_keymap(bufnr, ...)
+        end
+        local opts = { noremap = true, silent = true }
+        on_attach(client, bufnr)
+        buf_set_keymap('n', 'K', '<cmd>RustHoverActions<CR>', opts)
+      end,
       capabilities = capabilities,
       -- standalone file support
       -- setting it to false may improve startup time
