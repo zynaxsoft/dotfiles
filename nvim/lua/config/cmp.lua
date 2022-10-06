@@ -17,12 +17,18 @@ cmp.setup {
     },
     ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
   },
-  sources = cmp.config.sources {
+  sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim-lsp-signature-help' },
     { name = 'vsnip' },
-    { name = 'buffer' },
+  }, {
+    { name = 'calc' },
+    { name = 'emoji', option = { insert = true } },
+    { name = 'path' },
+    { name = 'crates' },
+  }, {
     { name = 'treesitter' },
+    { name = 'buffer' },
     { name = 'rg' },
     {
       name = 'tmux',
@@ -33,11 +39,7 @@ cmp.setup {
         trigger_characters_ft = {}, -- { filetype = { '.' } }
       },
     },
-    { name = 'calc' },
-    { name = 'emoji', option = { insert = true } },
-    { name = 'path' },
-    { name = 'crates' },
-  },
+  }),
   experimental = {
     ghost_text = true,
   },
@@ -65,7 +67,7 @@ cmp.setup {
 }
 
 cmdline_mapping = {
-  ["<CR>"] = {
+  ['<CR>'] = {
     c = function(fallback)
       if cmp.visible() and cmp.get_selected_entry() then
         cmp.confirm()
