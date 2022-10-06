@@ -158,9 +158,9 @@ return require('packer').startup(function(use)
 
   -- Enhancement
   use {
-    "tversteeg/registers.nvim",
+    'tversteeg/registers.nvim',
     config = function()
-      require("registers").setup()
+      require('registers').setup()
     end,
   }
   use {
@@ -201,6 +201,15 @@ return require('packer').startup(function(use)
     end,
     opt = true,
     cmd = { 'Octo' },
+  }
+  use {
+    'ThePrimeagen/harpoon',
+    requires = {
+      'nvim-lua/plenary.nvim',
+    },
+    config = function ()
+      require('harpoon').setup()
+    end,
   }
 
   -- Git
