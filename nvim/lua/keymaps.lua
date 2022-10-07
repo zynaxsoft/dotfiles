@@ -59,8 +59,8 @@ map('n', 'gi', telescope.lsp_implementations)
 map('n', 'gr', telescope.lsp_references)
 
 -- harpoon 🔱
-map('n', '<leader>m', function() require('harpoon.mark').add_file() end)
-map('n', '<c-m>', function() require('harpoon.ui').toggle_quick_menu() end)
+map('n', '<leader>n', function() require('harpoon.mark').add_file() end)
+map('n', '<A-n>', function() require('harpoon.ui').toggle_quick_menu() end)
 map('n', '<leader>1', function() require("harpoon.ui").nav_file(1) end)
 map('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end)
 map('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end)
