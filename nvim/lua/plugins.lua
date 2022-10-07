@@ -12,7 +12,14 @@ return require('packer').startup(function(use)
   }
 
   -- GUI
-  use { 'ishan9299/nvim-solarized-lua', as = 'solarized' }
+  -- use { 'ishan9299/nvim-solarized-lua', as = 'solarized' }
+  use {
+    'catppuccin/nvim',
+    as = 'catppuccin',
+    config = function()
+      require 'config.catppuccin'
+    end,
+  }
   use {
     'nvim-lualine/lualine.nvim',
     config = function()
@@ -207,7 +214,7 @@ return require('packer').startup(function(use)
     requires = {
       'nvim-lua/plenary.nvim',
     },
-    config = function ()
+    config = function()
       require('harpoon').setup()
     end,
   }
