@@ -157,12 +157,12 @@ return require('packer').startup(function(use)
   -- }
 
   -- Enhancement
-  use {
-    'tversteeg/registers.nvim',
-    config = function()
-      require('registers').setup()
-    end,
-  }
+  -- use {
+  --   'tversteeg/registers.nvim',
+  --   config = function()
+  --     require('registers').setup()
+  --   end,
+  -- }
   use {
     'sudormrfbin/cheatsheet.nvim',
     requires = {
