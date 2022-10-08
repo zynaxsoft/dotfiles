@@ -103,7 +103,7 @@ tmux_conf_theme_mode_bg='#bbbbbb'                       # yellow
 tmux_conf_theme_mode_attr='none'
 
 # status line style
-tmux_conf_theme_status_fg='#8a8a8a'                     # light gray
+tmux_conf_theme_status_fg='#{thm_fg}'                     # light gray
 tmux_conf_theme_status_bg='#{thm_bg}'
 tmux_conf_theme_status_attr='none'
 
