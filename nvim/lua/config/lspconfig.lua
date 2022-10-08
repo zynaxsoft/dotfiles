@@ -49,9 +49,9 @@ local on_attach = function(client, bufnr)
   -- Semantic highlighting
   if client.server_capabilities.documentHighlightProvider then
     vim.cmd [[
-      hi LspReferenceRead guibg=#073642 gui=NONE
-      hi LspReferenceText guibg=#073642 gui=NONE
-      hi LspReferenceWrite guibg=#073642 gui=NONE
+      hi LspReferenceRead guibg=#363a4f gui=NONE
+      hi LspReferenceText guibg=#363a4f gui=NONE
+      hi LspReferenceWrite guibg=#363a4f gui=NONE
       augroup lsp_document_highlight
         autocmd! * <buffer>
         autocmd CursorHold <buffer> lua vim.lsp.buf.document_highlight()
