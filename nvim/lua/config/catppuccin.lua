@@ -28,7 +28,7 @@ require('catppuccin').setup {
     nvimtree = true,
     telescope = true,
     treesitter = true,
-    trouble = true,
+    -- trouble = true,
 
   },
   color_overrides = {},
