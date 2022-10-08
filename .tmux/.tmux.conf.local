@@ -148,8 +148,8 @@ tmux_conf_theme_window_status_current_format='#I #W'
 #tmux_conf_theme_window_status_current_format='#I #W#{?window_zoomed_flag,🔍,}'
 
 # window activity status style
-tmux_conf_theme_window_status_activity_fg='default'
-tmux_conf_theme_window_status_activity_bg='default'
+tmux_conf_theme_window_status_activity_fg='#{thm_blue}'
+tmux_conf_theme_window_status_activity_bg='#{thm_bg}'
 tmux_conf_theme_window_status_activity_attr='underscore'
 
 # window bell status style
