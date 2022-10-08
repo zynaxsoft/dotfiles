@@ -125,8 +125,8 @@ tmux_conf_theme_terminal_title='#h ❐ #S ● #I #W'
 #     - #{hostname_ssh}
 #     - #{username}
 #     - #{username_ssh}
-tmux_conf_theme_window_status_fg='#{thm_fg}'              # light gray
-tmux_conf_theme_window_status_bg='#{thm_bg}'
+tmux_conf_theme_window_status_fg='#cad3f5'              # light gray
+tmux_conf_theme_window_status_bg='#181926'
 tmux_conf_theme_window_status_attr='none'
 tmux_conf_theme_window_status_format='#I #W'
 #tmux_conf_theme_window_status_format='#{circled_window_index} #W'
