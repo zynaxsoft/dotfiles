@@ -7,11 +7,7 @@ end
 function mason.lspconfig()
   require('mason-lspconfig').setup {
     ensure_installed = {
-      'pylint',
-      'flake8',
-      'black',
-      'stylua',
-      'rust-analyzer',
+      'rust_analyzer',
     },
     automatic_installation = true,
   }
