@@ -1,5 +1,5 @@
 -- https://github.com/simrat39/rust-tools.nvim/issues/196
-function init(on_attach, capabilities)
+function init(on_attach_in, capabilities)
   require('rust-tools').setup {
     tools = { -- rust-tools options
       -- whether to show hover actions inside the hover window
@@ -162,7 +162,7 @@ function init(on_attach, capabilities)
           vim.api.nvim_buf_set_keymap(bufnr, ...)
         end
         local opts = { noremap = true, silent = true }
-        on_attach(client, bufnr)
+        on_attach_in(client, bufnr)
         buf_set_keymap('n', 'K', '<cmd>RustHoverActions<CR>', opts)
       end,
       capabilities = capabilities,
