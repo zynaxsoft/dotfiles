@@ -67,7 +67,7 @@ echo "install starship prompt"
 curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
 echo "installing python(s)"
-sudo apt install -y python python3-pip
+sudo apt install -y python3 python3-pip
 sudo apt install -y python3.7 python3.7-venv
 sudo apt install -y python3.8 python3.8-venv
 sudo apt install -y python3.9 python3.9-venv
