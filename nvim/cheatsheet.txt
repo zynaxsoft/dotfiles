@@ -25,6 +25,6 @@ select the diff | do
 ## delete-buffer
 :bd <type path> press <C-a> 2 times | :bd
 
-## quickfix
-grep to quickfix | :grep <pattern> <file glob>
+## quickfix \v for very magic (no need escaping characters with backslash)
+grep to quickfix | :grep \v<pattern> <file glob>
 Perform command on every quickfix |:cdo <command>
