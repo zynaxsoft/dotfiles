@@ -4,12 +4,12 @@ return require('packer').startup(function(use)
 
   -- Core
   use 'nvim-lua/plenary.nvim'
-  use {
-    'nathom/filetype.nvim',
-    config = function()
-      require 'config.filetype'
-    end,
-  }
+  -- use {
+  --   'nathom/filetype.nvim',
+  --   config = function()
+  --     require 'config.filetype'
+  --   end,
+  -- }
 
   -- GUI
   -- use { 'ishan9299/nvim-solarized-lua', as = 'solarized' }
