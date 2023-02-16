@@ -100,7 +100,7 @@ lspconfig.pyright.setup {
 -- }
 
 -- For LSP servers that don't need extra config
-local servers = { 'taplo', 'sumneko_lua', 'terraformls' }
+local servers = { 'taplo', 'lua_ls', 'terraformls' }
 for _, lsp in pairs(servers) do
   require('lspconfig')[lsp].setup {
     on_attach = on_attach,
