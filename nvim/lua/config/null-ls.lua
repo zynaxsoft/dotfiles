@@ -32,7 +32,7 @@ function init(on_attach)
       -- null_ls.builtins.diagnostics.yamllint,
       null_ls.builtins.diagnostics.eslint,
       -- python
-      null_ls.builtins.diagnostics.pylint,
+      -- null_ls.builtins.diagnostics.pylint,
       null_ls.builtins.diagnostics.flake8,
       -- lua
       -- null_ls.builtins.diagnostics.selene,
