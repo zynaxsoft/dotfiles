@@ -16,8 +16,8 @@ map('n', '<leader>fC', [[:Git mergetool<cr> :ccl<cr> :Telescope quickfix<cr>]])
 map({ 'n', 'v' }, '<C-h>', [[:nohlsearch<cr>]], { silent = true })
 
 -- Jump to start and end of line using the home row keys
-map('', 'H', '^')
-map('', 'L', '$')
+-- map('', 'H', '^')
+-- map('', 'L', '$')
 
 map('n', '<c-q>', [[<cmd>TroubleToggle document_diagnostics<cr>]])
 map('n', '<a-q>', [[<cmd>TroubleToggle workspace_diagnostics<cr>]])
