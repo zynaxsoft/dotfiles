@@ -5,6 +5,7 @@ map('n', '<Leader>b', [[:Gitsigns toggle_current_line_blame<cr>]], { silent = tr
 map('n', '<Leader>B', [[:Git blame<cr>]], { silent = true })
 -- Fugitive
 map('n', '<leader>dd', [[:Gvdiffsplit!<cr>]], { silent = true })
+map('n', '<leader>dm', [[:Git mergetool<cr>]], { silent = true })
 map('n', '<leader>dh', [[:diffget //2<cr>]], { silent = true })
 map('n', '<leader>dl', [[:diffget //3<cr>]], { silent = true })
 map('n', 'gl', [[:.Gclog!<cr>]])
