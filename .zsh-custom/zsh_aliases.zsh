@@ -15,6 +15,9 @@ alias vim='nvim'
 alias vi='nvim'
 alias vimdiff='nvim -d'
 
+alias stgs='stg status'
+alias stgss='stg series --description'
+
 _tmux_kill_session() {
     tmux kill-session -t $1
 }
