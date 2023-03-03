@@ -22,6 +22,7 @@ delete inside symbols | dis{symbol}<cr>
 initiate 3 way diff. | <leader>dd
 select the diff | do
 merge tool :Git mergetool | <leader>dm
+Find conflicts and use quickfix list to navigate | :grep <<<<<
 
 ## delete-buffer
 :bd <type path> press <C-a> 2 times | :bd
