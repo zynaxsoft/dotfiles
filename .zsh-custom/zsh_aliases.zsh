@@ -11,6 +11,8 @@ alias ls='exa'
 alias ll='ls --icons --git -lg'
 alias la='ll -a'
 
+alias et='et -I'
+
 alias vim='nvim'
 alias vi='nvim'
 alias vimdiff='nvim -d'

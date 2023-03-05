@@ -132,6 +132,7 @@ CARGO_DIR=$HOME/.cargo/bin
 
 echo "installing rust tools"
 $CARGO_DIR/cargo install exa&  # ls alternative
+$CARGO_DIR/cargo install erdtree&  # beautiful tree
 
 echo "installing langauge servers"
 ./install-lang-server.sh
