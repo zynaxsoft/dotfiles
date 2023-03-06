@@ -1,6 +1,7 @@
 You can use Ctrl+t to find files
 Ctrl+r to find old commands
 Use ESC-_ for filling last argument
+Use Alt+C for find a directory to cd
 ---------------------------------
 Vim
 * `za` to toggle fold, zA toggle fold harder
