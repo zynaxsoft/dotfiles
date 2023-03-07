@@ -203,3 +203,10 @@ if test -f /usr/bin/terraform; then
     autoload -U +X bashcompinit && bashcompinit
     complete -o nospace -C /usr/bin/terraform terraform
 fi
+
+# bun completions
+[ -s "/home/tanapol/.bun/_bun" ] && source "/home/tanapol/.bun/_bun"
+
+# bun
+export BUN_INSTALL="$HOME/.bun"
+export PATH="$BUN_INSTALL/bin:$PATH"
