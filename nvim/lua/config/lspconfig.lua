@@ -37,15 +37,6 @@ local on_attach = function(client, bufnr)
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
-  -- Get signatures (and _only_ signatures) when in argument lists.
-  require('lsp_signature').on_attach {
-    bind = true,
-    -- doc_lines = 0,
-    handler_opts = {
-      border = 'rounded',
-    },
-    hi_parameter = 'LspSignatureActiveParameter',
-  }
   -- Semantic highlighting
   if client.server_capabilities.documentHighlightProvider then
     vim.cmd [[

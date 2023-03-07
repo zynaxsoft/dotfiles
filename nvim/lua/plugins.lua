@@ -87,7 +87,12 @@ return require('packer').startup(function(use)
       require 'config.lspconfig'
     end,
   }
-  use 'ray-x/lsp_signature.nvim'
+  use {
+    'ray-x/lsp_signature.nvim',
+    config = function()
+      require 'config.lsp-signature'
+    end,
+  }
 
   -- LSP Installer
   use {
