@@ -3,9 +3,13 @@
 pushd "$(dirname "$0")" > /dev/null
 
 # test $(awk -F= '/^NAME/{print $2}' /etc/os-release) = "\"Ubuntu\"
-echo "adding latest git, nvim, and github cli repository"
+echo "Installing latest git"
 sudo add-apt-repository -y ppa:git-core/ppa
-sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo apt install git
+
+# curl
+echo "Installing curl"
+sudo apt install -y curl
 
 # github cli
 curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo dd of=/usr/share/keyrings/githubcli-archive-keyring.gpg \
@@ -13,9 +17,6 @@ curl -fsSL https://cli.github.com/packages/githubcli-archive-keyring.gpg | sudo 
 && echo "deb [arch=$(dpkg --print-architecture) signed-by=/usr/share/keyrings/githubcli-archive-keyring.gpg] https://cli.github.com/packages stable main" | sudo tee /etc/apt/sources.list.d/github-cli.list > /dev/null \
 && sudo apt update \
 && sudo apt install gh -y
-
-# install curl
-sudo apt install -y curl
 
 echo "initialize and update git submodules"
 git submodule init
@@ -31,7 +32,6 @@ echo "installing tools"
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep fd-find
 mkdir -p ~/.local/bin
 ln -s $(which fdfind) ~/.local/bin/fd
-sudo apt install -y fzf
 git clone --depth 1 https://github.com/junegunn/fzf.git ~/.local/bin/fzf
 ~/.local/bin/fzf/install --all
 
@@ -46,6 +46,7 @@ echo "installing vim"
 sudo apt install -y vim-gtk
 
 echo "install neovim"
+sudo add-apt-repository -y ppa:neovim-ppa/unstable
 sudo apt install -y neovim
 git clone --depth 1 https://github.com/wbthomason/packer.nvim\
  ~/.local/share/nvim/site/pack/packer/start/packer.nvim
@@ -57,32 +58,26 @@ echo "installing zsh"
 sudo apt install -y zsh
 zsh -ic "compaudit | xargs chmod g-w,o-w" || true
 
-# echo "install wezterm"
-# curl -LO https://github.com/wez/wezterm/releases/download/20220101-133340-7edc5b5a/wezterm-20220101-133340-7edc5b5a.Ubuntu20.04.deb
-# sudo apt install -y ./wezterm-20220101-133340-7edc5b5a.Ubuntu20.04.deb
-# # make wezterm default terminal
-# sudo update-alternatives --install /usr/bin/x-terminal-emulator x-terminal-emulator /usr/bin/wezterm 50
-
 echo "install starship prompt"
 curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 
 echo "installing python(s)"
 sudo apt install -y python3 python3-pip
-sudo apt install -y python3.7 python3.7-venv
-sudo apt install -y python3.8 python3.8-venv
-sudo apt install -y python3.9 python3.9-venv
 sudo apt install -y python3.10 python3.10-venv
-pip3 install flake8 pylint
-pip3 install jedi
 
 echo "installing rust"
 sudo apt install curl
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
-alias cargo="$HOME/.cargo/bin/cargo"
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+export PATH=$PATH:$HOME/.cargo/bin
+
+echo "installing rustup completions"
+rustup completions zsh > ~/.config/zfunc/_rustup
+rustup completions zsh cargo > ~/.config/zfunc/_cargo
+
 
 echo "creating symlink to $HOME"
 mkdir -p $HOME/.config
-for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom .wezterm.lua
+for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
     do
     if test -f "$HOME/$file"; then
             echo "backing up $HOME/$file to $file.bak"
@@ -97,9 +92,6 @@ ln -s $HOME/dotfiles/starship.toml $HOME/.config/
 ln -s $HOME/dotfiles/nvim $HOME/.config/
 ln -s $HOME/dotfiles/zfunc $HOME/.config/zfunc
 ln -s $HOME/dotfiles/bin/win32yank.exe $HOME/dotfiles/bin/win32yank
-
-echo "installing pylint3"
-sudo apt install -y pylint3
 
 echo "installing nvim plugins"
 sudo apt install -y cmake
@@ -124,15 +116,15 @@ if uname -r | grep -qi microsoft; then
   sudo cp -f $HOME/dotfiles/wsl.conf /etc/wsl.conf
 fi
 
-echo "installing rustup completions"
-CARGO_DIR=$HOME/.cargo/bin
-# already have in dotfiles/zfunc
-# $CARGO_DIR/rustup completions zsh > ~/.config/zfunc/_rustup
-# $CARGO_DIR/rustup completions zsh cargo > ~/.config/zfunc/_cargo
+echo "installing stacked git"
+git clone https://github.com/stacked-git/stgit stgit-install
+pushd stgit-install > /dev/null
+make prefix=$HOME/.local install
+popd > /dev/null
 
 echo "installing rust tools"
-$CARGO_DIR/cargo install exa&  # ls alternative
-$CARGO_DIR/cargo install erdtree&  # beautiful tree
+cargo install exa&  # ls alternative
+cargo install erdtree&  # beautiful tree
 
 echo "installing langauge servers"
 ./install-lang-server.sh
