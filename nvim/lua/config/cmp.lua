@@ -22,16 +22,24 @@ cmp.setup {
     { name = 'nvim-lsp-signature-help' },
     { name = 'vsnip' },
   }, {
-    { name = 'calc' },
     { name = 'emoji', option = { insert = true } },
     { name = 'path' },
     { name = 'crates' },
   }, {
-    { name = 'treesitter' },
-    { name = 'buffer' },
-    { name = 'rg' },
+    { name = 'treesitter', keyword_length = 3 },
+    { name = 'buffer', keyword_length = 3 },
+    { name = 'calc', keyword_length = 3 },
+  }, {
+    {
+      name = 'rg',
+      keyword_length = 3,
+      option = {
+        additional_arguments = '--one-file-system ' .. '--ignore-file ~/dotfiles/nvim/ignore.rg',
+      },
+    },
     {
       name = 'tmux',
+      keyword_length = 3,
       option = {
         all_panes = false,
         label = '[tmux]',

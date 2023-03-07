@@ -1,0 +1,16 @@
+Pictures/
+Videos/
+Documents/
+go/pkg/
+.node_modules/
+.config/google-chrome/
+.cache/
+.java/
+.mozilla/
+.rustup/
+.encryptfs/
+.local/
+.npm/
+.cargo/
+.git
+target/
