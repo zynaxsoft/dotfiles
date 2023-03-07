@@ -62,6 +62,15 @@ lspconfig.pyright.setup {
   flags = {
     debounce_text_changes = 150,
   },
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = 'openFilesONly',
+      },
+    },
+  },
   capabilities = capabilities,
 }
 
