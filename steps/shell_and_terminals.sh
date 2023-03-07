@@ -7,6 +7,9 @@ echo "installing zsh"
 sudo apt install -y zsh
 zsh -ic "compaudit | xargs chmod g-w,o-w" || true
 
+echo "installing fish"
+sudo apt install fish
+
 echo "install starship prompt"
 curl -fsSL https://starship.rs/install.sh | sh -s -- -y
 

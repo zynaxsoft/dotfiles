@@ -17,4 +17,5 @@ ln -s $HOME/dotfiles/starship.toml $HOME/.config/
 ln -s $HOME/dotfiles/nvim $HOME/.config/
 ln -s $HOME/dotfiles/zfunc $HOME/.config/zfunc
 ln -s $HOME/dotfiles/bin/win32yank.exe $HOME/dotfiles/bin/win32yank
-
+mv $HOME/.config/fish $HOME/.config/fish.bak 2> /dev/null
+ln -s $HOME/dotfiles/fish $HOME/.config/fish

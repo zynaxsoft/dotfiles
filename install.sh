@@ -9,10 +9,11 @@ export PATH=$PATH:$HOME/.cargo/bin
 echo "Custom ppa"
 sudo add-apt-repository -y ppa:git-core/ppa
 sudo add-apt-repository -y ppa:neovim-ppa/unstable
+sudo add-apt-repository ppa:fish-shell/release-3
 sudo apt update
 
 echo "Installing prerequisites"
-sudo apt install -y git curl wget cmake build-essential
+sudo apt install -y git curl wget cmake build-essential libssl-dev openssl
 
 echo "Switching remote origin's URL of this git repo to ssh protocol"
 git remote set-url origin 'git@github.com:zynaxsoft/dotfiles'
