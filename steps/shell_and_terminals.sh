@@ -3,10 +3,6 @@
 echo "installing tmux"
 sudo apt install -y tmux
 
-echo "installing zsh"
-sudo apt install -y zsh
-zsh -ic "compaudit | xargs chmod g-w,o-w" || true
-
 echo "installing fish"
 sudo apt install fish
 

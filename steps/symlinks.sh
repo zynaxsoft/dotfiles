@@ -2,7 +2,7 @@
 
 echo "creating symlink to $HOME"
 mkdir -p $HOME/.config
-for file in .vimrc .zshrc .tmux/.tmux.conf .tmux/.tmux.conf.local .oh-my-zsh .zsh-custom
+for file in .vimrc .tmux/.tmux.conf .tmux/.tmux.conf.local
     do
     if test -f "$HOME/$file"; then
             echo "backing up $HOME/$file to $file.bak"
