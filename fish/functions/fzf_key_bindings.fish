@@ -1,1 +1,0 @@
-/home/tanapol/.local/fzf/shell/key-bindings.fish

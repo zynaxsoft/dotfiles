@@ -1,8 +1,13 @@
-set -a fish_function_path \
-    ~/.config/fish/functions/utils \
-    ~/.config/fish/functions/git
+set -a fish_function_path ~/dotfiles/fish/functions
+set -a fish_complete_path ~/dotfiles/fish/completions
+
+source ~/dotfiles/fish/configs/path.fish
 
 if status is-interactive
+    source ~/dotfiles/fish/configs/greetings.fish
+    source ~/dotfiles/fish/configs/abbr.fish
+    source ~/dotfiles/fish/configs/abbr-git.fish
+
     starship init fish | source
     eval ssh-agent > /dev/null
     set -gx GPG_TTY $(tty)
