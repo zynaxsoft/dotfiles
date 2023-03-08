@@ -1,5 +1,5 @@
 FZF:
-Ctrl+alt+f to find files
+Ctrl+t to find files
 Ctrl+r to find old commands
 Ctrl+v for environment variables
 Ctrl+alt+l for git log

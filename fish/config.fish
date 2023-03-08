@@ -8,6 +8,8 @@ if status is-interactive
     source ~/dotfiles/fish/configs/abbr.fish
     source ~/dotfiles/fish/configs/abbr-git.fish
 
+    fzf_configure_bindings --directory=\ct
+
     starship init fish | source
     eval ssh-agent > /dev/null
     set -gx GPG_TTY $(tty)
