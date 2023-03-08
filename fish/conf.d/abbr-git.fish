@@ -25,7 +25,7 @@ if status is-interactive
         abbr -a gds "git diff --staged"
         abbr -a gdca "git diff --cached"
 
-        alias gdct "git describe --tags $(git rev-list --tags --max-count=1)"
+        alias gdct 'git describe --tags $(git rev-list --tags --max-count=1)'
 
         abbr -a gf "git fetch"
         abbr -a gfa "git fetch --all --prune"
