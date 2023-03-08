@@ -1,15 +1,10 @@
 if status is-interactive
     function __add_abbr
-        # helpers
-        function git_current_branch -d 'Detect name of current branch of current git repository'
-          echo (git branch --show-current)
-        end
-
         abbr -a ga "git add -i"
         abbr -a gaa "git add -A"
-        abbr -a ggpush "git push origin $(git_current_branch)"
+        abbr -a ggpush "git push origin HEAD"
         abbr -a gl "git pull"
-        abbr -a ggpull "git pull origin $(git_current_branch)"
+        abbr -a ggpull "git pull origin HEAD"
 
         abbr -a gc "git commit -v"
         abbr -a gc! "git commit -v --amend"
@@ -30,7 +25,7 @@ if status is-interactive
         abbr -a gds "git diff --staged"
         abbr -a gdca "git diff --cached"
 
-        abbr -a gdct "git describe --tags $(git rev-list --tags --max-count=1)"
+        alias gdct "git describe --tags $(git rev-list --tags --max-count=1)"
 
         abbr -a gf "git fetch"
         abbr -a gfa "git fetch --all --prune"
