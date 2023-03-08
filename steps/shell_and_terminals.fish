@@ -7,9 +7,7 @@ echo "installing fish"
 # fish is already installed at the beginning
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher update
-fish_config theme choose "Catppuccin Macchiato"
-yes | fish_config theme save
+yes | fish_config theme save "Catppuccin Macchiato"
 
 echo "install starship prompt"
 curl -fsSL https://starship.rs/install.sh | sh -s -- -y
-
