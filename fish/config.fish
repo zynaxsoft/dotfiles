@@ -11,7 +11,7 @@ if status is-interactive
     fzf_configure_bindings --directory=\ct
 
     starship init fish | source
-    eval ssh-agent > /dev/null
+    eval $(ssh-agent -c) > /dev/null
     set -gx GPG_TTY $(tty)
     set -gx EDITOR /usr/bin/nvim
 end
