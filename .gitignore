@@ -1,4 +1,3 @@
-/fish/fish_variables
 /bin/win32yank
 # vim plugins
 .vim/plugged/*
