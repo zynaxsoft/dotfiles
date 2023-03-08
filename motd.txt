@@ -1,5 +1,10 @@
-You can use Ctrl+t to find files
+FZF:
+Ctrl+alt+f to find files
 Ctrl+r to find old commands
+Ctrl+v for environment variables
+Ctrl+alt+l for git log
+Ctrl+alt+s for git status
+Ctrl+alt+p for processes
 Use ESC-_ for filling last argument
 Use Alt+C for find a directory to cd
 ---------------------------------
