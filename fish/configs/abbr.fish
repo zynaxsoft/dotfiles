@@ -20,4 +20,20 @@ if status is-interactive
     abbr -a stgss stg status
 
     abbr -a tf terraform
+
+    function last_history_item
+        echo $history[1]
+    end
+    # function n_argument_item
+    #     set index (string replace "!" "" $argv)
+    #     set args (string split " " $history[1])
+    #     set -e args[1]
+    #     echo ($args[$index])
+    # end
+    # function last_argument_item
+    #     n_argument_item !-1
+    # end
+    abbr -a !! --position anywhere --function last_history_item
+    # abbr -a !\$ --position anywhere --function last_argument_item
+    # abbr -a n_args --position anywhere --function n_argument_item --regex "!-?\d"
 end
