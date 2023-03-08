@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 echo "install and config gpg-agent"
 sudo apt install -y gnupg2 gnupg-agent

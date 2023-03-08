@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 echo "install vim & neovim"
 sudo apt install -y neovim vim-gtk

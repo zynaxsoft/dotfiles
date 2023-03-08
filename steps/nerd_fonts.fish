@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 echo "installing nerd fonts"
 mkdir -p ~/.local/share/fonts

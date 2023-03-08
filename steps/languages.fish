@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 echo "installing python(s)"
 sudo apt install -y python3 python3-pip

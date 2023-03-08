@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 echo "Installing stacked git"
 git clone https://github.com/stacked-git/stgit stgit-install

@@ -1,16 +1,16 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 echo "creating symlink to $HOME"
 mkdir -p $HOME/.config
-for file in .vimrc .tmux/.tmux.conf .tmux/.tmux.conf.local
-    do
-    if test -f "$HOME/$file"; then
-            echo "backing up $HOME/$file to $file.bak"
-            mv $HOME/$file $HOME/$file.bak
-    fi
+set files_to_links .vimrc .tmux/.tmux.conf .tmux/.tmux.conf.local
+for file in files_to_links
+    if test -f $HOME/$file
+        echo "backing up $HOME/$file to $file.bak"
+        mv $HOME/$file $HOME/$file.bak
+    end
     echo "ln -s $HOME/dotfiles/$file $HOME/"
     ln -s $HOME/dotfiles/$file $HOME/
-done
+end
 ln -s $HOME/dotfiles/.vim $HOME/
 ln -s $HOME/dotfiles/.gitconfig $HOME/
 ln -s $HOME/dotfiles/starship.toml $HOME/.config/

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env fish
 
 echo "Installing Tools"
 sudo apt install -y -o Dpkg::Options::="--force-overwrite" bat ripgrep fd-find
