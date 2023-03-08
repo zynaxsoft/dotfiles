@@ -5,7 +5,7 @@ Ctrl+v for environment variables
 Ctrl+alt+l for git log
 Ctrl+alt+s for git status
 Ctrl+alt+p for processes
-Use ESC-_ for filling last argument
+Use Alt+. for filling last argument
 Use Alt+C for find a directory to cd
 ---------------------------------
 Vim
