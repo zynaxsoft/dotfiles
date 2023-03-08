@@ -10,6 +10,6 @@ mkdir -p ~/.config/fish
 ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln -s ~/dotfiles/fish/fish_plugins ~/.config/fish/fish_plugins
 
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 fisher update
 yes | fish_config theme save Catppuccin\ Macchiato
