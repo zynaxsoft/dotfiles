@@ -4,10 +4,9 @@ abbr -a tks tmux_kill_session
 abbr -a rn source ranger
 
 abbr -a ls exa
-abbr -a ll ls --icons --git -lg
-abbr -a la ll -a
-
-abbr -a et et -I
+alias ll "exa --icons --git -lg"
+alias la "ll -a"
+alias et "et -I"
 
 abbr -a vim nvim
 abbr -a vi nvim
