@@ -4,7 +4,7 @@ echo "installing tmux"
 sudo apt install -y tmux
 
 echo "installing fish"
-sudo apt install fish
+# fish is already installed at the beginning
 curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 fisher update
 fish_config theme choose "Catppuccin Macchiato"
