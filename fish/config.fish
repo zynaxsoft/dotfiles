@@ -14,6 +14,8 @@ if status is-interactive
     source ~/dotfiles/fish/configs/abbr.fish
     source ~/dotfiles/fish/configs/abbr-git.fish
 
+    set -gx COLORTERM truecolor
+
     fzf_configure_bindings --directory=\ct
 
     set -l _nix_fish ~/.nix-profile/etc/profile.d/nix.fish
