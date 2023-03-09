@@ -133,6 +133,12 @@ return require('packer').startup(function(use)
     },
   }
   use {
+    'mtoohey31/cmp-fish',
+    ft = 'fish',
+    opt = true,
+    requires = { 'hrsh7th/nvim-cmp' },
+  }
+  use {
     'saecki/crates.nvim',
     requires = { 'nvim-lua/plenary.nvim' },
     opt = true,

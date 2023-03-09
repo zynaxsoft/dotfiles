@@ -23,6 +23,7 @@ cmp.setup {
     { name = 'vsnip' },
   }, {
     { name = 'emoji', option = { insert = true } },
+    { name = 'fish' },
     { name = 'path' },
     { name = 'crates' },
   }, {
@@ -66,6 +67,7 @@ cmp.setup {
         calc = '[Calc]',
         path = '[Path]',
         crates = '[Crates]',
+        fish = '[Fish]',
       },
       before = function(entry, vim_item)
         return vim_item
