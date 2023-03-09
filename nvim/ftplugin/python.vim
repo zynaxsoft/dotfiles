@@ -11,6 +11,7 @@ set softtabstop=4
 " highlight the length over 80column
 " highlight OverLength ctermbg=darkred ctermfg=white guibg=#FFD9D9
 " match OverLength /\%81v.*/
+set colorcolumn=100
 
 "setlocal spell spelllang=en_us,cjk
 hi clear SpellBad
