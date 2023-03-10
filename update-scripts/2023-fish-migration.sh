@@ -9,6 +9,7 @@ rm -rf ~/.config/fish
 mkdir -p ~/.config/fish
 ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
 ln -s ~/dotfiles/fish/fish_plugins ~/.config/fish/fish_plugins
+ln -s ~/dotfiles/fish/my_conf_d.fish ~/.config/fish/conf.d/my_conf_d.fish
 
 fish -c "curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher"
 fisher update
