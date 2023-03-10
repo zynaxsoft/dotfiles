@@ -2,6 +2,7 @@ if status is-interactive
     function __add_abbr
         abbr -a ga "git add -i"
         abbr -a gaa "git add -A"
+        abbr -a gapa "git add --patch"
         abbr -a ggpush "git push origin HEAD"
         abbr -a gl "git pull"
         abbr -a ggpull "git pull origin HEAD"
