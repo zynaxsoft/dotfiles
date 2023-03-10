@@ -28,7 +28,14 @@ cmp.setup {
     { name = 'crates' },
   }, {
     { name = 'treesitter', keyword_length = 3 },
-    { name = 'buffer', keyword_length = 3 },
+    {
+      name = 'buffer',
+      option = {
+        get_bufnrs = function()
+          return vim.api.nvim_list_bufs()
+        end,
+      },
+    },
     { name = 'calc', keyword_length = 3 },
   }, {
     {
