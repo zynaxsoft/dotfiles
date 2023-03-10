@@ -9,6 +9,7 @@ Use Alt+. for filling last argument
 Use Alt+C for find a directory to cd
 ---------------------------------
 Vim
+* :%sm is :%s but always magic
 * `za` to toggle fold, zA toggle fold harder
 * `zm` increase fold, zM fold all (across buf)
 * `zr` reduce fold, zR unfold all (across buf)
