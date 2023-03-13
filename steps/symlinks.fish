@@ -18,6 +18,9 @@ ln -s ~/dotfiles/nvim ~/.config/
 ln -s ~/dotfiles/zfunc ~/.config/zfunc
 ln -s ~/dotfiles/bin/win32yank.exe ~/dotfiles/bin/win32yank
 
+mkdir -p ~/.cargo
+ln -s ~/dotfiles/cargo/config.toml ~/.cargo/config.toml
+
 # Fish stuff
 mv ~/.config/fish ~/.config/fish.bak 2> /dev/null
 ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
