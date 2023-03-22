@@ -6,7 +6,7 @@ Ctrl+alt+l for git log
 Ctrl+alt+s for git status
 Ctrl+alt+p for processes
 Use Alt+. for filling last argument
-Use Alt+C for find a directory to cd
+Use Alt+v to edit command in editor
 ---------------------------------
 Vim
 * :%sm is :%s but always magic
