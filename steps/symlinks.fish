@@ -1,30 +1,43 @@
 #!/usr/bin/env fish
 
-echo "creating symlink to ~"
-mkdir -p ~/.config
-set files_to_link .vimrc .tmux/.tmux.conf .tmux/.tmux.conf.local
-for file in files_to_link
-    if test -f ~/$file
-        echo "backing up ~/$file to $file.bak"
-        mv ~/$file ~/$file.bak
+function _link -d \
+    "1st arg is the file in dotfiles, 2nd arg is the folder \
+    it assumes you kindly put a backslash at the end."
+    set from ~/dotfiles/$argv[1]
+    set target (basename $from)
+    if test (count $argv) -lt 2
+        set to $HOME/$target
+    else
+        set to ~/$argv[2]$target
     end
-    echo "ln -s ~/dotfiles/$file ~/"
-    ln -s ~/dotfiles/$file ~/
+    if not test -L $to
+        echo $to is not a symlink. Creating a back up.
+        echo mv $to $to.bak
+        mv $to $to.bak
+    end
+    echo ln -sfT $from $to
+    ln -sfT $from $to
 end
-ln -s ~/dotfiles/.vim ~/
-ln -s ~/dotfiles/.gitconfig ~/
-ln -s ~/dotfiles/starship.toml ~/.config/
-ln -s ~/dotfiles/nvim ~/.config/
-ln -s ~/dotfiles/zfunc ~/.config/zfunc
-ln -s ~/dotfiles/bin/win32yank.exe ~/dotfiles/bin/win32yank
+
+
+_link .vimrc
+_link .tmux/.tmux.conf
+_link .tmux/.tmux.conf.local
+_link .gitconfig
+
+mkdir -p ~/.config
+_link starship.toml .config/
+_link nvim .config/
+_link fish/config.fish .config/fish/
+_link fish/fish_plugins .config/fish/
+_link fish/my_conf_d.fish .config/fish/conf.d/
 
 mkdir -p ~/.cargo
-ln -s ~/dotfiles/cargo/config.toml ~/.cargo/config.toml
+_link cargo/config.toml .cargo/
 
-ln -s ~/dotfiles/.gnupg/gpg.conf ~/.gnupg/gpg.conf
+mkdir -p ~/.gnupg
+_link .gnupg/gpg.conf .gnupg/
 
-# Fish stuff
-mv ~/.config/fish ~/.config/fish.bak 2> /dev/null
-ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
-ln -s ~/dotfiles/fish/fish_plugins ~/.config/fish/fish_plugins
-ln -s ~/dotfiles/fish/my_conf_d.fish ~/.config/fish/conf.d/my_conf_d.fish
+ln -s ~/dotfiles/bin/win32yank.exe ~/dotfiles/bin/win32yank
+
+functions -e _link
