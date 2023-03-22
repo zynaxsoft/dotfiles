@@ -21,6 +21,8 @@ ln -s ~/dotfiles/bin/win32yank.exe ~/dotfiles/bin/win32yank
 mkdir -p ~/.cargo
 ln -s ~/dotfiles/cargo/config.toml ~/.cargo/config.toml
 
+ln -s ~/dotfiles/.gnupg/gpg.conf ~/.gnupg/gpg.conf
+
 # Fish stuff
 mv ~/.config/fish ~/.config/fish.bak 2> /dev/null
 ln -s ~/dotfiles/fish/config.fish ~/.config/fish/config.fish
