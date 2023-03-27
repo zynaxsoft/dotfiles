@@ -20,6 +20,7 @@ if status is-interactive
     abbr -a stgss stg status
 
     abbr -a tf terraform
+    abbr -a osl openssl
 
     function last_history_item
         echo $history[1]
