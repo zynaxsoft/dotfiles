@@ -51,11 +51,6 @@ return require('packer').startup(function(use)
     config = require('config.treesitter').main,
   }
   use {
-    'lewis6991/spellsitter.nvim',
-    config = require('config.treesitter').spell,
-    requires = 'nvim-treesitter/nvim-treesitter',
-  }
-  use {
     'nvim-treesitter/nvim-treesitter-context',
     config = require('config.treesitter').context,
     requires = 'nvim-treesitter/nvim-treesitter',
