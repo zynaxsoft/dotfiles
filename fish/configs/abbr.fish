@@ -21,6 +21,7 @@ if status is-interactive
 
     abbr -a tf terraform
     abbr -a osl openssl
+    abbr -a po poetry
 
     function last_history_item
         echo $history[1]
