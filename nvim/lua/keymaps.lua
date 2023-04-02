@@ -13,6 +13,10 @@ map('n', 'gL', [[:0Gclog!<cr>]])
 map('n', '<leader>fc', [[:Git difftool<cr> :ccl<cr> :Telescope quickfix<cr>]])
 map('n', '<leader>fC', [[:Git mergetool<cr> :ccl<cr> :Telescope quickfix<cr>]])
 
+-- Packer & Mason
+map('n', '<leader><leader>p', [[:PackerSync<cr>]])
+map('n', '<leader><leader>m', [[:Mason<cr>]])
+
 -- Ctrl+h to stop searching
 map({ 'n', 'v' }, '<C-h>', [[:nohlsearch<cr>]], { silent = true })
 
