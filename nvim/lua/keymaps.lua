@@ -67,6 +67,9 @@ map('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end)
 map('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end)
 map('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end)
 
+-- undotree
+map('n', '<leader>u', vim.cmd.UndotreeToggle)
+
 -- quickfix
 map('n', '<leader>q', [[<cmd>copen<cr>]])
 map('n', '<a-j>', [[<cmd>cnext<cr>]])

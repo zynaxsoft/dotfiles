@@ -187,6 +187,8 @@ return require('packer').startup(function(use)
     keys = '<Leader>?',
   }
 
+  use 'mbbill/undotree'
+
   -- Motions
   use { 'machakann/vim-sandwich', opt = true, keys = 's' }
 
