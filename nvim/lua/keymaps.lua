@@ -81,7 +81,7 @@ map('n', '<a-k>', [[<cmd>cprevious<cr>]])
 
 -- nvim-tree
 -- C-_ means C-/
-map('', '<C-_>', [[<cmd>NvimTreeToggle<cr>]])
+map('', '<C-_>', [[<cmd>Neotree toggle<cr>]])
 
 -- Restart lang server
 map('n', '<leader><leader>r', [[<cmd>LspRestart<cr>]], { silent = true })

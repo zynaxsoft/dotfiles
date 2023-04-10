@@ -15,7 +15,7 @@ return {
     config = function()
       require 'config.lualine'
     end,
-    dependencies = { 'arkav/lualine-lsp-progress', 'kyazdani42/nvim-web-devicons' },
+    dependencies = { 'arkav/lualine-lsp-progress', 'nvim-tree/nvim-web-devicons' },
   },
 
   -- Show indent line
@@ -31,7 +31,7 @@ return {
   -- Highlight and preview pattern/regex
   {
     'markonm/traces.vim',
-    event = 'VeryLazy'
+    event = 'VeryLazy',
   },
 
   -- Color
@@ -56,16 +56,41 @@ return {
 
   -- Tree
   {
-    'kyazdani42/nvim-tree.lua',
-    dependencies = {
-      'kyazdani42/nvim-web-devicons',
-    },
-    cmd = 'NvimTreeToggle',
-    config = function()
-      require 'config.nvim-tree'
-    end,
+    'nvim-neo-tree/neo-tree.nvim',
+    cmd = 'Neotree',
     lazy = true,
-    version = 'nightly', -- optional, updated every week. (see issue #1193)
+    deactivate = function()
+      vim.cmd [[Neotree close]]
+    end,
+    config = function()
+      require 'config.neo-tree'
+    end,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+      'nvim-tree/nvim-web-devicons', -- not strictly required, but recommended
+      'MunifTanjim/nui.nvim',
+      {
+        -- only needed if you want to use the commands with "_with_window_picker" suffix
+        's1n7ax/nvim-window-picker',
+        version = 'v1.*',
+        config = function()
+          require('window-picker').setup {
+            autoselect_one = true,
+            include_current = false,
+            filter_rules = {
+              -- filter using buffer options
+              bo = {
+                -- if the file type is one of following, the window will be ignored
+                filetype = { 'neo-tree', 'neo-tree-popup', 'notify' },
+                -- if the buffer type is one of following, the window will be ignored
+                buftype = { 'terminal', 'quickfix' },
+              },
+            },
+            other_win_hl_color = '#e35e4f',
+          }
+        end,
+      },
+    },
   },
 
   -- LSP
@@ -101,14 +126,14 @@ return {
       require 'config.cmp'
     end,
     dependencies = {
-      { 'hrsh7th/cmp-nvim-lsp',                branch = 'main' },
+      { 'hrsh7th/cmp-nvim-lsp', branch = 'main' },
       -- sources
-      { 'hrsh7th/cmp-vsnip',                   branch = 'main' },
-      { 'hrsh7th/cmp-buffer',                  branch = 'main' },
-      { 'hrsh7th/cmp-path',                    branch = 'main' },
-      { 'hrsh7th/cmp-cmdline',                 branch = 'main' },
+      { 'hrsh7th/cmp-vsnip', branch = 'main' },
+      { 'hrsh7th/cmp-buffer', branch = 'main' },
+      { 'hrsh7th/cmp-path', branch = 'main' },
+      { 'hrsh7th/cmp-cmdline', branch = 'main' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', branch = 'main' },
-      { 'hrsh7th/cmp-calc',                    branch = 'main' },
+      { 'hrsh7th/cmp-calc', branch = 'main' },
       'lukas-reineke/cmp-rg',
       'ray-x/cmp-treesitter',
       'andersevenrud/cmp-tmux',
@@ -151,7 +176,7 @@ return {
     config = function()
       require 'config.trouble'
     end,
-    dependencies = 'kyazdani42/nvim-web-devicons',
+    dependencies = 'nvim-tree/nvim-web-devicons',
   },
 
   -- Enhancement
@@ -160,7 +185,7 @@ return {
     config = function()
       require('registers').setup()
     end,
-    event = "VeryLazy",
+    event = 'VeryLazy',
   },
   {
     'sudormrfbin/cheatsheet.nvim',
@@ -176,7 +201,7 @@ return {
   'mbbill/undotree',
 
   -- Motions
-  { 'machakann/vim-sandwich', lazy = true,       keys = 's' },
+  { 'machakann/vim-sandwich', lazy = true, keys = 's' },
 
   -- Tools
   {
@@ -195,7 +220,7 @@ return {
     dependencies = {
       'nvim-lua/plenary.nvim',
       'nvim-telescope/telescope.nvim',
-      'kyazdani42/nvim-web-devicons',
+      'nvim-tree/nvim-web-devicons',
     },
     config = function()
       require 'config.octo'
@@ -211,10 +236,10 @@ return {
     config = function()
       require('harpoon').setup()
     end,
-    event = "VeryLazy",
+    event = 'VeryLazy',
   },
   -- makes some plugins dot-repeatable like leap
-  { "tpope/vim-repeat",       event = "VeryLazy" },
+  { 'tpope/vim-repeat', event = 'VeryLazy' },
 
   -- Git
   {
@@ -258,8 +283,8 @@ return {
       'neovim/nvim-lspconfig',
     },
   },
-  { 'cespare/vim-toml',       lazy = true, ft = { 'toml' } },
-  { 'stephpy/vim-yaml',       lazy = true, ft = { 'yaml', 'yml' } },
+  { 'cespare/vim-toml', lazy = true, ft = { 'toml' } },
+  { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
 
   -- Util
