@@ -1,6 +1,6 @@
 require 'options'
 require 'disable-plugins'
-require 'plugins'
+require 'lazyplugin'
 require 'config'
 require 'colorscheme'
 require 'keymaps'
