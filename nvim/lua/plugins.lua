@@ -29,7 +29,10 @@ return {
   },
 
   -- Highlight and preview pattern/regex
-  'markonm/traces.vim',
+  {
+    'markonm/traces.vim',
+    event = 'VeryLazy'
+  },
 
   -- Color
   'norcalli/nvim-colorizer.lua',
@@ -98,14 +101,14 @@ return {
       require 'config.cmp'
     end,
     dependencies = {
-      { 'hrsh7th/cmp-nvim-lsp', branch = 'main' },
+      { 'hrsh7th/cmp-nvim-lsp',                branch = 'main' },
       -- sources
-      { 'hrsh7th/cmp-vsnip', branch = 'main' },
-      { 'hrsh7th/cmp-buffer', branch = 'main' },
-      { 'hrsh7th/cmp-path', branch = 'main' },
-      { 'hrsh7th/cmp-cmdline', branch = 'main' },
+      { 'hrsh7th/cmp-vsnip',                   branch = 'main' },
+      { 'hrsh7th/cmp-buffer',                  branch = 'main' },
+      { 'hrsh7th/cmp-path',                    branch = 'main' },
+      { 'hrsh7th/cmp-cmdline',                 branch = 'main' },
       { 'hrsh7th/cmp-nvim-lsp-signature-help', branch = 'main' },
-      { 'hrsh7th/cmp-calc', branch = 'main' },
+      { 'hrsh7th/cmp-calc',                    branch = 'main' },
       'lukas-reineke/cmp-rg',
       'ray-x/cmp-treesitter',
       'andersevenrud/cmp-tmux',
@@ -157,6 +160,7 @@ return {
     config = function()
       require('registers').setup()
     end,
+    event = "VeryLazy",
   },
   {
     'sudormrfbin/cheatsheet.nvim',
@@ -172,7 +176,7 @@ return {
   'mbbill/undotree',
 
   -- Motions
-  { 'machakann/vim-sandwich', lazy = true, keys = 's' },
+  { 'machakann/vim-sandwich', lazy = true,       keys = 's' },
 
   -- Tools
   {
@@ -207,7 +211,10 @@ return {
     config = function()
       require('harpoon').setup()
     end,
+    event = "VeryLazy",
   },
+  -- makes some plugins dot-repeatable like leap
+  { "tpope/vim-repeat",       event = "VeryLazy" },
 
   -- Git
   {
@@ -251,7 +258,17 @@ return {
       'neovim/nvim-lspconfig',
     },
   },
-  { 'cespare/vim-toml', lazy = true, ft = { 'toml' } },
-  { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
+  { 'cespare/vim-toml',       lazy = true, ft = { 'toml' } },
+  { 'stephpy/vim-yaml',       lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
+
+  -- Util
+  -- measure startuptime
+  {
+    'dstein64/vim-startuptime',
+    cmd = 'StartupTime',
+    config = function()
+      vim.g.startuptime_tries = 10
+    end,
+  },
 }
