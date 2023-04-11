@@ -180,13 +180,13 @@ return {
   },
 
   -- Enhancement
-  {
-    'tversteeg/registers.nvim',
-    config = function()
-      require('registers').setup()
-    end,
-    event = 'VeryLazy',
-  },
+  -- {
+  --   'tversteeg/registers.nvim',
+  --   config = function()
+  --     require('registers').setup()
+  --   end,
+  --   event = 'VeryLazy',
+  -- },
   {
     'sudormrfbin/cheatsheet.nvim',
     dependencies = {
