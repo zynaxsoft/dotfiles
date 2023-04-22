@@ -71,6 +71,11 @@ map('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end)
 map('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end)
 map('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end)
 
+-- crates
+map('n', '<leader>cf', require('crates').show_features_popup)-- 
+map('n', '<leader>cv', require('crates').show_versions_popup)-- 
+map('n', '<leader>cd', require('crates').show_dependencies_popup)-- 
+
 -- undotree
 map('n', '<leader>u', vim.cmd.UndotreeToggle)
 

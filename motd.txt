@@ -7,6 +7,7 @@ Ctrl+alt+s for git status
 Ctrl+alt+p for processes
 Use Alt+. for filling last argument
 Use Alt+v to edit command in editor
+Ctrl+w w to focus popup window
 ---------------------------------
 Vim
 * :%sm is :%s but always magic
