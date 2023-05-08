@@ -270,8 +270,8 @@ return {
   { 'rust-lang/rust.vim', lazy = true, ft = { 'rust' } },
   {
     'simrat39/rust-tools.nvim',
-    lazy = true,
-    ft = { 'rust' },
+    -- lazy = true,
+    -- ft = { 'rust' },
     config = function()
       local on_attach = require('config.lspconfig').on_attach
       local capabilities = require('config.lspconfig').capabilities

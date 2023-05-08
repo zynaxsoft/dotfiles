@@ -1,26 +1,23 @@
 -- https://github.com/simrat39/rust-tools.nvim/issues/196
 function init(on_attach_in, capabilities)
   require('rust-tools').setup {
-    tools = { -- rust-tools options
-      -- whether to show hover actions inside the hover window
-      -- this overrides the default hover handler so something like lspsaga.nvim's hover would be overriden by this
-      -- default: true
-      -- hover_with_actions = true,
+    tools = {
+      -- rust-tools options
 
       -- how to execute terminal commands
       -- options right now: termopen / quickfix
-      executor = require('rust-tools/executors').termopen,
+      executor = require('rust-tools.executors').termopen,
 
       -- callback to execute once rust-analyzer is done initializing the workspace
       -- The callback receives one parameter indicating the `health` of the server: "ok" | "warning" | "error"
       on_initialized = nil,
 
+      -- automatically call RustReloadWorkspace when writing to a Cargo.toml file.
+      reload_workspace_from_cargo_toml = true,
+
       -- These apply to the default RustSetInlayHints command
       inlay_hints = {
         -- automatically set inlay hints (type hints)
-        -- There is an issue due to which the hints are not applied on the first
-        -- opened file. For now, write to the file to trigger a reapplication of
-        -- the hints or just run :RustSetInlayHints.
         -- default: true
         auto = true,
 
@@ -39,7 +36,7 @@ function init(on_attach_in, capabilities)
         -- default: "=>"
         other_hints_prefix = '=> ',
 
-        -- whether to align to the lenght of the longest line in the file
+        -- whether to align to the length of the longest line in the file
         max_len_align = false,
 
         -- padding from the left if max_len_align is true
@@ -69,6 +66,12 @@ function init(on_attach_in, capabilities)
           { '╰', 'FloatBorder' },
           { '│', 'FloatBorder' },
         },
+
+        -- Maximal width of the hover window. Nil means no max.
+        max_width = nil,
+
+        -- Maximal height of the hover window. Nil means no max.
+        max_height = nil,
 
         -- whether the hover action window gets automatically focused
         -- default: false
@@ -168,7 +171,7 @@ function init(on_attach_in, capabilities)
       capabilities = capabilities,
       -- standalone file support
       -- setting it to false may improve startup time
-      standalone = true,
+      standalone = false,
       flags = {
         debounce_text_changes = 150,
       },
