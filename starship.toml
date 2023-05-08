@@ -37,16 +37,16 @@ style = "bold fg:230"
 
 [git_status]
 format = '([\[$all_status$ahead_behind\]]($style) )'
-conflicted = "ﲅ "
-ahead = "異×${count} "
-behind = "×${count} "
-diverged = "異 ×${ahead_count}  ×${behind_count} "
+conflicted = "🏳 "
+ahead = "⇡${count} "
+behind = "⇣${count} "
+diverged = '⇕⇡${ahead_count}⇣${behind_count}'
 untracked = "×${count} "
-stashed = "ﰤ "
-modified = "×${count} "
+stashed = "📦×"
+modified = "📝×${count} "
 staged = " ×${count} "
 renamed = " ×${count} "
-deleted = " ×${count} "
+deleted = "🗑️×${count} "
 style = "fg:230"
 
 [hostname]
