@@ -198,7 +198,7 @@ tmux_conf_theme_right_separator_sub='\uE0B3'  #   PowerlineSymbols.otf font, see
 #tmux_conf_theme_status_left=' ❐ #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
 tmux_conf_theme_status_left=' 🐅 #S | ↑#{?uptime_d, #{uptime_d}d,}#{?uptime_h, #{uptime_h}h,}#{?uptime_m, #{uptime_m}m,} '
 #tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized} #{?battery_status, #{battery_status},}#{?battery_bar, #{battery_bar},}#{?battery_percentage, #{battery_percentage},} , %d %b %R | #{username}#{root} | #{hostname} '
-tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}%g年%d日%m月%R | #{username}#{root} | #{hostname}  '
+tmux_conf_theme_status_right='#{prefix}#{pairing}#{synchronized}%g年%m月%d日%R | #{username}#{root} | #{hostname}  '
 
 # status left style
 tmux_conf_theme_status_left_fg='#{thm_fg},#{thm_fg},#{thm_fg}'
