@@ -97,7 +97,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-      require 'config.lspconfig'
+      require 'config.lspconfig_config'
     end,
   },
   {
@@ -165,7 +165,7 @@ return {
     'jose-elias-alvarez/null-ls.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      local on_attach = require('config.lspconfig').on_attach
+      local on_attach = require('config.lspconfig_config').on_attach
       require('config.null-ls').init(on_attach)
     end,
   },
@@ -273,8 +273,8 @@ return {
     -- lazy = true,
     -- ft = { 'rust' },
     config = function()
-      local on_attach = require('config.lspconfig').on_attach
-      local capabilities = require('config.lspconfig').capabilities
+      local on_attach = require('config.lspconfig_config').on_attach
+      local capabilities = require('config.lspconfig_config').capabilities
       require('config.rust-tools').init(on_attach, capabilities)
     end,
     dependencies = {
