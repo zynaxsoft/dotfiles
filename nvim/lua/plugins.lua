@@ -97,7 +97,7 @@ return {
   {
     'neovim/nvim-lspconfig',
     config = function()
-      require 'config.lspconfig_config'
+      require('config.lspconfig_config').setup()
     end,
   },
   {
