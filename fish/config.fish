@@ -14,6 +14,7 @@ if status is-interactive
     source ~/dotfiles/fish/configs/greetings.fish
     source ~/dotfiles/fish/configs/abbr.fish
     source ~/dotfiles/fish/configs/abbr-git.fish
+    source ~/dotfiles/fish/configs/host.fish
 
     set -gx COLORTERM truecolor
     set -gx GPG_TTY $(tty)
