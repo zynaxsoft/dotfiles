@@ -5,10 +5,10 @@
 # that are not idempotent mess up the environment, e.g., `set -a fish_complete_path`
 # Also we could put things that are not required for reload in our conf.d.
 
-if test -z $DISPLAY
-    set -gx DISPLAY :1
-    tmux set-option -g update-environment DISPLAY
-end
+# if test -z $DISPLAY
+#     set -gx DISPLAY :1
+#     tmux set-option -g update-environment DISPLAY
+# end
 
 if status is-interactive
     source ~/dotfiles/fish/configs/greetings.fish
