@@ -85,7 +85,7 @@ $character"""
 
 [env_var.MY_HOST_ALIAS]
 variable = "MY_HOST_ALIAS"
-style = "bold green"
+style = "bold fg:#f0c6c6"
 format = "[$env_value]($style) "
 
 [aws]
@@ -170,8 +170,8 @@ format = 'via [${symbol}${pyenv_prefix}${version}( \($virtualenv\))]($style) '
 style = "bold fg:64"
 
 [username]
-style_user = "bold dimmed blue"
-format = "[$user]($style) @ "
+style_user = "bold dimmed fg:#b7bdf8"
+format = "[$user]($style) [@](bold italic) "
 show_always = true
 
 # Solarized color list (prefix with fg:)
