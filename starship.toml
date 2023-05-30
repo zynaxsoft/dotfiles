@@ -1,3 +1,93 @@
+format = """
+$username\
+$hostname\
+$env_var\
+$localip\
+$shlvl\
+$singularity\
+$kubernetes\
+$directory\
+$vcsh\
+$fossil_branch\
+$git_branch\
+$git_commit\
+$git_state\
+$git_metrics\
+$git_status\
+$hg_branch\
+$pijul_channel\
+$docker_context\
+$package\
+$c\
+$cmake\
+$cobol\
+$daml\
+$dart\
+$deno\
+$dotnet\
+$elixir\
+$elm\
+$erlang\
+$fennel\
+$golang\
+$guix_shell\
+$haskell\
+$haxe\
+$helm\
+$java\
+$julia\
+$kotlin\
+$gradle\
+$lua\
+$nim\
+$nodejs\
+$ocaml\
+$opa\
+$perl\
+$php\
+$pulumi\
+$purescript\
+$python\
+$raku\
+$rlang\
+$red\
+$ruby\
+$rust\
+$scala\
+$swift\
+$terraform\
+$vlang\
+$vagrant\
+$zig\
+$buf\
+$nix_shell\
+$conda\
+$meson\
+$spack\
+$memory_usage\
+$aws\
+$gcloud\
+$openstack\
+$azure\
+$crystal\
+$custom\
+$sudo\
+$cmd_duration\
+$line_break\
+$jobs\
+$battery\
+$time\
+$status\
+$os\
+$container\
+$shell\
+$character"""
+
+[env_var.MY_HOST_ALIAS]
+variable = "MY_HOST_ALIAS"
+style = "bold green"
+format = "[$env_value]($style) "
+
 [aws]
 disabled = true
 
@@ -51,9 +141,10 @@ style = "fg:230"
 
 [hostname]
 ssh_only = false
-format = "<[$hostname]($style)>"
-trim_at = "-"
-style = "bold dimmed white"
+format = "<[$ssh_symbol$hostname]($style)> "
+trim_at = "."
+style = "bold dimmed green"
+ssh_symbol = '🌐 '
 disabled = true
 
 [memory_usage]
@@ -80,7 +171,8 @@ style = "bold fg:64"
 
 [username]
 style_user = "bold dimmed blue"
-show_always = false
+format = "[$user]($style) @ "
+show_always = true
 
 # Solarized color list (prefix with fg:)
 # base03    234
