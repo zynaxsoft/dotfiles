@@ -24,7 +24,6 @@ function mason.main()
     -- The registries to source packages from. Accepts multiple entries. Should a package with the same name exist in
     -- multiple registries, the registry listed first will be used.
     registries = {
-      'lua:mason-registry.index',
       'github:mason-org/mason-registry',
     },
 
