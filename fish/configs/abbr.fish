@@ -2,6 +2,9 @@ if status is-interactive
     abbr -a tls tmux list-session
     abbr -a tks tmux_kill_session
 
+    abbr -a zl zellij
+    abbr -a zlr zellij run --
+
     abbr -a rn source ranger
 
     abbr -a ls exa

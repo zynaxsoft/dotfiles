@@ -32,6 +32,9 @@ _link fish/config.fish .config/fish/
 _link fish/fish_plugins .config/fish/
 _link fish/my_conf_d.fish .config/fish/conf.d/
 
+mkdir -p ~/.config/zellij
+_link zellij/config.kdl .config/zellij/
+
 mkdir -p ~/.cargo
 _link cargo/config.toml .cargo/
 
