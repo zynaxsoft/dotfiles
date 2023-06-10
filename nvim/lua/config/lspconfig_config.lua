@@ -111,7 +111,7 @@ function setup()
   -- }
 
   -- For LSP servers that don't need extra config
-  local servers = { 'taplo', 'lua_ls', 'terraformls', 'vuels', 'tsserver'}
+  local servers = { 'taplo', 'lua_ls', 'terraformls', 'vuels', 'tsserver', 'gopls'}
   for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
       on_attach = on_attach,
