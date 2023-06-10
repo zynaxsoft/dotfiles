@@ -4,6 +4,7 @@ if status is-interactive
 
     abbr -a zl zellij
     abbr -a zlr zellij run --
+    abbr -a zla zellij attach
 
     abbr -a rn source ranger
 
