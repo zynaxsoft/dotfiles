@@ -11,6 +11,9 @@ function fish_user_key_bindings
     # The argument specifies the initial mode (insert, "default" or visual).
     fish_vi_key_bindings --no-erase insert
 
+    # fzf stuff
+    fzf_configure_bindings --directory=\co
+
     bind -M default \cp history-search-backward
     bind -M default \cn history-search-forward
 end
