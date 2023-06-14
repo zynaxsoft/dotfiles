@@ -1,6 +1,15 @@
 layout {
-    pane
-    pane size=1 borderless=true {
-        plugin location="zellij:compact-bar"
+    default_tab_template {
+        pane size=1 borderless=true {
+            plugin location="zellij:compact-bar"
+        }
+        children
+    }
+    tab name="dot" split_direction="vertical" {
+        pane cwd="dotfiles"
+        pane cwd="dotfiles"
+    }
+    tab focus=true name="dev" split_direction="vertical" {
+        pane
     }
 }
