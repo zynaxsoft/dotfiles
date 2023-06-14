@@ -28,8 +28,8 @@ keybinds clear-defaults=true {
         bind "k" "Up" { MoveFocus "Up"; }
         bind "p" { SwitchFocus; }
         bind "n" { NewPane; SwitchToMode "Normal"; }
-        bind "d" { NewPane "Down"; SwitchToMode "Normal"; }
-        bind "r" { NewPane "Right"; SwitchToMode "Normal"; }
+        bind "v" { NewPane "Down"; SwitchToMode "Normal"; }
+        bind "V" { NewPane "Right"; SwitchToMode "Normal"; }
         bind "x" { CloseFocus; SwitchToMode "Normal"; }
         bind "z" { ToggleFocusFullscreen; SwitchToMode "Normal"; }
         bind "f" { TogglePaneFrames; SwitchToMode "Normal"; }
@@ -258,7 +258,7 @@ theme "catppuccin-macchiato"
 // The name of the default layout to load on startup
 // Default: "default"
 //
-// default_layout "compact"
+default_layout "my_layout"
 
 // Choose the mode that zellij uses when starting up.
 // Default: normal
