@@ -93,6 +93,15 @@ return {
     },
   },
 
+  -- Folding
+  {
+    'kevinhwang91/nvim-ufo',
+    dependencies = { 'kevinhwang91/promise-async' },
+    config = function()
+      require 'config.ufo'
+    end,
+  },
+
   -- LSP
   {
     'neovim/nvim-lspconfig',

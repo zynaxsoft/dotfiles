@@ -58,6 +58,10 @@ function setup()
 
   local capabilities =
     require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+  capabilities.textDocument.foldingRange = {
+    dynamicRegistration = false,
+    lineFoldingOnly = true,
+  }
 
   lspconfig.ruff_lsp.setup {
     on_attach = on_attach,
@@ -111,7 +115,15 @@ function setup()
   -- }
 
   -- For LSP servers that don't need extra config
-  local servers = { 'taplo', 'lua_ls', 'terraformls', 'vuels', 'tsserver', 'gopls'}
+  local servers = { 'taplo', 'lua_ls', 'terraformls', 'vuels', 'tsserver', 'gopls' }
+  local settings = {
+    Lua = {
+      format = {
+        enable = false,
+      },
+      diagnostics = { globals = { 'vim' } },
+    },
+  }
   for _, lsp in pairs(servers) do
     require('lspconfig')[lsp].setup {
       on_attach = on_attach,
@@ -119,6 +131,7 @@ function setup()
       flags = {
         debounce_text_changes = 150,
       },
+      settings = settings,
     }
   end
 
