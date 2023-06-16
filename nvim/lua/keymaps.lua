@@ -92,3 +92,6 @@ map('', '<C-_>', [[<cmd>Neotree toggle<cr>]])
 map('n', '<leader><leader>r', [[<cmd>LspRestart<cr>]], { silent = true })
 -- Reload config
 map('n', '<leader><leader><c-r>', [[<cmd>source $MYVIMRC<cr>]])
+
+-- Disalbe unintentional q:
+map('n', 'q:', '<nop>', { silent = true })
