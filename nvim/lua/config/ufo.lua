@@ -4,7 +4,7 @@ local ftMap = {
 }
 require('ufo').setup {
   open_fold_hl_timeout = 150,
-  close_fold_kinds = { 'imports', 'comment' },
+  close_fold_kinds = { },
   preview = {
     win_config = {
       border = { '', '─', '', '', '', '─', '', '' },
