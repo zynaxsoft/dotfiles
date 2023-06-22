@@ -40,7 +40,7 @@ vim.g.indentLine_concealcursor = 'inc'
 vim.g.indentLine_conceallevel = 2
 vim.g.indentLine_setConceal = 1
 
-vim.wo.foldlevel = 99
+vim.o.foldlevel = 99
 vim.o.foldlevelstart = 99
 vim.o.foldenable = true
 vim.o.foldcolumn = '0'
