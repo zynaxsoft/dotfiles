@@ -81,8 +81,8 @@ map('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- quickfix
 map('n', '<leader>q', [[<cmd>copen<cr>]])
-map('n', '<a-j>', [[<cmd>cnext<cr>]])
-map('n', '<a-k>', [[<cmd>cprevious<cr>]])
+map('n', ']q', [[<cmd>cnext<cr>]])
+map('n', '[q', [[<cmd>cprevious<cr>]])
 
 -- nvim-tree
 -- C-_ means C-/
