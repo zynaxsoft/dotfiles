@@ -293,6 +293,19 @@ return {
       'neovim/nvim-lspconfig',
     },
   },
+  {
+    'mfussenegger/nvim-jdtls',
+    config = function()
+      local on_attach = require('config.lspconfig_config').on_attach
+      local capabilities = require('config.lspconfig_config').capabilities
+      require('config.jdtls').init(on_attach, capabilities)
+    end,
+    dependencies = {
+      'mfussenegger/nvim-dap',
+      'neovim/nvim-lspconfig',
+    },
+    ft = { 'java' },
+  },
   { 'cespare/vim-toml', lazy = true, ft = { 'toml' } },
   { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
