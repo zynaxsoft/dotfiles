@@ -1,9 +1,17 @@
+-- IMPORTANT
+-- To properly setup this jdtls
+-- Mason install jdtls
+-- create a folder ~/dev/.java_workspace
+
+
 function init(on_attach_in, capabilities)
   local jdtls = require 'jdtls'
   local home = os.getenv 'HOME'
   -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
   local project_name = vim.fn.fnamemodify(vim.fn.getcwd(), ':p:h:t')
-  local workspace_dir = '/path/to/workspace-root/' .. project_name
+  local workspace_dir = home .. '/dev/.java_workspace/' .. project_name
+  local jdtls_path = home .. '/.local/share/nvim/mason/packages/jdtls/'
+  local launcher_jar = vim.fn.glob(jdtls_path .. '/plugins/org.eclipse.equinox.launcher_*.jar')
   -- See `:help vim.lsp.start_client` for an overview of the supported `config` options.
   local config = {
     -- The command that starts the language server
@@ -27,15 +35,14 @@ function init(on_attach_in, capabilities)
 
       '-jar',
       -- '/path/to/jdtls_install_location/plugins/org.eclipse.equinox.launcher_VERSION_NUMBER.jar',
-      home
-        .. '/.local/share/nvim/mason/packages/jdtls/plugins/org.eclipse.equinox.launcher_1.6.500.v20230622-2056.jar',
+      launcher_jar,
       -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^                                       ^^^^^^^^^^^^^^
       -- Must point to the                                                     Change this to
       -- eclipse.jdt.ls installation                                           the actual version
 
       '-configuration',
       -- '/path/to/jdtls_install_location/config_SYSTEM',
-      home .. '/.local/share/nvim/mason/packages/jdtls/config_linux',
+      jdtls_path .. 'config_linux',
       -- ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^        ^^^^^^
       -- Must point to the                      Change to one of `linux`, `win` or `mac`
       -- eclipse.jdt.ls installation            Depending on your system.
