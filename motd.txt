@@ -1,3 +1,4 @@
+Use Bacon to check Rust code 🐽
 FZF:
 Ctrl+o to find files
 Ctrl+r to find old commands
