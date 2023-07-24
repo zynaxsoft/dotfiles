@@ -115,7 +115,7 @@ function setup()
   -- }
 
   -- For LSP servers that don't need extra config
-  local servers = { 'taplo', 'lua_ls', 'terraformls', 'vuels', 'tsserver', 'gopls' }
+  local servers = { 'taplo', 'lua_ls', 'terraformls', 'volar', 'tsserver', 'gopls' }
   local settings = {
     Lua = {
       format = {
