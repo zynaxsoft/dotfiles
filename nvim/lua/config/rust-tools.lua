@@ -184,6 +184,14 @@ function init(on_attach_in, capabilities)
           diagnostics = {
             disabled = { 'inactive-code' },
           },
+          inlay_hints = {
+            bindingModeHints = { enable = true },
+            chainingHints = { enable = true },
+            closingBraceHints = { enable = true },
+            closureReturnTypeHints = { enable = true },
+            parameterHints = { enable = true },
+            typeHints = { enable = true },
+          },
           checkOnSave = {
             command = 'clippy',
             extraArgs = {

@@ -1,0 +1,86 @@
+# This is a preferences file for the bacon tool
+# More info at https://github.com/Canop/bacon
+
+# Uncomment and change the value (true/false) to
+# specify whether bacon should start in summary mode
+#
+# summary = true
+
+# Uncomment and change the value (true/false) to
+# specify whether bacon should start with lines wrapped
+#
+# wrap = false
+
+# In "reverse" mode, the focus is at the bottom, item
+# order is reversed, and the status bar is on top
+#
+# reverse = true
+
+# my custom jobs
+[jobs.exs]
+command = ["ls"]
+# a list of directories that will be watched if the job is run on a package. src, tests, examples, and benches are implicitly included unles default_watch is set to false
+watch = []
+# whether to watch default directories (src, tests, examples, and benches). true by default. When it's set to false, only the directories in watch are watched (none if watch is empty or not supplied)
+default_watch = true
+# whether we need to capture stdout too (stderr is always captured). Default is false
+need_stdout = true
+# the action to run when there's no error, warning or test failures
+# on_success = []
+# if true, the action is considered a success even when there are warnings. Default is false but the standard run job is configured with allow_warnings=false
+allow_warnings = true
+# if true, the action is considered a success even when there are test failures. Default is false
+allow_failures = false
+# if true (which is default) the job isn't triggered when the modified file is excluded by gitignore rules
+# apply_gitignore = true
+# a map of environment vars, for example env.LOG_LEVEL="die"
+# env = ""
+
+# Exporting "locations" lets you use them in an external
+# tool, for example as a list of jump locations in an IDE.
+# 
+# See https://dystroy.org/bacon/config/#export-locations
+#
+# Set 'enabled' to true to have bacon always export locations
+# This is equivalent to always adding -e to bacon commands
+# but can still be cancelled on specific launches with -E
+[export]
+enabled = false
+path = ".bacon-locations"
+line_format = "{kind} {path}:{line}:{column} {message}"
+
+# Uncomment and change the key-bindings you want to define
+# (some of those ones are the defaults and are just here
+#  for illustration)
+[keybindings]
+# esc = "back"
+# q = "quit"
+# F5 = "rerun"
+ctrl-r = "rerun"
+Enter = "rerun"
+# s = "toggle-summary"
+# w = "toggle-wrap"
+# t = "toggle-backtrace"
+# Home = "scroll-to-top"
+# End = "scroll-to-bottom"
+# Up = "scroll-lines(-1)"
+# Down = "scroll-lines(1)"
+# PageUp = "scroll-pages(-1)"
+# PageDown = "scroll-pages(1)"
+# Space = "scroll-pages(1)"
+# a = "job:check-all"
+# i = "job:initial"
+# c = "job:clippy"
+# d = "job:doc-open"
+# t = "job:test"
+# r = "job:run"
+esc = "back"
+ctrl-g  = "scroll-to-top"
+shift-g  = "scroll-to-bottom"
+k = "scroll-lines(-1)"
+j = "scroll-lines(1)"
+ctrl-u = "scroll-page(-1)"
+ctrl-d = "scroll-page(1)"
+u = "scroll-page(-1)"
+d = "scroll-page(1)"
+shift-d = "job:doc-open"
