@@ -15,7 +15,7 @@ cmp.setup {
       -- behavior = cmp.ConfirmBehavior.Replace,
       select = false,
     },
-    ['<C-Space>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
+    ['<C-y>'] = cmp.mapping(cmp.mapping.complete(), { 'i', 'c' }),
   },
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
