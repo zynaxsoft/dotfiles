@@ -184,13 +184,23 @@ function init(on_attach_in, capabilities)
           diagnostics = {
             disabled = { 'inactive-code' },
           },
-          inlay_hints = {
+          inlayHints = {
             bindingModeHints = { enable = true },
             chainingHints = { enable = true },
             closingBraceHints = { enable = true },
-            closureReturnTypeHints = { enable = true },
+            closureCaptureHints = { enable = true },
+            closureReturnTypeHints = { enable = "always" },
+            discriminantHints = { enable = "always" },
+            -- expressionAdjustmentHints = { enable = "always"},
             parameterHints = { enable = true },
-            typeHints = { enable = true },
+            lifetimeElisionHints = { enable = "never" },
+            -- renderColons = { enable = false },
+            typeHints = {
+              enable = true,
+              hideClosureInitialization = { enable = false },
+              hideNamedConstructor = { enable = false },
+            },
+            maxLength = nil,
           },
           checkOnSave = {
             command = 'clippy',
