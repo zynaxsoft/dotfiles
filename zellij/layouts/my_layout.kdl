@@ -5,11 +5,11 @@ layout {
         }
         children
     }
-    tab name="dot" split_direction="vertical" {
-        pane cwd="dotfiles"
-        pane cwd="dotfiles"
-    }
-    tab focus=true name="dev" split_direction="vertical" {
-        pane
-    }
+//     tab name="dot" split_direction="vertical" {
+//         pane cwd="dotfiles"
+//         pane cwd="dotfiles"
+//     }
+//     tab focus=true name="dev" split_direction="vertical" {
+//         pane
+//     }
 }
