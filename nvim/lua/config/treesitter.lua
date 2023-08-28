@@ -1,7 +1,7 @@
 treesitter = {}
 function treesitter.main()
   require('nvim-treesitter.configs').setup {
-    ensure_installed = { "python", "lua", "rust" },
+    ensure_installed = { 'python', 'lua', 'rust' },
     auto_install = true,
     highlight = {
       enable = true,
@@ -12,49 +12,25 @@ function treesitter.main()
       additional_vim_regex_highlighting = false,
     },
   }
--- make treesitter parse Octo.nvim buffer page
-local parser_config = require("nvim-treesitter.parsers").get_parser_configs()
-parser_config.markdown.filetype_to_parsername = "octo"
+  -- make treesitter parse Octo.nvim buffer page
+  local parser_config = require('nvim-treesitter.parsers').get_parser_configs()
+  parser_config.markdown.filetype_to_parsername = 'octo'
 end
 
 function treesitter.context()
   require('treesitter-context').setup {
     enable = true, -- Enable this plugin (Can be enabled/disabled later via commands)
     max_lines = 0, -- How many lines the window should span. Values <= 0 mean no limit.
+    min_window_height = 0, -- Minimum editor window height to enable context. Values <= 0 mean no limit.
+    line_numbers = true,
+    multiline_threshold = 20, -- Maximum number of lines to show for a single context
     trim_scope = 'outer', -- Which context lines to discard if `max_lines` is exceeded. Choices: 'inner', 'outer'
-    patterns = { -- Match patterns for TS nodes. These get wrapped to match at word boundaries.
-      -- For all filetypes
-      -- Note that setting an entry here replaces all other patterns for this entry.
-      -- By setting the 'default' entry below, you can control which nodes you want to
-      -- appear in the context window.
-      default = {
-        'class',
-        'function',
-        'method',
-        -- 'for', -- These won't appear in the context
-        -- 'while',
-        -- 'if',
-        -- 'switch',
-        -- 'case',
-      },
-      -- Example for a specific filetype.
-      -- If a pattern is missing, *open a PR* so everyone can benefit.
-      --   rust = {
-      --       'impl_item',
-      --   },
-    },
-    exact_patterns = {
-      -- Example for a specific filetype with Lua patterns
-      -- Treat patterns.rust as a Lua pattern (i.e "^impl_item$" will
-      -- exactly match "impl_item" only)
-      -- rust = true,
-    },
-
-    -- [!] The options below are exposed but shouldn't require your attention,
-    --     you can safely ignore them.
-
-    zindex = 20, -- The Z-index of the context window
     mode = 'cursor', -- Line used to calculate context. Choices: 'cursor', 'topline'
+    -- Separator between context and content. Should be a single character string, like '-'.
+    -- When separator is set, the context will only show up when there are at least 2 lines above cursorline.
+    separator = nil,
+    zindex = 20, -- The Z-index of the context window
+    on_attach = nil, -- (fun(buf: integer): boolean) return false to disable attaching
   }
 end
 
