@@ -45,6 +45,7 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
+    commit = "1ba937b38eb101e37be120087a6a513137986c63",
     config = require('config.treesitter').context,
     dependencies = 'nvim-treesitter/nvim-treesitter',
   },
