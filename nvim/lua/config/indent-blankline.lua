@@ -1,13 +1,19 @@
 vim.cmd [[
   augroup MyIndentBlanklineColor
   au!
-    au VimEnter * hi IndentBlanklineChar guifg=NONE gui=NONE
-    au VimEnter * hi IndentBlanklineContextChar guifg=NONE gui=NONE
-    au VimEnter * hi IndentBlanklineSpaceChar guifg=NONE gui=NONE
-    au VimEnter * hi IndentBlanklineSpaceCharBlankline gui=NONE
+    au VimEnter * hi IblScope guifg=#f4dbd6 gui=BOLD
   augroup end
 ]]
-require('indent_blankline').setup {
-  space_char_blankline = ' ',
-  show_current_context = true,
+require('ibl').setup {
+  indent = {
+    char = '|',
+  },
+  whitespace = {
+    remove_blankline_trail = true,
+  },
+  scope = {
+    enabled = true,
+    show_start = false,
+    show_end = false,
+  },
 }
