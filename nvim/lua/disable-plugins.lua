@@ -1,10 +1,10 @@
 -- https://www.reddit.com/r/neovim/comments/opipij/guide_tips_and_tricks_to_reduce_startup_and/
 local disabled_built_ins = {
-  'gzip',
-  'zip',
-  'zipPlugin',
-  'tar',
-  'tarPlugin',
+--  'gzip',
+--  'zip',
+--  'zipPlugin',
+--  'tar',
+--  'tarPlugin',
   'getscript',
   'getscriptPlugin',
   'vimball',
@@ -18,5 +18,3 @@ local disabled_built_ins = {
 for _, plugin in pairs(disabled_built_ins) do
   vim.g['loaded_' .. plugin] = 1
 end
-
-
