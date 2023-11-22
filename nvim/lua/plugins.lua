@@ -221,6 +221,7 @@ return {
   },
   {
     'nvim-telescope/telescope-ui-select.nvim',
+    commit = 'b0015e6e4b46a',
     dependencies = {
       'nvim-telescope/telescope.nvim',
     },
