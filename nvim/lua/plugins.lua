@@ -265,6 +265,16 @@ return {
     end,
   },
 
+  -- Neorg
+  {
+    "nvim-neorg/neorg",
+    build = ":Neorg sync-parsers",
+    dependencies = { "nvim-lua/plenary.nvim" },
+    config = function()
+        require 'config.neorg'
+    end,
+  },
+
   -- Clipboard
   'roxma/vim-tmux-clipboard',
   { 'ojroques/nvim-osc52', config = require('config.osc52').init },
