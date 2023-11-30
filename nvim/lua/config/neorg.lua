@@ -1,14 +1,21 @@
 require('neorg').setup {
   load = {
-    ['core.autocommands'] = {},
     ['core.defaults'] = {}, -- Loads default behaviour
-    ['core.concealer'] = {}, -- Adds pretty icons to your documents
+    ['core.concealer'] = {
+      config = {
+        icon_preset = 'basic',
+      },
+    },
     ['core.completion'] = {
       config = {
         engine = 'nvim-cmp',
       },
     },
     ['core.ui.calendar'] = {},
+    ['core.autocommands'] = {},
+    ['core.neorgcmd'] = {},
+    ['core.mode'] = {},
+    ['core.neorgcmd.commands.return'] = {},
     ['core.integrations.nvim-cmp'] = {},
     ['core.integrations.treesitter'] = {},
     ['core.integrations.telescope'] = {},
@@ -17,6 +24,7 @@ require('neorg').setup {
         workspaces = {
           notes = '~/notes',
         },
+        default_workspace = 'notes',
       },
     },
   },
