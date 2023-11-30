@@ -45,7 +45,7 @@ return {
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
-    commit = "1ba937b38eb101e37be120087a6a513137986c63",
+    commit = '1ba937b38eb101e37be120087a6a513137986c63',
     config = require('config.treesitter').context,
     dependencies = 'nvim-treesitter/nvim-treesitter',
   },
@@ -267,11 +267,11 @@ return {
 
   -- Neorg
   {
-    "nvim-neorg/neorg",
-    build = ":Neorg sync-parsers",
-    dependencies = { "nvim-lua/plenary.nvim" },
+    'nvim-neorg/neorg',
+    build = ':Neorg sync-parsers',
+    dependencies = { { 'nvim-lua/plenary.nvim' }, { 'nvim-neorg/neorg-telescope' } },
     config = function()
-        require 'config.neorg'
+      require 'config.neorg'
     end,
   },
 
