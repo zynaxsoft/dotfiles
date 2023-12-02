@@ -4,6 +4,11 @@ require('neorg').setup {
     ['core.concealer'] = {
       config = {
         icon_preset = 'basic',
+        icons = {
+            heading = {
+                icons = {"󰪥", "󰺕", "✺", "⯁", "⟐", "⟡"}
+            }
+        }
       },
     },
     ['core.completion'] = {
