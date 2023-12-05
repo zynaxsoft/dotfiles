@@ -37,8 +37,14 @@ local on_attach = function(client, bufnr)
   end
 end
 
-function setup()
-  local lspconfig = require 'lspconfig'
+local capabilities =
+  require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
+capabilities.textDocument.foldingRange = {
+  dynamicRegistration = false,
+  lineFoldingOnly = true,
+}
+
+local setup = function()
   local opts = { noremap = true, silent = true }
   vim.keymap.set('n', '<C-l>', function()
     vim.diagnostic.open_float { source = true }
@@ -56,67 +62,16 @@ function setup()
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
-  local capabilities =
-    require('cmp_nvim_lsp').default_capabilities(vim.lsp.protocol.make_client_capabilities())
-  capabilities.textDocument.foldingRange = {
-    dynamicRegistration = false,
-    lineFoldingOnly = true,
-  }
-
-  lspconfig.ruff_lsp.setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-    settings = {},
-    capabilities = capabilities,
-  }
-
-  lspconfig.pyright.setup {
-    on_attach = on_attach,
-    flags = {
-      debounce_text_changes = 150,
-    },
-    settings = {
-      python = {
-        analysis = {
-          autoSearchPaths = true,
-          useLibraryCodeForTypes = true,
-          diagnosticMode = 'openFilesOnly',
-        },
+  -- For LSP servers that don't need extra config
+  local servers = { 'taplo', 'lua_ls', 'terraformls', 'volar', 'tsserver', 'gopls', 'pyright' }
+  local settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = 'openFilesOnly',
       },
     },
-    capabilities = capabilities,
-  }
-
-  -- ==Moved to config.rust-tools.==
-  --
-  -- lspconfig.rust_analyzer.setup {
-  --   on_attach = on_attach,
-  --   flags = {
-  --     debounce_text_changes = 150,
-  --   },
-  --   settings = {
-  --     ['rust-analyzer'] = {
-  --       cargo = {
-  --         allFeatures = true,
-  --       },
-  --       diagnostics = {
-  --         disabled = { 'inactive-code' },
-  --       },
-  --       -- completion = {
-  --       --   postfix = {
-  --       --     enable = false,
-  --       --   },
-  --       -- },
-  --     },
-  --   },
-  --   capabilities = capabilities,
-  -- }
-
-  -- For LSP servers that don't need extra config
-  local servers = { 'taplo', 'lua_ls', 'terraformls', 'volar', 'tsserver', 'gopls' }
-  local settings = {
     Lua = {
       format = {
         enable = false,
