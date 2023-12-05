@@ -3,7 +3,8 @@ layout {
         pane size=1 borderless=true {
             plugin location="file:~/.local/share/zellij/zjstatus.wasm" {
                 format_left  "{mode} #[fg=#f4dbd6,bold]󱓟 {session} {tabs}"
-                format_right "#[bg=black] {swap_layout} {command_git_branch} {datetime}"
+                // format_right "#[bg=black] {swap_layout} {command_git_branch} {datetime}"
+                format_right "#[bg=black] {swap_layout} {datetime}"
                 format_space ""
 
                 border_enabled  "false"
@@ -19,9 +20,9 @@ layout {
                 tab_normal   "#[fg=#939ab7] {index}: {name} "
                 tab_active   "#[fg=#cad3f5,bold,italic] {index}: {name} "
 
-                command_git_branch_command   "git rev-parse --abbrev-ref HEAD"
-                command_git_branch_format    "#[fg=blue] {stdout} "
-                command_git_branch_interval  "10"
+                // command_git_branch_command   "git rev-parse --abbrev-ref HEAD"
+                // command_git_branch_format    "#[fg=blue] {stdout} "
+                // command_git_branch_interval  "10"
 
                 datetime        "#[fg=#b8c0e0,bold] {format} "
                 datetime_format "%A, %d %b %Y %H:%M"
