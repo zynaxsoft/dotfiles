@@ -62,8 +62,20 @@ local setup = function()
     vim.fn.sign_define(hl, { text = icon, texthl = hl, numhl = hl })
   end
 
+  require('lspconfig').volar.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    init_options = {
+      typescript = {
+        tsdk = '~/.npm-global/lib/node_modules/typescript/lib',
+      },
+    },
+    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+  }
+
   -- For LSP servers that don't need extra config
-  local servers = { 'taplo', 'lua_ls', 'terraformls', 'volar', 'tsserver', 'gopls', 'pyright' }
+  local servers =
+    { 'taplo', 'lua_ls', 'terraformls', 'volar', 'tsserver', 'gopls', 'pyright', 'vuels' }
   local settings = {
     python = {
       analysis = {
