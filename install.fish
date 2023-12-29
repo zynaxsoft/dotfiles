@@ -23,6 +23,8 @@ git remote set-url origin 'git@github.com:zynaxsoft/dotfiles'
 ./steps/gpg.fish
 ./steps/wsl_stuff.fish
 ./steps/tools_required_rust_installed.fish
+./update-scripts/zellij.fish
+./steps/install_zellij_plugins.fish
 
 echo "If wim32yank is slow. copy win32yank.exe to somewhere in Windows if you are using WSL2"
 echo "Then do ln -s /mnt/c/path/to/win32yank.exe $HOME/dotfiles/bin/win32yank (without .exe)"
