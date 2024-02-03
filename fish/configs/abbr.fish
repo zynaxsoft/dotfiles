@@ -8,8 +8,8 @@ if status is-interactive
 
     abbr -a rn source ranger
 
-    abbr -a ls exa
-    alias ll "exa --icons --git -lg"
+    abbr -a ls eza
+    alias ll "eza --icons --git -lg"
     alias la "ll -a"
     alias et "et -I"
 

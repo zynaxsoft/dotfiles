@@ -15,6 +15,13 @@ if status is-interactive
     source ~/dotfiles/fish/configs/abbr.fish
     source ~/dotfiles/fish/configs/abbr-git.fish
     source ~/dotfiles/fish/configs/host.fish
+    switch (uname)
+        case Darwin
+            source ~/dotfiles/fish/configs/mac.fish
+    end
+    if test -e ~/dotfiles/fish/configs/work.fish
+        source ~/dotfiles/fish/configs/work.fish
+    end
 
     set -gx COLORTERM truecolor
     set -gx GPG_TTY $(tty)
