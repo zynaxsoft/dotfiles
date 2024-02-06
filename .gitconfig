@@ -1,5 +1,5 @@
 [user]
-    email = tanapol.pr@gmail.com
+    email = me@tanapol.dev
     name = Tanapol Prucksakorn
     signingkey = E10770F0BA34F84FDFA8F2727EA163BFEC316740
 
@@ -19,7 +19,7 @@
 [pull]
     rebase = false
 [filter "lfs"]
-	clean = git-lfs clean -- %f
-	smudge = git-lfs smudge -- %f
-	process = git-lfs filter-process
-	required = true
+    clean = git-lfs clean -- %f
+    smudge = git-lfs smudge -- %f
+    process = git-lfs filter-process
+    required = true

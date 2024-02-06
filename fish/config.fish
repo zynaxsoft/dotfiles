@@ -25,7 +25,7 @@ if status is-interactive
 
     set -gx COLORTERM truecolor
     set -gx GPG_TTY $(tty)
-    set -gx EDITOR /usr/bin/nvim
+    set -gx EDITOR (which nvim)
 
     starship init fish | source
     eval $(ssh-agent -c) > /dev/null
