@@ -70,7 +70,7 @@ local setup = function()
         tsdk = '~/.npm-global/lib/node_modules/typescript/lib',
       },
     },
-    filetypes = { 'typescript', 'javascript', 'javascriptreact', 'typescriptreact', 'vue', 'json' },
+    filetypes = { 'vue' },
   }
 
   -- For LSP servers that don't need extra config
