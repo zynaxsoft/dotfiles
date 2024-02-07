@@ -292,18 +292,21 @@ return {
   },
   { 'rust-lang/rust.vim', lazy = true, ft = { 'rust' } },
   {
-    'simrat39/rust-tools.nvim',
-    -- lazy = true,
-    -- ft = { 'rust' },
+    'mrcjkb/rustaceanvim',
+    version = '^4', -- Recommended
+    ft = { 'rust' },
     config = function()
       local on_attach = require('config.lspconfig_config').on_attach
       local capabilities = require('config.lspconfig_config').capabilities
-      require('config.rust-tools').init(on_attach, capabilities)
+      require('config.rustaceanvim').init(on_attach, capabilities)
     end,
     dependencies = {
       'nvim-lua/plenary.nvim',
       'mfussenegger/nvim-dap',
-      'neovim/nvim-lspconfig',
+      {
+        'lvimuser/lsp-inlayhints.nvim',
+        opts = {},
+      },
     },
   },
   {
