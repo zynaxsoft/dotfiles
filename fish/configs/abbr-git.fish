@@ -1,5 +1,8 @@
 if status is-interactive
     function __add_abbr
+        abbr -a gcm "git checkout master"
+        abbr -a gcd "git checkout develop"
+
         abbr -a ga "git add -i"
         abbr -a gaa "git add -A"
         abbr -a gapa "git add --patch"
