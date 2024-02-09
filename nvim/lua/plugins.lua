@@ -172,7 +172,7 @@ return {
   },
   -- Diagnostic stuff
   {
-    'jose-elias-alvarez/null-ls.nvim',
+    'nvimtools/none-ls.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
       local on_attach = require('config.lspconfig_config').on_attach
