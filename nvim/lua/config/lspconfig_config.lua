@@ -73,6 +73,17 @@ local setup = function()
     filetypes = { 'vue' },
   }
 
+  local home = os.getenv 'HOME'
+  local elixirls_path = home .. '/.local/share/nvim/mason/bin/elixir-ls'
+  require('lspconfig').elixirls.setup {
+    on_attach = on_attach,
+    capabilities = capabilities,
+    cmd = { elixirls_path },
+    flags = {
+      debounce_text_changes = 150,
+    },
+  }
+
   -- For LSP servers that don't need extra config
   local servers =
     { 'taplo', 'lua_ls', 'terraformls', 'tsserver', 'gopls', 'pyright', 'vuels', 'eslint' }
