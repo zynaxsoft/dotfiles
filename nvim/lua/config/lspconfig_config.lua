@@ -85,8 +85,17 @@ local setup = function()
   }
 
   -- For LSP servers that don't need extra config
-  local servers =
-    { 'taplo', 'lua_ls', 'terraformls', 'tsserver', 'gopls', 'pyright', 'vuels', 'eslint' }
+  local servers = {
+    'taplo',
+    'lua_ls',
+    'terraformls',
+    'tsserver',
+    'gopls',
+    'pyright',
+    'vuels',
+    'eslint',
+    -- 'kotlin_language_server',
+  }
   local settings = {
     python = {
       analysis = {

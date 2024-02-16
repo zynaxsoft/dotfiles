@@ -161,6 +161,7 @@ symbol = " "
 style = "bold fg:208"
 
 [nodejs]
+disabled = true
 format = "via [$symbol$version]($style) "
 symbol = " "
 style = "bold 64"
