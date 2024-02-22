@@ -57,7 +57,7 @@ if status is-interactive
         abbr -a gst "git status"
 
 # gsw: git switch
-        abbr -a gsw "git switch"
+        abbr -a gsw "git switch -t"
         abbr -a gswc "git switch -c"
 
 # gwch: git whatchanged
