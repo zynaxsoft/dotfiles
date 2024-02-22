@@ -1,0 +1,15 @@
+// See https://github.com/extrawurst/gitui/blob/master/src/keys/key_list.rs#L83
+(
+    move_left: Some(( code: Char('h'), modifiers: "")),
+    move_right: Some(( code: Char('l'), modifiers: "")),
+    move_up: Some(( code: Char('k'), modifiers: "")),
+    move_down: Some(( code: Char('j'), modifiers: "")),
+
+    stash_open: Some(( code: Char('l'), modifiers: "")),
+    open_help: Some(( code: F(1), modifiers: "")),
+
+    page_up: Some(( code: Char('u'), modifiers: "CONTROL")),
+    page_down: Some(( code: Char('d'), modifiers: "CONTROL")),
+
+    status_reset_item: Some(( code: Char('U'), modifiers: "SHIFT")),
+)

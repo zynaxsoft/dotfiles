@@ -33,6 +33,7 @@ _link fish/fish_plugins .config/fish/
 _link fish/my_conf_d.fish .config/fish/conf.d/
 _link zellij .config/
 _link kitty .config/
+_link gitui .config/
 ln -s ~/dotfiles/bacon-prefs.toml ~/.config/bacon/prefs.toml
 
 mkdir -p ~/.cargo
