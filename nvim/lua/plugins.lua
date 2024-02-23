@@ -28,12 +28,6 @@ return {
     dependencies = 'nvim-treesitter/nvim-treesitter',
   },
 
-  -- Highlight and preview pattern/regex
-  {
-    'markonm/traces.vim',
-    event = 'VeryLazy',
-  },
-
   -- Color
   'norcalli/nvim-colorizer.lua',
 
