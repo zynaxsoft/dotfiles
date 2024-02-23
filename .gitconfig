@@ -1,3 +1,10 @@
+# Guides:
+# Improving git status response on large repo:
+# git config core.fsmonitor true
+# git config core.untrackedCache true
+# Load GitHub special Pull Request references to origin/pull/*:
+# git config remote.origin.fetch '+refs/pull/*:refs/remotes/origin/pull/*'
+
 [user]
     email = me@tanapol.dev
     name = Tanapol Prucksakorn
@@ -15,6 +22,9 @@
 [core]
     excludesfile = ~/dotfiles/.mygitignore
     pager = less -+FX -r
+
+[fetch]
+    writeCommitGraph = true
 
 [pull]
     rebase = false
