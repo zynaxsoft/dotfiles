@@ -21,9 +21,7 @@ function init(on_attach)
       },
       -- null_ls.builtins.formatting.prettierd,
       null_ls.builtins.formatting.terraform_fmt,
-      null_ls.builtins.formatting.clang_format,
       null_ls.builtins.formatting.black,
-      null_ls.builtins.formatting.taplo,
 
       -- Completion
       -- null_ls.builtins.completion.spell,
