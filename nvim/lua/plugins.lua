@@ -1,6 +1,6 @@
 return {
   -- Core
-  'nvim-lua/plenary.nvim',
+  { 'nvim-lua/plenary.nvim', lazy = true },
 
   -- GUI
   {
@@ -9,6 +9,7 @@ return {
     config = function()
       require 'config.catppuccin'
     end,
+    lazy = true,
   },
   {
     'nvim-lualine/lualine.nvim',
@@ -16,6 +17,7 @@ return {
       require 'config.lualine'
     end,
     dependencies = { 'arkav/lualine-lsp-progress', 'nvim-tree/nvim-web-devicons' },
+    event = 'VeryLazy',
   },
 
   -- Show indent line
@@ -26,6 +28,7 @@ return {
       require 'config.indent-blankline'
     end,
     dependencies = 'nvim-treesitter/nvim-treesitter',
+    event = { "BufReadPost", "BufNewFile" },
   },
 
   -- Color
@@ -34,6 +37,7 @@ return {
     config = function()
       require('colorizer').setup()
     end,
+    event = { "BufReadPost", "BufNewFile" },
   },
 
   -- Treesitter
@@ -41,16 +45,19 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = require('config.treesitter').main,
+    event = { "BufReadPost", "BufNewFile" },
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
     config = require('config.treesitter').context,
     dependencies = 'nvim-treesitter/nvim-treesitter',
+    event = { "BufReadPost", "BufNewFile" },
   },
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
     config = require('config.treesitter').textobjects,
     dependencies = 'nvim-treesitter/nvim-treesitter',
+    event = { "BufReadPost", "BufNewFile" },
   },
 
   -- Tree
@@ -99,6 +106,8 @@ return {
     config = function()
       require 'config.ufo'
     end,
+    lazy = true,
+    keys = { 'za', 'zA' },
   },
 
   -- LSP
@@ -107,12 +116,14 @@ return {
     config = function()
       require('config.lspconfig_config').setup()
     end,
+    event = { 'BufReadPre', 'BufNewFile' },
   },
   {
     'ray-x/lsp_signature.nvim',
     config = function()
       require 'config.lsp-signature'
     end,
+    event = { "BufReadPost", "BufNewFile" },
   },
 
   -- LSP Installer
@@ -124,6 +135,7 @@ return {
     'williamboman/mason-lspconfig.nvim',
     config = require('config.mason').lspconfig,
     dependencies = { 'williamboman/mason.nvim', 'neovim/nvim-lspconfig' },
+    event = { 'BufReadPre', 'BufNewFile' },
   },
 
   -- nvim-cmp
@@ -134,7 +146,7 @@ return {
       require 'config.cmp'
     end,
     dependencies = {
-      { 'hrsh7th/cmp-nvim-lsp', branch = 'main' },
+      { 'hrsh7th/cmp-nvim-lsp', branch = 'main', lazy = true },
       -- sources
       { 'hrsh7th/cmp-vsnip', branch = 'main' },
       { 'hrsh7th/cmp-buffer', branch = 'main' },
@@ -152,6 +164,7 @@ return {
       -- symbols
       'onsails/lspkind-nvim',
     },
+    lazy = true,
   },
   {
     'mtoohey31/cmp-fish',
@@ -176,6 +189,7 @@ return {
       local on_attach = require('config.lspconfig_config').on_attach
       require('config.null-ls').init(on_attach)
     end,
+    event = { "BufReadPre", "BufNewFile" },
   },
   {
     'folke/trouble.nvim',
@@ -206,7 +220,7 @@ return {
     keys = '<Leader>?',
   },
 
-  'mbbill/undotree',
+  { 'mbbill/undotree', lazy = true, cmd = { 'UndotreeToggle' } },
 
   -- Motions
   { 'machakann/vim-sandwich', lazy = true, keys = 's' },
@@ -214,14 +228,18 @@ return {
   -- Tools
   {
     'nvim-telescope/telescope.nvim',
-    config = require('config.telescope').setup,
+    config = function()
+      require('config.telescope').setup()
+    end,
     dependencies = { 'nvim-lua/plenary.nvim' },
+    lazy = true,
   },
   {
     'nvim-telescope/telescope-ui-select.nvim',
     dependencies = {
       'nvim-telescope/telescope.nvim',
     },
+    lazy = true,
   },
   {
     'pwntester/octo.nvim',
@@ -244,7 +262,7 @@ return {
     config = function()
       require('harpoon').setup()
     end,
-    event = 'VeryLazy',
+    lazy = true,
   },
   -- makes some plugins dot-repeatable like leap
   { 'tpope/vim-repeat', event = 'VeryLazy' },
@@ -260,6 +278,7 @@ return {
     config = function()
       require 'config.gitsigns'
     end,
+    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
   },
 
   -- Neorg

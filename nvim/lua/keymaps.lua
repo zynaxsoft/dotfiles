@@ -31,37 +31,39 @@ map('n', '<leader>xl', [[<cmd>TroubleToggle loclist<cr>]])
 map('n', 'gR', [[<cmd>TroubleToggle lsp_references<cr>]])
 
 -- Find files using Telescope command-line sugar.
-local telescope = require 'telescope.builtin'
-map('n', '<leader>fb', telescope.builtin)
-map('n', '<leader>fbh', telescope.highlights)
-map('n', '<leader>fbc', telescope.commands)
+function telescope()
+    return require 'telescope.builtin'
+end
+map('n', '<leader>fb', function() telescope().builtin() end)
+map('n', '<leader>fbh', function() telescope().highlights() end)
+map('n', '<leader>fbc', function() telescope().commands() end)
 
 map('n', '<c-p>', require('config.telescope').project_files)
-map('n', '<c-n>', telescope.buffers)
-map('n', '<leader>g', telescope.live_grep)
-map('n', '<leader>G', telescope.current_buffer_fuzzy_find)
+map('n', '<c-n>', function() telescope().buffers() end)
+map('n', '<leader>g', function() telescope().live_grep() end)
+map('n', '<leader>G', function() telescope().current_buffer_fuzzy_find() end)
 map('n', '<leader>ff', function()
-  telescope.find_files { hidden = true, no_ignore = true }
+  telescope().find_files { hidden = true, no_ignore = true }
 end)
-map('n', '<leader>f:', telescope.command_history)
-map('n', '<leader>fh', telescope.help_tags)
+map('n', '<leader>f:', function() telescope().command_history() end)
+map('n', '<leader>fh', function() telescope().help_tags() end)
 map('n', '<leader><leader>h', function()
-  telescope.live_grep { cwd = '$HOME/dotfiles/nvim' }
+  telescope().live_grep { cwd = '$HOME/dotfiles/nvim' }
 end)
-map('n', '<leader>f/', telescope.search_history)
-map('n', '<leader>fm', telescope.marks)
-map('n', '<leader>fq', telescope.quickfix)
-map('n', '<leader>fl', telescope.loclist)
-map('n', '<leader>fr', telescope.registers)
-map('n', '<leader>fe', telescope.keymaps)
-map('n', '<leader>fs', telescope.spell_suggest)
-map('n', '<leader>fy', telescope.lsp_document_symbols)
-map('n', '<leader>ft', telescope.treesitter)
+map('n', '<leader>f/', function() telescope().search_history() end)
+map('n', '<leader>fm', function() telescope().marks() end)
+map('n', '<leader>fq', function() telescope().quickfix() end)
+map('n', '<leader>fl', function() telescope().loclist() end)
+map('n', '<leader>fr', function() telescope().registers() end)
+map('n', '<leader>fe', function() telescope().keymaps() end)
+map('n', '<leader>fs', function() telescope().spell_suggest() end)
+map('n', '<leader>fy', function() telescope().lsp_document_symbols() end)
+map('n', '<leader>ft', function() telescope().treesitter() end)
 map('v', '<leader>a', [[:'<,'>Telescope lsp_range_code_actions<cr>]])
-map('n', 'gd', telescope.lsp_definitions)
-map('n', 'gD', telescope.lsp_type_definitions)
-map('n', 'gi', telescope.lsp_implementations)
-map('n', 'gr', telescope.lsp_references)
+map('n', 'gd', function() telescope().lsp_definitions() end)
+map('n', 'gD', function() telescope().lsp_type_definitions() end)
+map('n', 'gi', function() telescope().lsp_implementations() end)
+map('n', 'gr', function() telescope().lsp_references() end)
 
 -- harpoon 🔱
 map('n', '<leader>N', function() require('harpoon.mark').add_file() end)
@@ -72,9 +74,22 @@ map('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end)
 map('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end)
 
 -- crates
-map('n', '<leader>cf', require('crates').show_features_popup)
-map('n', '<leader>cv', require('crates').show_versions_popup)
-map('n', '<leader>cd', require('crates').show_dependencies_popup)
+map('n', '<leader>cf', function() require('crates').show_features_popup() end)
+map('n', '<leader>cv', function() require('crates').show_versions_popup() end)
+map('n', '<leader>cd', function() require('crates').show_dependencies_popup() end)
+
+-- ufo
+map('n', 'zR', function() require('ufo').openAllFolds() end)
+map('n', 'zM', function() require('ufo').closeAllFolds() end)
+map('n', 'zr', function() require('ufo').openFoldsExceptKinds() end)
+map('n', 'zf', function(n)
+    require('ufo').openFoldsExceptKinds()
+    require('ufo').closeFoldsWith(n)
+end)
+map('n', 'zm', function() require('ufo').closeFoldsWith() end) -- closeAllFolds == closeFoldsWith(0)
+map('n', 'zk', function()
+  require('ufo').peekFoldedLinesUnderCursor()
+end)
 
 -- undotree
 map('n', '<leader>u', vim.cmd.UndotreeToggle)
