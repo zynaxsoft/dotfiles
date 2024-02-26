@@ -276,7 +276,6 @@ return {
 
   -- Clipboard
   'roxma/vim-tmux-clipboard',
-  { 'ojroques/nvim-osc52', config = require('config.osc52').init },
 
   -- Nvim dev
   { 'bfredl/nvim-luadev', lazy = true, cmd = 'Luadev' },
