@@ -21,7 +21,7 @@
 
 [core]
     excludesfile = ~/dotfiles/.mygitignore
-    pager = less -+FX -r
+    # pager = less -+FX -r
 
 [fetch]
     writeCommitGraph = true
