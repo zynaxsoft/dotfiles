@@ -94,7 +94,7 @@ local setup = function()
     'pyright',
     'vuels',
     'eslint',
-    -- 'kotlin_language_server',
+    'kotlin_language_server',
   }
   local settings = {
     python = {
