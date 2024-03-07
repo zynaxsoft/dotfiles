@@ -28,7 +28,7 @@ return {
       require 'config.indent-blankline'
     end,
     dependencies = 'nvim-treesitter/nvim-treesitter',
-    event = { "BufReadPost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufNewFile' },
   },
 
   -- Color
@@ -37,7 +37,7 @@ return {
     config = function()
       require('colorizer').setup()
     end,
-    event = { "BufReadPost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufNewFile' },
   },
 
   -- Treesitter
@@ -45,19 +45,19 @@ return {
     'nvim-treesitter/nvim-treesitter',
     build = ':TSUpdate',
     config = require('config.treesitter').main,
-    event = { "BufReadPost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufNewFile' },
   },
   {
     'nvim-treesitter/nvim-treesitter-context',
     config = require('config.treesitter').context,
     dependencies = 'nvim-treesitter/nvim-treesitter',
-    event = { "BufReadPost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufNewFile' },
   },
   {
     'nvim-treesitter/nvim-treesitter-textobjects',
     config = require('config.treesitter').textobjects,
     dependencies = 'nvim-treesitter/nvim-treesitter',
-    event = { "BufReadPost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufNewFile' },
   },
 
   -- Tree
@@ -123,7 +123,7 @@ return {
     config = function()
       require 'config.lsp-signature'
     end,
-    event = { "BufReadPost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufNewFile' },
   },
 
   -- LSP Installer
@@ -189,7 +189,7 @@ return {
       local on_attach = require('config.lspconfig_config').on_attach
       require('config.null-ls').init(on_attach)
     end,
-    event = { "BufReadPre", "BufNewFile" },
+    event = { 'BufReadPre', 'BufNewFile' },
   },
   {
     'folke/trouble.nvim',
@@ -231,13 +231,18 @@ return {
     config = function()
       require('config.telescope').setup()
     end,
-    dependencies = { 'nvim-lua/plenary.nvim' },
-    lazy = true,
-  },
-  {
-    'nvim-telescope/telescope-ui-select.nvim',
     dependencies = {
-      'nvim-telescope/telescope.nvim',
+      'nvim-lua/plenary.nvim',
+
+      {
+        'nvim-telescope/telescope-ui-select.nvim',
+        lazy = true,
+      },
+      {
+        'nvim-telescope/telescope-live-grep-args.nvim',
+        lazy = true,
+        version = '*',
+      },
     },
     lazy = true,
   },
@@ -278,7 +283,7 @@ return {
     config = function()
       require 'config.gitsigns'
     end,
-    event = { "BufReadPost", "BufWritePost", "BufNewFile" },
+    event = { 'BufReadPost', 'BufWritePost', 'BufNewFile' },
   },
 
   -- Neorg

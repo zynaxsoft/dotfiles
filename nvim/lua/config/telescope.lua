@@ -5,6 +5,7 @@ function M.setup()
     -- height = 0.5,
     mirror = true,
   }
+  local lga_actions = require("telescope-live-grep-args.actions")
   require('telescope').setup {
     defaults = {
       -- Default configuration for telescope goes here:
@@ -62,9 +63,24 @@ function M.setup()
         -- }
         -- please take a look at the readme of the extension you want to configure
       },
+      live_grep_args = {
+        auto_quoting = true, -- enable/disable auto-quoting
+        -- define mappings, e.g.
+        mappings = { -- extend mappings
+          i = {
+            ['<C-k>'] = lga_actions.quote_prompt(),
+            ['<C-i>'] = lga_actions.quote_prompt { postfix = ' --iglob ' },
+          },
+        },
+        -- ... also accepts theme settings, for example:
+        -- theme = "dropdown", -- use dropdown theme
+        -- theme = { }, -- use own theme spec
+        -- layout_config = { mirror=true }, -- mirror preview pane
+      },
     },
   }
   require('telescope').load_extension 'ui-select'
+  require('telescope').load_extension 'live_grep_args'
 end
 
 function M.project_files()
