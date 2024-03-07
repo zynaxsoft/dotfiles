@@ -95,8 +95,8 @@ end)
 map('n', '<leader>u', vim.cmd.UndotreeToggle)
 
 -- Neorg
-map('n', '<leader>fn', [[:Neorg workspace<cr>]])
-map('n', '<leader>fi', [[:Neorg index<cr>]])
+map('n', '<leader>fn', [[:Neorg workspace<cr>]], { silent = true})
+map('n', '<leader>fi', [[:Neorg index<cr>]], { silent = true})
 
 -- quickfix
 map('n', '<leader>q', [[<cmd>copen<cr>]])

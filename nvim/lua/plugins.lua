@@ -287,6 +287,7 @@ return {
     build = ':Neorg sync-parsers',
     version = '*',
     ft = 'norg',
+    cmd = { 'Neorg' },
     dependencies = { { 'nvim-lua/plenary.nvim' }, { 'nvim-neorg/neorg-telescope', ft = 'norg' } },
     config = function()
       require 'config.neorg'
