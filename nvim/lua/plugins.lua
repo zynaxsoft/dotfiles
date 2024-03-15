@@ -305,6 +305,10 @@ return {
   -- Nvim dev
   { 'bfredl/nvim-luadev', lazy = true, cmd = 'Luadev' },
 
+  -- Justfile
+  { 'IndianBoy42/tree-sitter-just', ft = 'just' },
+  { 'NoahTheDuke/vim-just', ft = 'just' },
+
   -- Lang specifics
   {
     'plasticboy/vim-markdown',
