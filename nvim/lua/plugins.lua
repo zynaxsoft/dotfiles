@@ -201,6 +201,8 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
   },
 
+  { 'github/copilot.vim', lazy = true, cmd = 'Copilot' },
+
   -- Enhancement
   -- {
   --   'tversteeg/registers.nvim',
