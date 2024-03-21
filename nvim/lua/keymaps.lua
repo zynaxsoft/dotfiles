@@ -19,6 +19,7 @@ map('n', '<leader><leader>m', [[:Mason<cr>]])
 
 -- Ctrl+h to stop searching
 map({ 'n', 'v' }, '<C-h>', [[:nohlsearch<cr>]], { silent = true })
+map('n', 'zt', [[zt5<C-y>]], { silent = true })
 
 -- Jump to start and end of line using the home row keys
 -- map('', 'H', '^')
