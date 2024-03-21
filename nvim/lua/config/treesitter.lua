@@ -74,6 +74,8 @@ function treesitter.textobjects()
         enable = true,
         set_jumps = true, -- whether to set jumps in the jumplist
         goto_next_start = {
+          [']a'] = { query = '@assignment.lhs', desc = 'Next left hand side assignment' },
+          [']b'] = { query = '@block.outer', desc = 'Next left block' },
           [']m'] = { query = '@call.outer', desc = 'Next function call start' },
           [']f'] = { query = '@function.outer', desc = 'Next method/function def start' },
           [']c'] = { query = '@class.outer', desc = 'Next class start' },
@@ -93,6 +95,8 @@ function treesitter.textobjects()
           [']L'] = { query = '@loop.outer', desc = 'Next loop end' },
         },
         goto_previous_start = {
+          ['[a'] = { query = '@assignment.lhs', desc = 'Prev left hand side assignment' },
+          ['[b'] = { query = '@block.outer', desc = 'Next block' },
           ['[m'] = { query = '@call.outer', desc = 'Prev function call start' },
           ['[f'] = { query = '@function.outer', desc = 'Prev method/function def start' },
           ['[c'] = { query = '@class.outer', desc = 'Prev class start' },
