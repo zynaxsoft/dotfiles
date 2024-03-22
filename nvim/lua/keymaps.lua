@@ -3,6 +3,7 @@ local map = vim.keymap.set
 -- git-blame activate by leader b
 map('n', '<Leader>b', [[:Gitsigns toggle_current_line_blame<cr>]], { silent = true })
 map('n', '<Leader>B', [[:Git blame<cr>]], { silent = true })
+map('n', '<Leader><Leader>B', [[:Git blame -CCC<cr>]], { silent = true })
 -- Fugitive
 map('n', '<leader>dd', [[:Gvdiffsplit!<cr>]], { silent = true })
 map('n', '<leader>dm', [[:Git mergetool<cr>]], { silent = true })
