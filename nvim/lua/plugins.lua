@@ -163,6 +163,13 @@ return {
       'hrsh7th/vim-vsnip',
       -- symbols
       'onsails/lspkind-nvim',
+      -- etc
+      {
+        'zbirenbaum/copilot-cmp',
+        config = function()
+          require('copilot_cmp').setup()
+        end,
+      },
     },
     lazy = true,
   },
@@ -201,7 +208,12 @@ return {
     dependencies = 'nvim-tree/nvim-web-devicons',
   },
 
-  { 'github/copilot.vim', lazy = true, cmd = 'Copilot' },
+  -- copilot
+  {
+    'zbirenbaum/copilot.lua',
+    cmd = 'Copilot',
+    build = ':Copilot auth',
+  },
 
   -- Enhancement
   -- {

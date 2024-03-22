@@ -22,6 +22,7 @@ cmp.setup {
     { name = 'nvim-lsp-signature-help' },
     { name = 'vsnip' },
     { name = 'neorg' },
+    { name = 'copilot' },
   }, {
     { name = 'emoji', option = { insert = true } },
     { name = 'fish' },
