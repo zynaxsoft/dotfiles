@@ -20,15 +20,13 @@ cmp.setup {
   sources = cmp.config.sources({
     { name = 'nvim_lsp' },
     { name = 'nvim-lsp-signature-help' },
-    { name = 'vsnip' },
-    { name = 'neorg' },
     { name = 'copilot' },
-  }, {
-    { name = 'emoji', option = { insert = true } },
-    { name = 'fish' },
     { name = 'path' },
-    { name = 'crates' },
+    { name = 'vsnip' },
+    { name = 'fish' },
+    -- { name = 'neorg' },
   }, {
+    { name = 'crates' },
     { name = 'treesitter', keyword_length = 3 },
     {
       name = 'buffer',
@@ -57,6 +55,8 @@ cmp.setup {
         trigger_characters_ft = {}, -- { filetype = { '.' } }
       },
     },
+  }, {
+    { name = 'emoji', option = { insert = true } },
   }),
   experimental = {
     ghost_text = {
