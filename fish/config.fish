@@ -27,6 +27,5 @@ if status is-interactive
     set -gx GPG_TTY $(tty)
     set -gx EDITOR (which nvim)
 
-    starship init fish | source
-    eval $(ssh-agent -c) > /dev/null
+    source ~/dotfiles/fish/configs/sources.fish
 end

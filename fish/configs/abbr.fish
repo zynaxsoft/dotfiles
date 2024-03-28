@@ -12,6 +12,7 @@ if status is-interactive
     alias ll "eza --icons --git -lg"
     alias la "ll -a"
     alias et "et -I"
+    alias z "zoxide"
 
     abbr -a vim nvim
     abbr -a vi nvim
