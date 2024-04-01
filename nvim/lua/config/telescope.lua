@@ -44,6 +44,8 @@ function M.setup()
         layout_config = my_layout,
         -- previewer = false,
         show_all_buffers = true,
+        -- ignore_current_buffer = true,
+        sort_mru = true,
         -- sort_lastused = true,
         mappings = {
           i = {
