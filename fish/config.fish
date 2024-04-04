@@ -23,9 +23,7 @@ if status is-interactive
         source ~/dotfiles/fish/configs/work.fish
     end
 
-    set -gx COLORTERM truecolor
-    set -gx GPG_TTY $(tty)
-    set -gx EDITOR (which nvim)
+    source ~/dotfiles/fish/configs/env.fish
 
     source ~/dotfiles/fish/configs/sources.fish
 end
