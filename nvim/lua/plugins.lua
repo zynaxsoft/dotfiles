@@ -214,8 +214,8 @@ return {
     cmd = 'Copilot',
     build = ':Copilot auth',
     config = function()
-        require 'config.copilot'
-    end
+      require 'config.copilot'
+    end,
   },
 
   -- Enhancement
@@ -310,7 +310,11 @@ return {
     version = '*',
     ft = 'norg',
     cmd = { 'Neorg' },
-    dependencies = { { 'nvim-lua/plenary.nvim' }, { 'nvim-neorg/neorg-telescope', ft = 'norg' } },
+    dependencies = {
+      { 'nvim-lua/plenary.nvim' },
+      { 'nvim-neorg/neorg-telescope', ft = 'norg' },
+      { 'vhyrro/luarocks.nvim' },
+    },
     config = function()
       require 'config.neorg'
     end,
