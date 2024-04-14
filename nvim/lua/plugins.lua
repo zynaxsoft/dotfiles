@@ -315,7 +315,6 @@ return {
   -- Neorg
   {
     'nvim-neorg/neorg',
-    build = ':Neorg sync-parsers',
     version = '*',
     ft = 'norg',
     cmd = { 'Neorg' },
