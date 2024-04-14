@@ -81,6 +81,9 @@ map('n', '<leader>2', function() require("harpoon.ui").nav_file(2) end)
 map('n', '<leader>3', function() require("harpoon.ui").nav_file(3) end)
 map('n', '<leader>4', function() require("harpoon.ui").nav_file(4) end)
 
+-- oil
+map('n', 'g-', function() require('oil').open() end)
+
 -- crates
 map('n', '<leader>cf', function() require('crates').show_features_popup() end)
 map('n', '<leader>cv', function() require('crates').show_versions_popup() end)
