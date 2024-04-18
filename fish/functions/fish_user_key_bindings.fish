@@ -16,4 +16,6 @@ function fish_user_key_bindings
 
     bind -M default \cp history-search-backward
     bind -M default \cn history-search-forward
+
+    bind -M insert \cgb 'fzf_git_recent_branch'
 end
