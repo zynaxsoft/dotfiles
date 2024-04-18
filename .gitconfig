@@ -12,6 +12,7 @@
 
 [diff]
     tool = vimdiff
+    colorMoved = default
 
 [difftool]
     prompt = false
@@ -21,7 +22,18 @@
 
 [core]
     excludesfile = ~/dotfiles/.mygitignore
-    pager = less -+FX
+    # pager = less -+FX
+    pager = delta --paging always
+
+[delta]
+    navigate = true
+    features = catppuccin-macchiato
+
+[interactive]
+    diffFilter = delta --color-only
+
+[merge]
+    conflictstyle = diff3
 
 [fetch]
     writeCommitGraph = true
@@ -36,4 +48,5 @@
     required = true
 
 [include]
+    path = ~/dotfiles/bat/delta-theme.gitconfig
     path = ~/.gitconfig-work
