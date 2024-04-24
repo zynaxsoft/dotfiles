@@ -8,7 +8,8 @@ function fzf_git_recent_branch -d "Efficient fish keybinding for fzf with git br
     if test -n $select
     set -l branch (builtin string trim --left --chars='* ' "$select")
     set -l branch (builtin string shorten -N $branch | tr -d '\n')
-    commandline -i $branch
+    set -e cmd[-1]
+    commandline -r "$(builtin string join ' ' $cmd) $branch"
     end
 
     commandline -f repaint
