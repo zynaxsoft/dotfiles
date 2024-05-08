@@ -96,6 +96,7 @@ local setup = function()
     'vuels',
     'eslint',
     'kotlin_language_server',
+    'zls',
   }
   local settings = {
     python = {
