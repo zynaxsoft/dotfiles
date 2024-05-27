@@ -102,6 +102,9 @@ map('n', 'zk', function()
   require('ufo').peekFoldedLinesUnderCursor()
 end)
 
+-- Dadbod
+map('n', '<Leader><Leader>l', [[:DBUIToggle<cr>]], { silent = true })
+
 -- undotree
 map('n', '<leader>u', vim.cmd.UndotreeToggle)
 

@@ -79,6 +79,7 @@ cmp.setup {
         path = '[Path]',
         crates = '[Crates]',
         fish = '[Fish]',
+         ['vim-dadbod-completion']= '[DB]',
       },
       before = function(entry, vim_item)
         return vim_item
@@ -86,6 +87,13 @@ cmp.setup {
     },
   },
 }
+
+cmp.setup.filetype({ 'sql', 'plsql', 'mysql' }, {
+  sources = {
+    { name = 'vim-dadbod-completion' },
+    { name = 'buffer' },
+  },
+})
 
 cmdline_mapping = {
   ['<CR>'] = {
