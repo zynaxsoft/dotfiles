@@ -3,33 +3,6 @@ function gitsigns_visual_op(op)
 end
 
 require('gitsigns').setup {
-  signs = {
-    add = { hl = 'GitSignsAdd', text = '+', numhl = 'GitSignsAddNr', linehl = 'GitSignsAddLn' },
-    change = {
-      hl = 'GitSignsChange',
-      text = '~',
-      numhl = 'GitSignsChangeNr',
-      linehl = 'GitSignsChangeLn',
-    },
-    delete = {
-      hl = 'GitSignsDelete',
-      text = '_',
-      numhl = 'GitSignsDeleteNr',
-      linehl = 'GitSignsDeleteLn',
-    },
-    topdelete = {
-      hl = 'GitSignsDelete',
-      text = '‾',
-      numhl = 'GitSignsDeleteNr',
-      linehl = 'GitSignsDeleteLn',
-    },
-    changedelete = {
-      hl = 'GitSignsChange',
-      text = '~',
-      numhl = 'GitSignsChangeNr',
-      linehl = 'GitSignsChangeLn',
-    },
-  },
   signcolumn = true, -- Toggle with `:Gitsigns toggle_signs`
   numhl = false, -- Toggle with `:Gitsigns toggle_numhl`
   linehl = false, -- Toggle with `:Gitsigns toggle_linehl`
@@ -39,7 +12,6 @@ require('gitsigns').setup {
     follow_files = true,
   },
   attach_to_untracked = true,
-  current_line_blame = false, -- Toggle with `:Gitsigns toggle_current_line_blame`
   current_line_blame_opts = {
     virt_text = true,
     virt_text_pos = 'eol', -- 'eol' | 'overlay' | 'right_align'
@@ -60,9 +32,6 @@ require('gitsigns').setup {
     relative = 'cursor',
     row = 0,
     col = 1,
-  },
-  yadm = {
-    enable = false,
   },
   on_attach = function(bufnr)
     local function map(mode, lhs, rhs, opts)
