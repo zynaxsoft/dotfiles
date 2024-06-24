@@ -1,5 +1,5 @@
 function gitsigns_visual_op(op)
-  return require("gitsigns")[op]({ vim.fn.line("."), vim.fn.line("v") })
+  return require('gitsigns')[op] { vim.fn.line '.', vim.fn.line 'v' }
 end
 
 require('gitsigns').setup {
@@ -18,8 +18,21 @@ require('gitsigns').setup {
     delay = 50,
     ignore_whitespace = false,
   },
-  current_line_blame_formatter_opts = {
-    relative_time = false,
+  -- signs = {
+  --   add = { text = '┃' },
+  --   change = { text = '┃' },
+  --   delete = { text = '_' },
+  --   topdelete = { text = '‾' },
+  --   changedelete = { text = '~' },
+  --   untracked = { text = '┆' },
+  -- },
+  signs = {
+    add = { text = '+' },
+    change = { text = '~' },
+    delete = { text = '_' },
+    topdelete = { text = '‾' },
+    changedelete = { text = '~' },
+    untracked = { text = '┆' },
   },
   sign_priority = 6,
   update_debounce = 100,
