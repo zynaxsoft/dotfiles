@@ -1,5 +1,5 @@
 if vim.fn.has 'unix' == 1 then
-  vim.opt.shell = '/bin/bash'
+  vim.opt.shell = os.getenv('SHELL')
 elseif vim.fn.has 'win64' == 1 then
   vim.cmd [[
     let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
