@@ -102,6 +102,7 @@ local setup = function()
     'eslint',
     'kotlin_language_server',
     'zls',
+    'hls',
   }
   local settings = {
     python = {

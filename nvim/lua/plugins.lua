@@ -397,6 +397,24 @@ return {
     },
     ft = { 'java' },
   },
+  {
+    'elixir-tools/elixir-tools.nvim',
+    version = '*',
+    event = { 'BufReadPre', 'BufNewFile' },
+    config = require('config.elixir-tools').setup,
+    dependencies = {
+      'nvim-lua/plenary.nvim',
+    },
+  },
+  {
+    'mrcjkb/haskell-tools.nvim',
+    version = '*', -- Recommended
+    lazy = false, -- This plugin is already lazy
+    config = function()
+      local on_attach = require('config.lspconfig_config').on_attach
+      require('config.haskell-tools').init(on_attach)
+    end,
+  },
   { 'cespare/vim-toml', lazy = true, ft = { 'toml' } },
   { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
