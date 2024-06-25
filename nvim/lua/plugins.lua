@@ -397,15 +397,18 @@ return {
     },
     ft = { 'java' },
   },
-  {
-    'elixir-tools/elixir-tools.nvim',
-    version = '*',
-    event = { 'BufReadPre', 'BufNewFile' },
-    config = require('config.elixir-tools').setup,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-    },
-  },
+  -- {
+  --   'elixir-tools/elixir-tools.nvim',
+  --   version = '*',
+  --   event = { 'BufReadPre', 'BufNewFile' },
+  --   config = function()
+  --     local on_attach = require('config.lspconfig_config').on_attach
+  --     require('config.elixir-tools').init(on_attach)
+  --   end,
+  --   dependencies = {
+  --     'nvim-lua/plenary.nvim',
+  --   },
+  -- },
   {
     'mrcjkb/haskell-tools.nvim',
     version = '*', -- Recommended
