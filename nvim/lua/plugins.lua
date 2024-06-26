@@ -335,7 +335,7 @@ return {
   -- Neorg
   {
     'nvim-neorg/neorg',
-    version = '*',
+    version = '~8.7',
     ft = 'norg',
     cmd = { 'Neorg' },
     dependencies = {
