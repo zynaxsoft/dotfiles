@@ -418,6 +418,7 @@ return {
       require('config.haskell-tools').init(on_attach)
     end,
   },
+  'neovimhaskell/haskell-vim',
   { 'cespare/vim-toml', lazy = true, ft = { 'toml' } },
   { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
