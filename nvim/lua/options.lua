@@ -1,5 +1,5 @@
 if vim.fn.has 'unix' == 1 then
-  vim.opt.shell = os.getenv('SHELL')
+  vim.opt.shell = os.getenv 'SHELL'
 elseif vim.fn.has 'win64' == 1 then
   vim.cmd [[
     let &shell = executable('pwsh') ? 'pwsh' : 'powershell'
@@ -53,6 +53,18 @@ vim.opt.smartindent = true
 vim.opt.grepprg = [[rg --vimgrep]]
 
 vim.opt.lazyredraw = true
+
+vim.g.clipboard = {
+  name = 'OSC 52',
+  copy = {
+    ['+'] = require('vim.ui.clipboard.osc52').copy '+',
+    ['*'] = require('vim.ui.clipboard.osc52').copy '*',
+  },
+  paste = {
+    ['+'] = require('vim.ui.clipboard.osc52').paste '+',
+    ['*'] = require('vim.ui.clipboard.osc52').paste '*',
+  },
+}
 
 vim.cmd [[
   source ~/dotfiles/nvim/configs/wsl-stuff.vim
