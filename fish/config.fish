@@ -19,11 +19,11 @@ if status is-interactive
         case Darwin
             source ~/dotfiles/fish/configs/mac.fish
     end
-    if test -e ~/dotfiles/fish/configs/work.fish
-        source ~/dotfiles/fish/configs/work.fish
-    end
-
     source ~/dotfiles/fish/configs/env.fish
 
     source ~/dotfiles/fish/configs/sources.fish
+end
+
+if test -e ~/dotfiles/fish/configs/work.fish
+    source ~/dotfiles/fish/configs/work.fish
 end
