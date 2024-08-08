@@ -30,7 +30,7 @@ map('n', '<c-q>', [[<cmd>Trouble diagnostic toggle filter.buf=0<cr>]])
 map('n', '<a-q>', [[<cmd>Trouble diagnostic toggle<cr>]])
 map('n', '<leader>xs', [[<cmd>Trouble symbols toggle focus=false<cr>]])
 map('n', '<leader>xL', [[<cmd>Trouble lsp toggle focus=false win.position=right<cr>]])
-map('n', '<leader>xq', [[<cmd>Trouble qflist toggle<cr>]])
+map('n', '<leader>q', [[<cmd>Trouble qflist toggle win={position=right, size=0.3}<cr>]])
 map('n', '<leader>xl', [[<cmd>Trouble loclist toggle<cr>]])
 map('n', 'gR', [[<cmd>TroubleToggle lsp_references<cr>]])
 
@@ -115,7 +115,7 @@ map('n', '<leader>fn', [[:Neorg workspace<cr>]], { silent = true})
 map('n', '<leader>fi', [[:Neorg index<cr>]], { silent = true})
 
 -- quickfix
-map('n', '<leader>q', [[<cmd>copen<cr>]])
+-- map('n', '<leader>q', [[<cmd>copen<cr>]])
 map('n', ']q', [[<cmd>cnext<cr>]])
 map('n', '[q', [[<cmd>cprevious<cr>]])
 
