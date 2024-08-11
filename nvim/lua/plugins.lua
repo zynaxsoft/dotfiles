@@ -368,21 +368,14 @@ return {
   { 'rust-lang/rust.vim', lazy = true, ft = { 'rust' } },
   {
     'mrcjkb/rustaceanvim',
-    version = '^4', -- Recommended
+    version = '*', -- Recommended
     ft = { 'rust' },
     config = function()
       local on_attach = require('config.lspconfig_config').on_attach
       local capabilities = require('config.lspconfig_config').capabilities
       require('config.rustaceanvim').init(on_attach, capabilities)
     end,
-    dependencies = {
-      'nvim-lua/plenary.nvim',
-      'mfussenegger/nvim-dap',
-      {
-        'lvimuser/lsp-inlayhints.nvim',
-        opts = {},
-      },
-    },
+    dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
   },
   {
     'mfussenegger/nvim-jdtls',
@@ -432,4 +425,18 @@ return {
       vim.g.startuptime_tries = 10
     end,
   },
+
+  -- nvim dev
+  {
+    'folke/lazydev.nvim',
+    ft = 'lua', -- only load on lua files
+    opts = {
+      library = {
+        -- Load luvit types when the `vim.uv` word is found
+        { path = 'luvit-meta/library', words = { 'vim%.uv' } },
+        'lazy.nvim',
+      },
+    },
+  },
+  { 'Bilal2453/luvit-meta', lazy = true }, -- optional `vim.uv` typings
 }
