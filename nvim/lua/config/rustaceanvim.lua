@@ -1,15 +1,14 @@
 function init(on_attach_in, capabilities)
+  ---@type rustaceanvim.Opts
   vim.g.rustaceanvim = {
-    -- Plugin configuration
+    ---@type rustaceanvim.tools.Opts
     tools = {
       hover_actions = {
         auto_focus = true,
       },
     },
     -- LSP configuration
-    inlay_hints = {
-      highlight = 'NonText',
-    },
+    ---@type rustaceanvim.lsp.ClientOpts
     server = {
       on_attach = function(client, bufnr)
         on_attach_in(client, bufnr)
@@ -17,14 +16,21 @@ function init(on_attach_in, capabilities)
           vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
           -- or vim.lsp.buf.codeAction() if you don't want grouping.
         end, { silent = true, buffer = bufnr })
-        require('lsp-inlayhints').on_attach(client, bufnr)
       end,
       settings = {
         -- rust-analyzer language server configuration
-        ['rust-analyzer'] = {},
+        ['rust-analyzer'] = {
+          inlayHints = {
+            bindingModeHints = { enable = true },
+            closureCaptureHints = { enable = true },
+            closureReturnTypeHints = { enable = true },
+            lifetimeElisionHints = { enable = true },
+          },
+        },
       },
     },
     -- DAP configuration
+    ---@type rustaceanvim.dap.Opts
     dap = {},
   }
 end
