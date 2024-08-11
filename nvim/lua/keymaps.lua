@@ -26,13 +26,13 @@ map('n', 'zt', [[zt5<C-y>]], { silent = true })
 -- map('', 'H', '^')
 -- map('', 'L', '$')
 
-map('n', '<c-q>', [[<cmd>Trouble diagnostic toggle filter.buf=0<cr>]])
-map('n', '<a-q>', [[<cmd>Trouble diagnostic toggle<cr>]])
+map('n', '<c-q>', [[<cmd>Trouble diagnostics toggle filter.buf=0<cr>]])
+map('n', '<a-q>', [[<cmd>Trouble diagnostics toggle<cr>]])
 map('n', '<leader>xs', [[<cmd>Trouble symbols toggle focus=false<cr>]])
 map('n', '<leader>xL', [[<cmd>Trouble lsp toggle focus=false win.position=right<cr>]])
-map('n', '<leader>q', [[<cmd>Trouble qflist toggle win={position=right, size=0.3}<cr>]])
+map('n', '<leader>q', [[<cmd>Trouble myqflist toggle<cr>]])
 map('n', '<leader>xl', [[<cmd>Trouble loclist toggle<cr>]])
-map('n', 'gR', [[<cmd>TroubleToggle lsp_references<cr>]])
+map('n', 'gR', [[<cmd>Trouble lsp_references toggle<cr>]])
 
 -- Find files using Telescope command-line sugar.
 local function telescope_b()

@@ -210,7 +210,7 @@ return {
   {
     'folke/trouble.nvim',
     lazy = true,
-    cmd = 'TroubleToggle',
+    cmd = 'Trouble',
     config = function()
       require 'config.trouble'
     end,
