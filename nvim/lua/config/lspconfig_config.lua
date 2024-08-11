@@ -1,6 +1,11 @@
+local function toggle_inlay(bufnr)
+  local cur = vim.lsp.inlay_hint.is_enabled { bufnr = bufnr }
+  vim.lsp.inlay_hint.enable(not cur, { bufnr = bufnr })
+end
+
 local on_attach = function(client, bufnr)
   --Enable completion triggered by <c-x><c-o>
-  vim.api.nvim_buf_set_option(bufnr, 'omnifunc', 'v:lua.vim.lsp.omnifunc')
+  vim.api.nvim_set_option_value('omnifunc', 'v:lua.vim.lsp.omnifunc', { buf = bufnr })
 
   -- Mappings.
   -- See `:help vim.lsp.*` for documentation on any of the below functions
@@ -21,6 +26,9 @@ local on_attach = function(client, bufnr)
   vim.keymap.set({ 'n', 'i', 'v' }, '<C-e>', vim.lsp.buf.code_action, bufopts)
   vim.keymap.set('n', '<space>m', function()
     vim.lsp.buf.format { async = true }
+  end, bufopts)
+  vim.keymap.set('n', '<leader>ii', function()
+    toggle_inlay(bufnr)
   end, bufopts)
 
   -- Semantic highlighting
