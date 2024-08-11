@@ -59,10 +59,10 @@ local setup = function()
     vim.diagnostic.open_float { source = true }
   end, opts)
   vim.keymap.set('n', '<C-k>', function()
-    vim.diagnostic.goto_prev { float = { source = true } }
+    vim.diagnostic.jump { count = -1, float = { source = true } }
   end, opts)
   vim.keymap.set('n', '<C-j>', function()
-    vim.diagnostic.goto_next { float = { source = true } }
+    vim.diagnostic.jump { count = 1, float = { source = true } }
   end, opts)
 
   vim.diagnostic.config {
