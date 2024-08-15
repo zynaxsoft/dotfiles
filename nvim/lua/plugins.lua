@@ -416,6 +416,18 @@ return {
   { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
 
+  {
+    'pmizio/typescript-tools.nvim',
+    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
+    ft = {'typescript', 'typescriptreact', 'javascript'},
+    config = function()
+      local on_attach = require('config.lspconfig_config').on_attach
+      local capabilities = require('config.lspconfig_config').capabilities
+      require('config.typescript-tools').init(on_attach, capabilities)
+    end,
+    opts = {},
+  },
+
   -- Util
   -- measure startuptime
   {

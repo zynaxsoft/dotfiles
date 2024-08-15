@@ -103,7 +103,7 @@ local setup = function()
     'taplo',
     'lua_ls',
     'terraformls',
-    'tsserver',
+    -- 'tsserver',
     'gopls',
     'pyright',
     'vuels',
