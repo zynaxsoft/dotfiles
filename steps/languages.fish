@@ -11,7 +11,8 @@ echo "Installing Nodejs"
 # installs fnm (Fast Node Manager)
 sudo apt install -y unzip
 mkdir -p ~/.local/bin
-curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.local/bin/fnm" --skip-shell
+curl -fsSL https://fnm.vercel.app/install | bash -s -- --install-dir "$HOME/.local/share/fnm" --skip-shell
+ln -sf ~/.local/share/fnm/fnm ~/.local/bin/
 fish_add_path ~/.local/bin
 fnm env --use-on-cd --shell fish | source
 # download and install Node.js
