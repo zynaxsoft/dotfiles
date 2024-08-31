@@ -7,4 +7,4 @@ function _get
 end
 
 mkdir -p $plugin_path
-_get https://github.com/dj95/zjstatus/releases/download/v0.9.2/zjstatus.wasm zjstatus.wasm
+_get https://github.com/dj95/zjstatus/releases/latest/download/zjstatus.wasm zjstatus.wasm
