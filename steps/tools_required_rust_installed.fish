@@ -8,6 +8,6 @@ make -f ./completion/Makefile install
 popd > /dev/null
 
 echo "Installing rust tools"
-cargo install exa&  # ls alternative
+cargo install eza&
 cargo install erdtree&  # beautiful tree
 cargo install zellij&
