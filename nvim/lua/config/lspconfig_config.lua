@@ -102,6 +102,7 @@ local setup = function()
   local servers = {
     'taplo',
     'lua_ls',
+    'cssls',
     'terraformls',
     -- 'tsserver',
     'gopls',
