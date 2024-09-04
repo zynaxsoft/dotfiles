@@ -419,13 +419,20 @@ return {
   {
     'pmizio/typescript-tools.nvim',
     dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    ft = {'typescript', 'typescriptreact', 'javascript'},
+    ft = { 'typescript', 'typescriptreact', 'javascript' },
     config = function()
       local on_attach = require('config.lspconfig_config').on_attach
       local capabilities = require('config.lspconfig_config').capabilities
       require('config.typescript-tools').init(on_attach, capabilities)
     end,
     opts = {},
+  },
+  {
+    'luckasRanarison/tailwind-tools.nvim',
+    name = 'tailwind-tools',
+    build = ':UpdateRemotePlugins',
+    ft = { 'typescript', 'typescriptreact', 'javascript' },
+    opts = require('config.tailwind-tools').get_opts(),
   },
 
   -- Util

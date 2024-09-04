@@ -1,4 +1,5 @@
 local cmp = require 'cmp'
+local tailwind = require('tailwind-tools.cmp').lspkind_format
 cmp.setup {
   snippet = {
     -- REQUIRED by nvim-cmp. get rid of it once we can
@@ -79,9 +80,13 @@ cmp.setup {
         path = '[Path]',
         crates = '[Crates]',
         fish = '[Fish]',
-         ['vim-dadbod-completion']= '[DB]',
+        ['vim-dadbod-completion'] = '[DB]',
       },
       before = function(entry, vim_item)
+        local result = tailwind(entry, vim_item)
+        if result then
+          return result
+        end
         return vim_item
       end,
     },
