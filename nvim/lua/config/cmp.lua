@@ -91,7 +91,13 @@ cmp.setup {
       end,
     },
   },
+  window = {
+      documentation = {
+          zindex = 250,
+      }
+  }
 }
+
 
 cmp.setup.filetype({ 'sql', 'plsql', 'mysql' }, {
   sources = {
