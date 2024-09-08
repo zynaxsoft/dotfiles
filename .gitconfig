@@ -49,4 +49,4 @@
 
 [include]
     path = ~/dotfiles/bat/delta-theme.gitconfig
-    path = ~/.gitconfig-work
+    path = ~/.work/.gitconfig-work
