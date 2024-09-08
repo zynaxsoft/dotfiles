@@ -170,6 +170,7 @@ return {
       -- snip
       'hrsh7th/vim-vsnip-integ',
       'hrsh7th/vim-vsnip',
+      'rafamadriz/friendly-snippets',
       -- symbols
       'onsails/lspkind-nvim',
       -- etc
