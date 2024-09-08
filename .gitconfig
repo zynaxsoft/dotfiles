@@ -50,3 +50,6 @@
 [include]
     path = ~/dotfiles/bat/delta-theme.gitconfig
     path = ~/.work/.gitconfig-work
+[diff "lockb"]
+	textconv = bun
+	binary = true
