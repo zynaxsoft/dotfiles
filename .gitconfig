@@ -47,9 +47,10 @@
     process = git-lfs filter-process
     required = true
 
+[diff "lockb"]
+    textconv = bun
+    binary = true
+
 [include]
     path = ~/dotfiles/bat/delta-theme.gitconfig
     path = ~/.work/.gitconfig-work
-[diff "lockb"]
-	textconv = bun
-	binary = true
