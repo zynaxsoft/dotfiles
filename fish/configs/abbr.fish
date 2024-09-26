@@ -21,6 +21,7 @@ if status is-interactive
     abbr -a stgn stg new
     abbr -a stgn stg edit
     abbr -a stgr stg refresh
+    abbr -a stgrp stg refresh -p
     abbr -a stgri stg refresh -i
     abbr -a stgrip stg refresh -i -p
     abbr -a stgs stg series --description
