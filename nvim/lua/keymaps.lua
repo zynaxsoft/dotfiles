@@ -47,7 +47,7 @@ map('n', '<leader>fbc', function() telescope_b().commands() end)
 
 map('n', '<c-p>', require('config.telescope').project_files)
 map('n', '<c-n>', function() telescope_b().buffers() end)
-map('n', '<c-m>', function() telescope_b().oldfiles() end)
+map('n', '<leader>j', function() telescope_b().oldfiles() end)
 -- map('n', '<leader>g', function() telescope_b().live_grep() end)
 map('n', '<leader>g', function()
     telescope().extensions.live_grep_args.live_grep_args()
