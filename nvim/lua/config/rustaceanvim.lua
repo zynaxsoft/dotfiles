@@ -20,6 +20,11 @@ function init(on_attach_in, capabilities)
       settings = {
         -- rust-analyzer language server configuration
         ['rust-analyzer'] = {
+          completion = {
+            capable = {
+              snippets = 'add_parenthesis',
+            },
+          },
           inlayHints = {
             bindingModeHints = { enable = true },
             closureCaptureHints = { enable = true },

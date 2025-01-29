@@ -127,13 +127,13 @@ return {
     end,
     event = { 'BufReadPre', 'BufNewFile' },
   },
-  {
-    'ray-x/lsp_signature.nvim',
-    config = function()
-      require 'config.lsp-signature'
-    end,
-    event = { 'BufReadPost', 'BufNewFile' },
-  },
+  -- {
+  --   'ray-x/lsp_signature.nvim',
+  --   config = function()
+  --     require 'config.lsp-signature'
+  --   end,
+  --   event = { 'BufReadPost', 'BufNewFile' },
+  -- },
 
   -- LSP Installer
   {
@@ -147,48 +147,54 @@ return {
     event = { 'BufReadPre', 'BufNewFile' },
   },
 
-  -- nvim-cmp
+  -- blink.cmp
+  --
   {
-    'hrsh7th/nvim-cmp',
-    branch = 'main',
-    config = function()
-      require 'config.cmp'
-    end,
+    'saghen/blink.cmp',
     dependencies = {
-      { 'hrsh7th/cmp-nvim-lsp', branch = 'main', lazy = true },
-      -- sources
-      { 'hrsh7th/cmp-vsnip', branch = 'main' },
-      { 'hrsh7th/cmp-buffer', branch = 'main' },
-      { 'hrsh7th/cmp-path', branch = 'main' },
-      { 'hrsh7th/cmp-cmdline', branch = 'main' },
-      { 'hrsh7th/cmp-nvim-lsp-signature-help', branch = 'main' },
-      { 'hrsh7th/cmp-calc', branch = 'main' },
-      'lukas-reineke/cmp-rg',
-      'ray-x/cmp-treesitter',
-      'andersevenrud/cmp-tmux',
-      'hrsh7th/cmp-emoji',
-      -- snip
-      'hrsh7th/vim-vsnip-integ',
-      'hrsh7th/vim-vsnip',
       'rafamadriz/friendly-snippets',
-      -- symbols
-      'onsails/lspkind-nvim',
-      -- etc
+      'saghen/blink.compat',
       {
-        'zbirenbaum/copilot-cmp',
+        'L3MON4D3/LuaSnip',
+        version = 'v2.*',
         config = function()
-          require('copilot_cmp').setup()
+          require('luasnip.loaders.from_vscode').lazy_load()
         end,
       },
+      -- 'echasnovski/mini.snippets',
     },
-    lazy = true,
+    version = '*',
+    ---@module 'blink.cmp'
+    ---@type blink.cmp.Config
+    opts = require('config.blink-cmp').opts,
+    opts_extend = { 'sources.default' },
   },
+  -- add blink.compat
   {
-    'mtoohey31/cmp-fish',
-    ft = 'fish',
+    'saghen/blink.compat',
+    dependencies = {
+      -- sources
+      -- { 'hrsh7th/cmp-cmdline', branch = 'main' },
+      -- { 'hrsh7th/cmp-nvim-lsp-signature-help', branch = 'main' },
+      -- { 'hrsh7th/cmp-calc', branch = 'main' },
+      -- 'lukas-reineke/cmp-rg',
+      -- 'ray-x/cmp-treesitter',
+      -- 'andersevenrud/cmp-tmux',
+      -- 'hrsh7th/cmp-emoji',
+      -- {
+      --   'mtoohey31/cmp-fish',
+      --   ft = 'fish',
+      --   lazy = true,
+      -- },
+    },
+    -- use the latest release, via version = '*', if you also use the latest release for blink.cmp
+    version = '*',
+    -- lazy.nvim will automatically load the plugin when it's required by blink.cmp
     lazy = true,
-    dependencies = { 'hrsh7th/nvim-cmp' },
+    -- make sure to set opts so that lazy.nvim calls blink.compat's setup
+    opts = {},
   },
+
   {
     'saecki/crates.nvim',
     dependencies = { 'nvim-lua/plenary.nvim' },
