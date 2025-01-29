@@ -161,7 +161,10 @@ return {
           require('luasnip.loaders.from_vscode').lazy_load()
         end,
       },
-      -- 'echasnovski/mini.snippets',
+      -- sources
+      'moyiz/blink-emoji.nvim',
+      'mikavilpas/blink-ripgrep.nvim',
+      { 'Kaiser-Yang/blink-cmp-dictionary', dependencies = { 'nvim-lua/plenary.nvim' } },
     },
     version = '*',
     ---@module 'blink.cmp'

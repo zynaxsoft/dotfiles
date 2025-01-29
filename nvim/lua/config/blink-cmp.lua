@@ -5,7 +5,36 @@ local opts = {
     nerd_font_variant = 'mono',
   },
   sources = {
-    default = { 'lsp', 'path', 'snippets', 'buffer' },
+    default = {
+      'lsp',
+      'path',
+      'snippets',
+      'buffer',
+      'emoji',
+      'ripgrep',
+      'dadbod',
+      'dictionary',
+      'lazydev',
+    },
+    providers = {
+      emoji = {
+        module = 'blink-emoji',
+        name = 'Emoji',
+        score_offset = 15, -- Tune by preference
+        opts = { insert = true }, -- Insert emoji (default) or complete its name
+      },
+      ripgrep = { module = 'blink-ripgrep', name = 'Ripgrep' },
+      dadbod = { name = 'Dadbod', module = 'vim_dadbod_completion.blink' },
+      lazydev = { name = 'LazyDev', module = 'lazydev.integrations.blink', score_offset = 100 },
+      dictionary = {
+        module = 'blink-cmp-dictionary',
+        name = 'Dict',
+        min_keyword_length = 3,
+        opts = {
+          dictionary_files = { vim.fn.expand '~/.config/nvim/dictionary/words.dict' },
+        },
+      },
+    },
   },
   signature = { enabled = true },
   completion = {
@@ -22,4 +51,5 @@ local opts = {
   },
   keymap = { preset = 'enter' },
 }
+
 return { opts = opts }
