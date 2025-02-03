@@ -47,7 +47,14 @@ local opts = {
     documentation = { auto_show = true, auto_show_delay_ms = 0 },
     ghost_text = { enabled = true },
     keyword = { range = 'full' },
-    list = { selection = { preselect = true, auto_insert = false } },
+    list = {
+      selection = {
+        preselect = function(ctx)
+          return ctx.mode ~= 'cmdline'
+        end,
+        auto_insert = false,
+      },
+    },
   },
   keymap = { preset = 'enter' },
 }
