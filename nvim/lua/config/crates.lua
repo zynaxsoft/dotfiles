@@ -9,7 +9,6 @@ require('crates').setup {
   thousands_separator = '.',
   notification_title = 'Crates',
   curl_args = { '-sL', '--retry', '1' },
-  disable_invalid_feature_diagnostic = false,
   text = {
     loading = '   Loading',
     version = '   %s',
@@ -123,17 +122,17 @@ require('crates').setup {
       jump_back = { '<c-o>', '<C-RightMouse>' },
     },
   },
-  src = {
-    insert_closing_quote = true,
-    text = {
-      prerelease = '  pre-release ',
-      yanked = '  yanked ',
-    },
-    coq = {
-      enabled = false,
-      name = 'Crates',
-    },
-  },
+  -- src = {
+  --   insert_closing_quote = true,
+  --   text = {
+  --     prerelease = '  pre-release ',
+  --     yanked = '  yanked ',
+  --   },
+  --   coq = {
+  --     enabled = false,
+  --     name = 'Crates',
+  --   },
+  -- },
   null_ls = {
     enabled = false,
     name = 'Crates',
