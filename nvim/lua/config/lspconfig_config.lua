@@ -122,7 +122,7 @@ local setup = function()
     },
     Lua = {
       format = {
-        enable = false,
+        -- enable = false,
       },
       diagnostics = { globals = { 'vim' } },
     },
