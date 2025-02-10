@@ -1,6 +1,6 @@
 return {
   -- Core
-  { 'nvim-lua/plenary.nvim', lazy = true },
+  { 'nvim-lua/plenary.nvim',  lazy = true },
 
   -- GUI
   {
@@ -256,7 +256,7 @@ return {
     keys = '<Leader>?',
   },
 
-  { 'mbbill/undotree', lazy = true, cmd = { 'UndotreeToggle' } },
+  { 'mbbill/undotree',        lazy = true, cmd = { 'UndotreeToggle' } },
 
   -- Motions
   { 'machakann/vim-sandwich', lazy = true, keys = 's' },
@@ -282,6 +282,17 @@ return {
     },
     lazy = true,
   },
+
+  {
+    'folke/snacks.nvim',
+    priority = 1000,
+    lazy = false,
+    ---@type snacks.Config
+    opts = require('config.snacks').opts,
+    keys = require('config.snacks').keys,
+    init = require('config.snacks').init,
+  },
+
   {
     'pwntester/octo.nvim',
     dependencies = {
@@ -306,7 +317,7 @@ return {
     lazy = true,
   },
   -- makes some plugins dot-repeatable like leap
-  { 'tpope/vim-repeat', event = 'VeryLazy' },
+  { 'tpope/vim-repeat',             event = 'VeryLazy' },
 
   -- Git
   {
@@ -326,8 +337,8 @@ return {
   {
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
-      { 'tpope/vim-dadbod', lazy = true },
-      { 'kristijanhusak/vim-dadbod-ui', lazy = true },
+      { 'tpope/vim-dadbod',                     lazy = true },
+      { 'kristijanhusak/vim-dadbod-ui',         lazy = true },
       { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
     },
     cmd = {
@@ -362,11 +373,11 @@ return {
   'roxma/vim-tmux-clipboard',
 
   -- Nvim dev
-  { 'bfredl/nvim-luadev', lazy = true, cmd = 'Luadev' },
+  { 'bfredl/nvim-luadev',           lazy = true,       cmd = 'Luadev' },
 
   -- Justfile
   { 'IndianBoy42/tree-sitter-just', ft = 'just' },
-  { 'NoahTheDuke/vim-just', ft = 'just' },
+  { 'NoahTheDuke/vim-just',         ft = 'just' },
 
   -- Lang specifics
   {
@@ -375,7 +386,7 @@ return {
     ft = { 'markdown' },
     dependencies = 'godlygeek/tabular',
   },
-  { 'rust-lang/rust.vim', lazy = true, ft = { 'rust' } },
+  { 'rust-lang/rust.vim',     lazy = true, ft = { 'rust' } },
   {
     'mrcjkb/rustaceanvim',
     version = '*', -- Recommended
@@ -415,15 +426,15 @@ return {
   {
     'mrcjkb/haskell-tools.nvim',
     version = '*', -- Recommended
-    lazy = false, -- This plugin is already lazy
+    lazy = false,  -- This plugin is already lazy
     config = function()
       local on_attach = require('config.lspconfig_config').on_attach
       require('config.haskell-tools').init(on_attach)
     end,
   },
   'neovimhaskell/haskell-vim',
-  { 'cespare/vim-toml', lazy = true, ft = { 'toml' } },
-  { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
+  { 'cespare/vim-toml',       lazy = true, ft = { 'toml' } },
+  { 'stephpy/vim-yaml',       lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
 
   {
