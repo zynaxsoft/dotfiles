@@ -123,6 +123,7 @@ map('n', '[q', [[<cmd>cprevious<cr>]])
 
 -- nvim-tree
 map('', '<C-/>', [[<cmd>Neotree toggle<cr>]])
+map('', '<C-_>', [[<cmd>Neotree toggle<cr>]])
 
 -- Restart lang server
 map('n', '<leader><leader>r', [[<cmd>LspRestart<cr>]], { silent = true })
