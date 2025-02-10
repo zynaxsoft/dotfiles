@@ -49,9 +49,7 @@ local opts = {
     keyword = { range = 'full' },
     list = {
       selection = {
-        preselect = function(ctx)
-          return ctx.mode ~= 'cmdline'
-        end,
+        preselect = false,
         auto_insert = false,
       },
     },
