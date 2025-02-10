@@ -22,6 +22,7 @@ keybinds clear-defaults=true {
     }
     pane {
         bind "Ctrl a" { Write 1; SwitchToMode "Normal"; }
+        bind "L" { Clear; SwitchToMode "Normal"; }
         bind "h" "Left" { MoveFocus "Left"; }
         bind "l" "Right" { MoveFocus "Right"; }
         bind "j" "Down" { MoveFocus "Down"; }
