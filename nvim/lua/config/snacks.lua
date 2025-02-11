@@ -2,13 +2,10 @@ local opts = {
   dashboard = { enabled = true },
   explorer = { enabled = true },
   input = { enabled = true },
+  image = { enabled = true },
   picker = {
     enabled = true,
-    source = {
-      grep = { cmd = "rga", }
-    },
     win = {
-      -- input window
       input = {
         keys = {
           ["<c-h>"] = { "toggle_hidden", mode = { "i", "n" } },
@@ -17,6 +14,7 @@ local opts = {
       }
     },
   },
+  scratch = { enabled = true, ft = "markdown" },
   notifier = { enabled = true },
   quickfile = { enabled = true },
   scope = { enabled = true },
