@@ -269,11 +269,6 @@ return {
     end,
     dependencies = {
       'nvim-lua/plenary.nvim',
-
-      {
-        'nvim-telescope/telescope-ui-select.nvim',
-        lazy = true,
-      },
       {
         'nvim-telescope/telescope-live-grep-args.nvim',
         lazy = true,
