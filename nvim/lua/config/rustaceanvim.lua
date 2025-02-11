@@ -12,10 +12,10 @@ function init(on_attach_in, capabilities)
     server = {
       on_attach = function(client, bufnr)
         on_attach_in(client, bufnr)
-        vim.keymap.set('n', '<C-e>', function()
-          vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
-          -- or vim.lsp.buf.codeAction() if you don't want grouping.
-        end, { silent = true, buffer = bufnr })
+        -- vim.keymap.set('n', '<C-e>', function()
+        --   vim.cmd.RustLsp 'codeAction' -- supports rust-analyzer's grouping
+        --   -- or vim.lsp.buf.codeAction() if you don't want grouping.
+        -- end, { silent = true, buffer = bufnr })
       end,
       settings = {
         -- rust-analyzer language server configuration
