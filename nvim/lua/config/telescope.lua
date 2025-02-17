@@ -55,16 +55,16 @@ function M.setup()
       },
     },
     extensions = {
-      ['ui-select'] = {
-        require('telescope.themes').get_dropdown {
-          -- even more opts
-        },
+      -- ['ui-select'] = {
+      --   require('telescope.themes').get_dropdown {
+      --     -- even more opts
+      --   },
         -- Your extension configuration goes here:
         -- extension_name = {
         --   extension_config_key = value,
         -- }
         -- please take a look at the readme of the extension you want to configure
-      },
+      -- },
       live_grep_args = {
         auto_quoting = true, -- enable/disable auto-quoting
         -- define mappings, e.g.
