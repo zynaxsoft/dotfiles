@@ -1,6 +1,7 @@
 set -gx COLORTERM truecolor
 set -gx GPG_TTY $(tty)
 set -gx EDITOR (which nvim)
+set -gx fish_cursor_insert block
 
 # FZF Catppuccin-Macchiato theme
 set -Ux FZF_DEFAULT_OPTS "\
