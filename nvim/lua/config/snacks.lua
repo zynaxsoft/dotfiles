@@ -59,7 +59,7 @@ local keys = {
   -- { "<leader>gf",  function() Snacks.picker.git_log_file() end,                            desc = "Git Log File" },
   -- Grep
   { "<leader>sb",  function() Snacks.picker.lines() end,                 desc = "Buffer Lines" },
-  { "<leader>g",   function() Snacks.picker.grep() end,                  desc = "Grep" },
+  { "<leader>g",   function() Snacks.picker.grep{ignored = true, hidden = true} end, desc = "Grep" },
   { "<leader>G",   function() Snacks.picker.grep_buffers() end,          desc = "Grep Open Buffers" },
   { "<leader>fw",  function() Snacks.picker.grep_word() end,             desc = "Visual selection or word", mode = { "n", "x" } },
   -- search
