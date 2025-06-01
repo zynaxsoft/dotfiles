@@ -103,9 +103,7 @@ end
 
 function mason.lspconfig()
   require('mason-lspconfig').setup {
-    ensure_installed = {
-      'rust_analyzer',
-    },
+    ensure_installed = { },
     automatic_installation = true,
   }
 end
