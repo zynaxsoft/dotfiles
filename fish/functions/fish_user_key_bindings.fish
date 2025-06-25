@@ -2,7 +2,7 @@ function fish_user_key_bindings
     # https://github.com/warpdotdev/Warp/issues/3090
     if string match -q "$TERM_PROGRAM" "WarpTerminal"
         set fish_key_bindings fish_default_key_bindings
-        return
+        return 0
     end
     # For those that didn't do this before
     # This solve some time Starship couldn't recognize vim mode
