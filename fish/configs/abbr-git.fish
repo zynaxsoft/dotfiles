@@ -1,5 +1,6 @@
 if status is-interactive
     function __add_abbr
+        abbr -a glistbranch "git for-each-ref --sort=-committerdate --format=\"%(committerdate:iso8601) %(authorname) %(refname:short)\" refs/remotes/ | head -n 20"
         abbr -a gcm "git checkout master"
         abbr -a gcd "git checkout develop"
 
