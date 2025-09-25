@@ -1,6 +1,6 @@
-function init(on_attach_in, capabilities)
+function init()
 local config = {
-  on_attach = on_attach_in,
+  -- on_attach = on_attach_in,
   -- handlers = {},
   settings = {
     -- spawn additional tsserver instance to calculate diagnostics on it

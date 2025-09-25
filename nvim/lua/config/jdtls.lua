@@ -4,7 +4,7 @@
 -- create a folder ~/dev/.java_workspace
 
 
-function init(on_attach_in, capabilities)
+function init()
   local jdtls = require 'jdtls'
   local home = os.getenv 'HOME'
   -- If you started neovim within `~/dev/xy/project-1` this would resolve to `project-1`
@@ -74,9 +74,6 @@ function init(on_attach_in, capabilities)
       bundles = {},
       extendedClientCapabilities = jdtls.extendedClientCapabilities,
     },
-
-    on_attach = on_attach_in,
-    capabilities = capabilities,
   }
   -- This starts a new client & server,
   -- or attaches to an existing client & server depending on the `root_dir`.

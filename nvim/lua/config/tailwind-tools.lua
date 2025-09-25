@@ -4,7 +4,7 @@ function get_opts()
     server = {
       override = true, -- setup the server from the plugin if true
       settings = {}, -- shortcut for `settings.tailwindCSS`
-      on_attach = function(client, buffer) end, -- callback triggered when the server attaches to a buffer
+      -- on_attach = function(client, buffer) end, -- callback triggered when the server attaches to a buffer
     },
     document_color = {
       enabled = true, -- can be toggled by commands

@@ -1,8 +1,7 @@
-function init(on_attach)
+function init()
   local null_ls = require 'null-ls'
 
   null_ls.setup {
-    on_attach = on_attach,
     sources = {
       -- Formatting
       -- null_ls.builtins.formatting.stylua.with {

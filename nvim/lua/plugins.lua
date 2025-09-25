@@ -1,6 +1,6 @@
 return {
   -- Core
-  { 'nvim-lua/plenary.nvim',  lazy = true },
+  { 'nvim-lua/plenary.nvim', lazy = true },
 
   -- GUI
   {
@@ -122,29 +122,17 @@ return {
   -- LSP
   {
     'neovim/nvim-lspconfig',
-    config = function()
-      require('config.lspconfig_config').setup()
-    end,
-    event = { 'BufReadPre', 'BufNewFile' },
+    lazy = true,
   },
-  -- {
-  --   'ray-x/lsp_signature.nvim',
-  --   config = function()
-  --     require 'config.lsp-signature'
-  --   end,
-  --   event = { 'BufReadPost', 'BufNewFile' },
-  -- },
 
   -- LSP Installer
   {
-    'williamboman/mason.nvim',
-    config = require('config.mason').main,
-  },
-  {
-    'williamboman/mason-lspconfig.nvim',
-    config = require('config.mason').lspconfig,
-    dependencies = { 'williamboman/mason.nvim', 'neovim/nvim-lspconfig' },
-    event = { 'BufReadPre', 'BufNewFile' },
+    'mason-org/mason-lspconfig.nvim',
+    opts = {},
+    dependencies = {
+      { 'mason-org/mason.nvim', opts = {} },
+      'neovim/nvim-lspconfig',
+    },
   },
 
   -- blink.cmp
@@ -212,8 +200,7 @@ return {
     'nvimtools/none-ls.nvim',
     dependencies = 'nvim-lua/plenary.nvim',
     config = function()
-      local on_attach = require('config.lspconfig_config').on_attach
-      require('config.null-ls').init(on_attach)
+      require('config.null-ls').init()
     end,
     event = { 'BufReadPre', 'BufNewFile' },
   },
@@ -256,7 +243,7 @@ return {
     keys = '<Leader>?',
   },
 
-  { 'mbbill/undotree',        lazy = true, cmd = { 'UndotreeToggle' } },
+  { 'mbbill/undotree', lazy = true, cmd = { 'UndotreeToggle' } },
 
   -- Motions
   { 'machakann/vim-sandwich', lazy = true, keys = 's' },
@@ -312,7 +299,7 @@ return {
     lazy = true,
   },
   -- makes some plugins dot-repeatable like leap
-  { 'tpope/vim-repeat',             event = 'VeryLazy' },
+  { 'tpope/vim-repeat', event = 'VeryLazy' },
 
   -- Git
   {
@@ -332,8 +319,8 @@ return {
   {
     'kristijanhusak/vim-dadbod-ui',
     dependencies = {
-      { 'tpope/vim-dadbod',                     lazy = true },
-      { 'kristijanhusak/vim-dadbod-ui',         lazy = true },
+      { 'tpope/vim-dadbod', lazy = true },
+      { 'kristijanhusak/vim-dadbod-ui', lazy = true },
       { 'kristijanhusak/vim-dadbod-completion', ft = { 'sql', 'mysql', 'plsql' }, lazy = true },
     },
     cmd = {
@@ -368,11 +355,11 @@ return {
   'roxma/vim-tmux-clipboard',
 
   -- Nvim dev
-  { 'bfredl/nvim-luadev',           lazy = true,       cmd = 'Luadev' },
+  { 'bfredl/nvim-luadev', lazy = true, cmd = 'Luadev' },
 
   -- Justfile
   { 'IndianBoy42/tree-sitter-just', ft = 'just' },
-  { 'NoahTheDuke/vim-just',         ft = 'just' },
+  { 'NoahTheDuke/vim-just', ft = 'just' },
 
   -- Lang specifics
   {
@@ -381,24 +368,20 @@ return {
     ft = { 'markdown' },
     dependencies = 'godlygeek/tabular',
   },
-  { 'rust-lang/rust.vim',     lazy = true, ft = { 'rust' } },
+  { 'rust-lang/rust.vim', lazy = true, ft = { 'rust' } },
   {
     'mrcjkb/rustaceanvim',
     version = '*', -- Recommended
     ft = { 'rust' },
     config = function()
-      local on_attach = require('config.lspconfig_config').on_attach
-      local capabilities = require('config.lspconfig_config').capabilities
-      require('config.rustaceanvim').init(on_attach, capabilities)
+      require('config.rustaceanvim').init()
     end,
     dependencies = { 'nvim-lua/plenary.nvim', 'mfussenegger/nvim-dap' },
   },
   {
     'mfussenegger/nvim-jdtls',
     config = function()
-      local on_attach = require('config.lspconfig_config').on_attach
-      local capabilities = require('config.lspconfig_config').capabilities
-      require('config.jdtls').init(on_attach, capabilities)
+      require('config.jdtls').init()
     end,
     dependencies = {
       'mfussenegger/nvim-dap',
@@ -406,50 +389,18 @@ return {
     },
     ft = { 'java' },
   },
-  -- {
-  --   'elixir-tools/elixir-tools.nvim',
-  --   version = '*',
-  --   event = { 'BufReadPre', 'BufNewFile' },
-  --   config = function()
-  --     local on_attach = require('config.lspconfig_config').on_attach
-  --     require('config.elixir-tools').init(on_attach)
-  --   end,
-  --   dependencies = {
-  --     'nvim-lua/plenary.nvim',
-  --   },
-  -- },
   {
     'mrcjkb/haskell-tools.nvim',
     version = '*', -- Recommended
-    lazy = false,  -- This plugin is already lazy
+    lazy = false, -- This plugin is already lazy
     config = function()
-      local on_attach = require('config.lspconfig_config').on_attach
-      require('config.haskell-tools').init(on_attach)
+      require('config.haskell-tools').init()
     end,
   },
   'neovimhaskell/haskell-vim',
-  { 'cespare/vim-toml',       lazy = true, ft = { 'toml' } },
-  { 'stephpy/vim-yaml',       lazy = true, ft = { 'yaml', 'yml' } },
+  { 'cespare/vim-toml', lazy = true, ft = { 'toml' } },
+  { 'stephpy/vim-yaml', lazy = true, ft = { 'yaml', 'yml' } },
   { 'hashivim/vim-terraform', lazy = true, ft = { 'terraform' } },
-
-  {
-    'pmizio/typescript-tools.nvim',
-    dependencies = { 'nvim-lua/plenary.nvim', 'neovim/nvim-lspconfig' },
-    ft = { 'typescript', 'typescriptreact', 'javascript' },
-    config = function()
-      local on_attach = require('config.lspconfig_config').on_attach
-      local capabilities = require('config.lspconfig_config').capabilities
-      require('config.typescript-tools').init(on_attach, capabilities)
-    end,
-    opts = {},
-  },
-  {
-    'luckasRanarison/tailwind-tools.nvim',
-    name = 'tailwind-tools',
-    build = ':UpdateRemotePlugins',
-    ft = { 'typescript', 'typescriptreact', 'javascript' },
-    opts = require('config.tailwind-tools').get_opts(),
-  },
 
   -- Util
   -- measure startuptime
