@@ -51,6 +51,9 @@
     textconv = bun
     binary = true
 
+[stgit]
+    autosign = Signed-off-by
+
 [include]
     path = ~/dotfiles/bat/delta-theme.gitconfig
     path = ~/.work/.gitconfig-work
