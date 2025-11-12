@@ -35,6 +35,7 @@ _link zellij .config/
 _link kitty .config/
 _link gitui .config/
 _link bat .config/
+_link claude/commands .claude/
 ln -s ~/dotfiles/bacon-prefs.toml ~/.config/bacon/prefs.toml
 
 mkdir -p ~/.cargo
