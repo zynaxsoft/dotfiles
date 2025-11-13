@@ -36,6 +36,7 @@ _link kitty .config/
 _link gitui .config/
 _link bat .config/
 _link claude/commands .claude/
+_link gemini/commands .gemini/
 ln -s ~/dotfiles/bacon-prefs.toml ~/.config/bacon/prefs.toml
 
 mkdir -p ~/.cargo
