@@ -1,8 +1,8 @@
-description = "Generate a commit message by analyzing staged changes."
+description = "Generate a patch message by analyzing stacked-git patch's changes."
 prompt = """
-# Task: Generate a commit message by analyzing staged changes.
+# Task: Generate a patch message by analyzing stacked-git patch's changes.
 Steps:
-1. Run `git diff --cached` to retrieve all staged changes
+1. Run `stg email format {{args}} -G --stdout | tee` to retrieve all staged changes. Ignore every data about the commit message, only look at the diff that is after `diff --git` line.
 2. Read each modified file in full to understand its purpose and context
 3. Analyze how changes across different files relate to each other
 4. Summarize the overall impact, then provide per-file summaries
