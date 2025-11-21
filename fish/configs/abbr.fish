@@ -2,6 +2,10 @@ if status is-interactive
     abbr -a tls tmux list-session
     abbr -a tks tmux_kill_session
 
+    abbr -a cld claude
+    abbr -a cldp claude -p
+    abbr -a gmn gemini
+
     abbr -a zl zellij
     abbr -a zlr zellij run --
     abbr -a zla zellij attach
