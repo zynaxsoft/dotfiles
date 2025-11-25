@@ -1,0 +1,16 @@
+{
+  "apiKeyHelper": "echo $_ANTHROPIC_API_KEY",
+  "permissions": {
+    "allow": [
+      "WebFetch",
+      "WebSearch"
+    ]
+  },
+  "model": "opus",
+  "alwaysThinkingEnabled": true,
+  "statusLine": {
+    "type": "command",
+    "command": "~/dotfiles/claude/statusline.sh",
+    "padding": 0
+  }
+}
