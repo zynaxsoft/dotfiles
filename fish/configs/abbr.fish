@@ -4,6 +4,7 @@ if status is-interactive
 
     abbr -a cld claude
     abbr -a cldp claude -p
+    abbr -a cldm claude --model
     abbr -a gmn gemini
 
     abbr -a zl zellij
