@@ -53,6 +53,16 @@ swap_tiled_layout name="stacked" {
     }
 }
 
+swap_tiled_layout name="wide-stacked" {
+    tab min_panes=3 {
+        pane split_direction="vertical" {
+            pane size="33%"
+            pane size="34%"
+            pane size="33%" stacked=true { children; }
+        }
+    }
+}
+
 swap_floating_layout name="staggered" {
     floating_panes
 }
