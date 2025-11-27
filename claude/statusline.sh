@@ -14,7 +14,7 @@ TRANSCRIPT=$(echo "$input" | jq -r '.transcript_path // ""')
 # Only get messages where content is a string (actual user prompts, not tool results)
 LAST_PROMPT=""
 if [[ -n "$TRANSCRIPT" && -f "$TRANSCRIPT" ]]; then
-  LAST_PROMPT=$(grep '"type":"user"' "$TRANSCRIPT" 2>/dev/null | jq -r 'select(.message.content | type == "string") | .message.content' 2>/dev/null | tail -1 | head -c 30 | tr '\n' ' ')
+  LAST_PROMPT=$(grep '"type":"user"' "$TRANSCRIPT" 2>/dev/null | jq -r 'select(.message.content | type == "string") | .message.content' 2>/dev/null | head -c 40 | tr '\n' ' ')
   [[ ${#LAST_PROMPT} -ge 30 ]] && LAST_PROMPT="${LAST_PROMPT}..."
 fi
 
