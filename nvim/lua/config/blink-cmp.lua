@@ -41,6 +41,9 @@ local opts = {
   },
   signature = { enabled = true },
   completion = {
+    accept = {
+      auto_brackets = { enabled = false },
+    },
     menu = {
       draw = {
         -- columns = { { 'label', 'label_description', gap = 1}, { 'kind_icon', 'kind', gap = 1}, {'source_name' } },
