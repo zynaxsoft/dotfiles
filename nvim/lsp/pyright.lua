@@ -1,9 +1,11 @@
 return {
-  python = {
-    analysis = {
-      autoSearchPaths = true,
-      useLibraryCodeForTypes = true,
-      diagnosticMode = 'openFilesOnly',
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        useLibraryCodeForTypes = true,
+        diagnosticMode = 'openFilesOnly',
+      },
     },
   },
 }
