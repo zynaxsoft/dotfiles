@@ -5,6 +5,9 @@ if status is-interactive
     abbr -a cld claude
     abbr -a cldp claude -p
     abbr -a cldm claude --model
+    abbr -a cldh claude --model haiku
+    abbr -a clds claude --model sonnet
+    abbr -a cldo claude --model opus
     abbr -a gmn gemini
 
     abbr -a zl zellij
