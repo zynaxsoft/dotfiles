@@ -9,7 +9,11 @@ Steps:
 6. Output the topic as the first line, followed by a detailed summary
 
 Format:
-- First line: Brief topic (50 chars or less)
+- First line: <type>: <subsystem>: <message title>
 - Blank line
 - Detailed summary of overall changes
 - Per-file breakdown if changes are complex
+
+IMPORTANT: You must only output the formated commit message only.
+YOU MUST: Write the commit message in imperative Mood. Write as a command, not a description.
+    e.g. “make xyzzy do frotz” instead of “[This patch] makes xyzzy do frotz” or “[I] changed xyzzy to do frotz”, as if you are giving orders to the codebase to change its behaviour.
