@@ -97,6 +97,7 @@ local servers = {
   'cssls',
   'vtsls',
   'tailwindcss',
+  'prismals',
   'terraformls',
   'elixirls',
   'gopls',
