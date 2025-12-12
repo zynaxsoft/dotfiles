@@ -33,7 +33,7 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set({ 'n', 'i', 'v' }, '<C-e>', vim.lsp.buf.code_action, bufopts)
     vim.keymap.set('n', '<space>m', function()
       -- vim.lsp.buf.format { async = true }
-      require("conform").format({ async = true, lsp_format = "last" })
+      require("conform").format({ async = true })
     end, bufopts)
     vim.keymap.set('n', '<leader>ii', function()
       toggle_inlay(bufnr)
