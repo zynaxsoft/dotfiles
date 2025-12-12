@@ -461,3 +461,4 @@ scroll_buffer_size 100000
 // Default: true
 //
 // show_startup_tips false
+advanced_mouse_actions false
