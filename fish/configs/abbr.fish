@@ -9,6 +9,7 @@ if status is-interactive
     abbr -a cldms claude --model sonnet[1m]
     abbr -a cldmo claude --model opus
     abbr -a gmn gemini
+    abbr -a opc opencode
 
     abbr -a zl zellij
     abbr -a zlr zellij run --
