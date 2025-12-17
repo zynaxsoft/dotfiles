@@ -12,6 +12,7 @@ nvim/plugged/*
 nvim/bundle/*
 nvim/view/*
 
+/ghostty/work-config
 
 resurrect/
 # Swap

@@ -33,6 +33,7 @@ _link fish/fish_plugins .config/fish/
 _link fish/my_conf_d.fish .config/fish/conf.d/
 _link zellij .config/
 _link kitty .config/
+_link ghostty .config/
 _link gitui .config/
 _link bat .config/
 _link claude/commands .claude/

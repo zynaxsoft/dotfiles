@@ -1,0 +1,21 @@
+config-file = ?~/dotfiles/ghostty/work-config
+
+font-family = VictorMono Nerd Font Mono
+font-size = 15
+theme = Catppuccin Macchiato
+
+window-padding-y = 0
+# place this in ghotstty/work-config
+# window-height = 50
+# window-width = 200
+
+auto-update = download
+
+# MacOS
+font-thicken = true
+font-thicken-strength = 0
+macos-option-as-alt = true
+
+# Quick terminal
+keybind = global:cmd+ctrl+t=toggle_quick_terminal
+quick-terminal-size = 40%
