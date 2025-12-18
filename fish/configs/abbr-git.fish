@@ -46,6 +46,7 @@ if status is-interactive
         abbr -a glola "git log --graph --pretty='%Cred%h%Creset -%C(auto)%d%Creset %s %Cgreen(%ar) %C(bold blue)<%an>%Creset' --all"
         abbr -a glog "git log --oneline --decorate --graph"
         abbr -a gloga "git log --oneline --decorate --graph --all"
+        abbr -a glpickaxe "git log -p --all --pickaxe-regex -S"
 
 # grb: git rebase
         abbr -a grb "git rebase"
