@@ -38,6 +38,7 @@ keybinds clear-defaults=true {
         bind "w" { ToggleFloatingPanes; SwitchToMode "Normal"; }
         bind "e" { TogglePaneEmbedOrFloating; SwitchToMode "Normal"; }
         bind "c" { SwitchToMode "RenamePane"; PaneNameInput 0;}
+        bind "i" { TogglePanePinned; SwitchToMode "Normal"; }
 
         bind "1" { GoToTab 1; SwitchToMode "Normal"; }
         bind "2" { GoToTab 2; SwitchToMode "Normal"; }
@@ -210,6 +211,7 @@ keybinds clear-defaults=true {
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt w" { ToggleFloatingPanes; }
         bind "Alt p" { TogglePaneInGroup; }
+        bind "Alt u" { ToggleFocusFullscreen; }
         bind "Alt Shift p" { ToggleGroupMarking; }
     }
     shared_except "normal" "locked" {
