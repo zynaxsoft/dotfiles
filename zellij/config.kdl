@@ -83,6 +83,13 @@ keybinds clear-defaults=true {
         bind "Tab" { ToggleTab; }
         bind "<" { MoveTab "Left"; }
         bind ">" { MoveTab "Right"; }
+        bind "Ctrl 1" {
+            NewTab {
+                name "👻"
+                layout "agents"
+            };
+            SwitchToMode "Normal";
+        }
     }
     scroll {
         bind "q" { SwitchToMode "Normal"; }
