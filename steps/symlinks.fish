@@ -38,6 +38,7 @@ _link opencode/opencode.json .config/opencode
 _link gitui .config/
 _link bat .config/
 _link claude/commands .claude/
+_link claude/output-styles .claude/
 _link gemini/commands .gemini/
 ln -s ~/dotfiles/bacon-prefs.toml ~/.config/bacon/prefs.toml
 
