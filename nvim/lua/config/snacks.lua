@@ -2,7 +2,7 @@ local opts = {
   dashboard = { enabled = true },
   explorer = { enabled = true },
   input = { enabled = true },
-  image = { enabled = true },
+  image = { enabled = false },
   picker = {
     enabled = true,
     win = {
