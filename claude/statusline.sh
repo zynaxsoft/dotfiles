@@ -39,8 +39,15 @@ YELLOW='\033[33m'
 DIM='\033[2m'
 RESET='\033[0m'
 
+# Set terminal title with last prompt or default
+TITLE="✳ Claude Code"
+if [[ -n "$LAST_PROMPT" ]]; then
+  TITLE="✳ ${LAST_PROMPT}"
+fi
+
 # Build minimal statusline
-OUTPUT="${CYAN}${MODEL}${RESET}"
+OUTPUT="\033]0;${TITLE}\007"  # Set terminal title
+OUTPUT="${OUTPUT}${CYAN}${MODEL}${RESET}"
 [[ -n "$TOKENS" ]] && OUTPUT="${OUTPUT} ${DIM}${TOKENS}${RESET}"
 OUTPUT="${OUTPUT} ${GREEN}\$${COST}${RESET}"
 [[ -n "$LAST_PROMPT" ]] && OUTPUT="${OUTPUT} ${DIM}\"${LAST_PROMPT}\"${RESET}"
