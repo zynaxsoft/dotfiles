@@ -19,3 +19,6 @@ macos-option-as-alt = true
 # Quick terminal
 keybind = global:cmd+ctrl+t=toggle_quick_terminal
 quick-terminal-size = 40%
+
+# Claude shift+enter newline
+keybind = shift+enter=text:\x1b\r
