@@ -11,10 +11,19 @@ COST=$(echo "$input" | jq -r '.cost.total_cost_usd // 0' | xargs printf "%.2f")
 TRANSCRIPT=$(echo "$input" | jq -r '.transcript_path // ""')
 
 # Get last user message from transcript (JSONL format)
-# Only get messages where content is a string (actual user prompts, not tool results)
+# Handle both string content and array content
 LAST_PROMPT=""
 if [[ -n "$TRANSCRIPT" && -f "$TRANSCRIPT" ]]; then
-  LAST_PROMPT=$(grep '"type":"user"' "$TRANSCRIPT" 2>/dev/null | tail -1 | jq -r 'select(.message.content | type == "string") | .message.content' 2>/dev/null | head -c 40 | tr -d '\n')
+  # Try to extract content - handle both string and array formats
+  LAST_PROMPT=$(grep '"type":"user"' "$TRANSCRIPT" 2>/dev/null | tail -1 | jq -r '
+    if (.message.content | type == "string") then
+      .message.content
+    elif (.message.content | type == "array") then
+      .message.content[] | select(.type == "text") | .text
+    else
+      empty
+    end
+  ' 2>/dev/null | head -c 40 | tr -d '\n')
   [[ ${#LAST_PROMPT} -ge 30 ]] && LAST_PROMPT="${LAST_PROMPT}..."
 fi
 
@@ -38,12 +47,6 @@ GREEN='\033[32m'
 YELLOW='\033[33m'
 DIM='\033[2m'
 RESET='\033[0m'
-
-# Set terminal title with last prompt or default
-TITLE="✳ Claude Code"
-if [[ -n "$LAST_PROMPT" ]]; then
-  TITLE="✳ ${LAST_PROMPT}"
-fi
 
 # Build minimal statusline
 OUTPUT="\033]0;${TITLE}\007"  # Set terminal title
