@@ -49,7 +49,6 @@ DIM='\033[2m'
 RESET='\033[0m'
 
 # Build minimal statusline
-OUTPUT="\033]0;${TITLE}\007"  # Set terminal title
 OUTPUT="${OUTPUT}${CYAN}${MODEL}${RESET}"
 [[ -n "$TOKENS" ]] && OUTPUT="${OUTPUT} ${DIM}${TOKENS}${RESET}"
 OUTPUT="${OUTPUT} ${GREEN}\$${COST}${RESET}"
