@@ -22,6 +22,7 @@ local opts = {
 }
 
 local buffers_opts = {
+  sort_lastused = true,  -- Sort by most recently used (MRU)
   win = {
     input = { keys = { ["<c-d>"] = { "bufdelete", mode = { "n", "i" } }, }, },
     list = { keys = { ["dd"] = "bufdelete" } },
