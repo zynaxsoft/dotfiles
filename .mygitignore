@@ -2,7 +2,7 @@
 GEMINI.md
 .gemini/
 CLAUDE.md
-.claude/
+.claude
 
 # Swap
 [._]*.s[a-v][a-z]
