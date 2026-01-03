@@ -27,30 +27,57 @@ if [[ -n "$TRANSCRIPT" && -f "$TRANSCRIPT" ]]; then
   [[ ${#LAST_PROMPT} -ge 30 ]] && LAST_PROMPT="${LAST_PROMPT}..."
 fi
 
-# Get token usage from LAST assistant message (current context size)
-TOKENS=""
-if [[ -n "$TRANSCRIPT" && -f "$TRANSCRIPT" ]]; then
-  # Get last assistant message's input tokens (input + cache = total context for that turn)
-  LAST_USAGE=$(grep '"type":"assistant"' "$TRANSCRIPT" 2>/dev/null | tail -1 | jq '.message.usage // {}' 2>/dev/null)
-  if [[ -n "$LAST_USAGE" && "$LAST_USAGE" != "{}" ]]; then
-    INPUT_TOKENS=$(echo "$LAST_USAGE" | jq '(.input_tokens // 0) + (.cache_read_input_tokens // 0) + (.cache_creation_input_tokens // 0)' 2>/dev/null)
-    if [[ -n "$INPUT_TOKENS" && "$INPUT_TOKENS" != "null" && "$INPUT_TOKENS" != "0" ]]; then
-      TOTAL_K=$(( INPUT_TOKENS / 1000 ))
-      TOKENS="${TOTAL_K}k"
+# Colors
+CYAN='\033[36m'
+GREEN='\033[32m'
+DIM='\033[2m'
+RESET='\033[0m'
+
+# Extract context window data and build progress bar
+CONTEXT_SIZE=$(echo "$input" | jq '.context_window.context_window_size // 0')
+CURRENT_USAGE=$(echo "$input" | jq '.context_window.current_usage')
+
+BAR_DISPLAY=""
+
+if [[ "$CURRENT_USAGE" != "null" && -n "$CURRENT_USAGE" ]]; then
+  # Calculate current tokens
+  CURRENT_TOKENS=$(echo "$CURRENT_USAGE" | jq '(.input_tokens // 0) + (.cache_creation_input_tokens // 0) + (.cache_read_input_tokens // 0)')
+
+  # Calculate percentage
+  if [[ "$CONTEXT_SIZE" -gt 0 ]]; then
+    PERCENTAGE=$((CURRENT_TOKENS * 100 / CONTEXT_SIZE))
+
+    # Build density progress bar with 40% threshold
+    BAR_WIDTH=10
+    THRESHOLD=4  # 40% of 10 = 4 chars
+    FILLED=$((PERCENTAGE * BAR_WIDTH / 100))
+
+    # Build bar: ▓ = filled, ▒ = until threshold, ░ = after threshold
+    BAR="╠"
+    for ((i=0; i<FILLED; i++)); do BAR+="▓"; done
+    if [[ $FILLED -lt $THRESHOLD ]]; then
+      for ((i=FILLED; i<THRESHOLD; i++)); do BAR+="▒"; done
+    fi
+    START=$((FILLED > THRESHOLD ? FILLED : THRESHOLD))
+    for ((i=START; i<BAR_WIDTH; i++)); do BAR+="░"; done
+    BAR+="╣"
+
+    # Format token display
+    CURRENT_K=$((CURRENT_TOKENS / 1000))
+    CONTEXT_K=$((CONTEXT_SIZE / 1000))
+
+    # Choose color based on usage (>40% = brighter, <=40% = dimmed)
+    if [[ $PERCENTAGE -gt 40 ]]; then
+      BAR_DISPLAY="${BAR} ${PERCENTAGE}% (${CURRENT_K}k/${CONTEXT_K}k)"
+    else
+      BAR_DISPLAY="${DIM}${BAR} ${PERCENTAGE}% (${CURRENT_K}k/${CONTEXT_K}k)${RESET}"
     fi
   fi
 fi
 
-# Fish theme colors (default)
-CYAN='\033[36m'
-GREEN='\033[32m'
-YELLOW='\033[33m'
-DIM='\033[2m'
-RESET='\033[0m'
-
 # Build minimal statusline
-OUTPUT="${OUTPUT}${CYAN}${MODEL}${RESET}"
-[[ -n "$TOKENS" ]] && OUTPUT="${OUTPUT} ${DIM}${TOKENS}${RESET}"
+OUTPUT="${CYAN}${MODEL}${RESET}"
+[[ -n "$BAR_DISPLAY" ]] && OUTPUT="${OUTPUT} ${BAR_DISPLAY}"
 OUTPUT="${OUTPUT} ${GREEN}\$${COST}${RESET}"
 [[ -n "$LAST_PROMPT" ]] && OUTPUT="${OUTPUT} ${DIM}\"${LAST_PROMPT}\"${RESET}"
 
