@@ -1,9 +1,3 @@
-# AI stuff
-GEMINI.md
-.gemini/
-CLAUDE.md
-.claude
-
 # Swap
 [._]*.s[a-v][a-z]
 [._]*.sw[a-p]
