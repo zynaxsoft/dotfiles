@@ -31,7 +31,7 @@ local buffers_opts = {
 
 local keys = {
   -- Top Pickers & Explorer
-  { "<c-p>",      function() Snacks.picker.smart() end,               desc = "Smart Find Files" },
+  { "<c-p>",      function() Snacks.picker.smart({ hidden = true }) end, desc = "Smart Find Files" },
   { "<c-n>",      function() Snacks.picker.buffers(buffers_opts) end, desc = "Buffers" },
   { "<leader>:",  function() Snacks.picker.command_history() end,     desc = "Command History" },
   { "<leader>hn", function() Snacks.picker.notifications() end,       desc = "Notification History" },
