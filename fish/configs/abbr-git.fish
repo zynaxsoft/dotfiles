@@ -4,6 +4,8 @@ if status is-interactive
         abbr -a gcm "git checkout master"
         abbr -a gcd "git checkout develop"
 
+        abbr -a gmd "git merge develop"
+
         abbr -a ga "git add -i"
         abbr -a gaa "git add -A"
         abbr -a gapa "git add --patch"
