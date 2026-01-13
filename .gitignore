@@ -1,3 +1,5 @@
+/.claude/settings.local.json
+
 fish/configs/custom_host.fish
 fish/configs/work.fish
 lazy-lock.json
