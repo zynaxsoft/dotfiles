@@ -34,7 +34,7 @@ local opts = {
         name = 'Dict',
         min_keyword_length = 3,
         opts = {
-          dictionary_files = { vim.fn.expand '~/.config/nvim/dictionary/words.dict' },
+          dictionary_files = vim.fn.filereadable('/usr/share/dict/words') == 1 and { '/usr/share/dict/words' } or {},
         },
       },
     },
