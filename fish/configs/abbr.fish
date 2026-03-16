@@ -3,10 +3,11 @@ if status is-interactive
     abbr -a tks tmux_kill_session
 
     abbr -a cld claude
+    abbr -a cldy claude --dangerously-skip-permissions
     abbr -a cldp claude -p
     abbr -a cldm claude --model
     abbr -a cldmh claude --model haiku
-    abbr -a cldms claude --model sonnet[1m]
+    abbr -a cldms claude --model sonnet
     abbr -a cldmo claude --model opus
     abbr -a gmn gemini
     abbr -a opc opencode
