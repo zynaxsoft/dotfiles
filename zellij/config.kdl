@@ -482,6 +482,7 @@ scroll_buffer_size 100000
 // Default: true
 //
 advanced_mouse_actions false
+mouse_hover_effects false
 
 web_client {
     font "monospace"

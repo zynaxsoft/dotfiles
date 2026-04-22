@@ -9,7 +9,6 @@ return {
     config = function()
       require 'config.catppuccin'
     end,
-    lazy = true,
   },
   {
     'nvim-lualine/lualine.nvim',
