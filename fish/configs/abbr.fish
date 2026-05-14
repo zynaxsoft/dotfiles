@@ -16,7 +16,6 @@ if status is-interactive
     abbr -a zlr zellij run --
     abbr -a zla zellij attach
 
-    abbr -a fg figma
     abbr -a fgc figma connect
     abbr -a fgcp figma connect publish
 

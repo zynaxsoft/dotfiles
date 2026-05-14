@@ -34,7 +34,13 @@ return {
   {
     'catgoose/nvim-colorizer.lua',
     config = function()
-      require('colorizer').setup()
+      require('colorizer').setup {
+        user_default_options = {
+          -- vim.lsp.document_color doesn't exist in this nvim build; accessing it
+          -- triggers a failing lazy require in colorizer's truthy check.
+          disable_document_color = false,
+        },
+      }
     end,
     event = 'BufReadPre',
   },
