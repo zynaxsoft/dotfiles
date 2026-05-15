@@ -3,6 +3,7 @@ if status is-interactive
     abbr -a tks tmux_kill_session
 
     abbr -a cld claude
+    abbr -a cldg claude agents
     abbr -a cldy claude --dangerously-skip-permissions
     abbr -a cldp claude -p
     abbr -a cldm claude --model
